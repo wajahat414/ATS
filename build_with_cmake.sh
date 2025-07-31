@@ -29,9 +29,9 @@ ROOT_DIR="$(get_abs_path ..)"
 
 # Set default paths
 if [ -z "$1" ]; then
-  DDS_HOME="$ROOT_DIR/dds"
-  QUICKFIX_HOME="$ROOT_DIR/quickfix"
-  LOG4CXX_HOME="$ROOT_DIR/log4cxx"
+  DDS_HOME="$ROOT_DIR/externel/dds"
+  QUICKFIX_HOME="$ROOT_DIR/externel/quickfix"
+  LOG4CXX_HOME="$ROOT_DIR/externel/log4cxx"
   INSTALL_PREFIX="$ROOT_DIR/DistributedATS"
 else
   INSTALL_PREFIX="$(get_abs_path "$1")"

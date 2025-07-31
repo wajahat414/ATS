@@ -1,0 +1,11 @@
+prefix=/Users/wajahat/Documents/WorkSpace/ForexSystem/RefernceCodes/DistributedATS/build/dds
+exec_prefix=/Users/wajahat/Documents/WorkSpace/ForexSystem/RefernceCodes/DistributedATS/build/dds
+includedir=${prefix}/include
+
+Name: asio
+Description: A cross-platform C++ library for network and low-level I/O programming that provides developers with a consistent asynchronous model using a modern C++ approach.
+Version: 1.28.0
+Cflags: -I${includedir}
+Lflags:
+Requires:
+Requires.private:

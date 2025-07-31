@@ -1,0 +1,126 @@
+=== All Tables in Database: ../DistributedATS/MiscATS/CryptoCLOB/data/distributed_ats.db ===
+
+Tables found:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hist_price
+instrument
+instrument_market_map
+market
+user_code
+user_group
+user_group_market_map
+
+=== Sample Data (First 3 rows) ===
+
+--- Sample data from: hist_price ---
+instrument_name  business_date  properties                                                       last_update_time   
+---------------  -------------  ---------------------------------------------------------------  -------------------
+AAA              20200401       {"open":1010,"low":1000,"high":2000,"last":1500, "volume":1000}  2022-10-29 14:29:09
+BBB              20200401       {"open":2010,"low":2000,"high":3000,"last":2500, "volume":2000}  2022-10-29 14:29:09
+CCC              20200401       {"open":3010,"low":3000,"high":4000,"last":3500, "volume":3000}  2022-10-29 14:29:09
+
+--- Sample data from: market ---
+market_name  properties  last_update_time   
+-----------  ----------  -------------------
+UST_MARKET   {}          2022-10-29 14:29:13
+MARKET_Y     {}          2023-02-05 16:31:04
+MARKET_Z     {}          2023-02-05 16:31:04
+
+--- Sample data from: user_group_market_map ---
+user_group           market_name  last_update_time   
+-------------------  -----------  -------------------
+UST_TRADER_GROUP_A   UST_MARKET   2022-10-29 14:29:13
+UST_TRADER_GROUP_B   UST_MARKET   2022-10-29 14:29:13
+MATCHING_ENGINE_UST  UST_MARKET   2022-10-29 14:29:13
+
+--- Sample data from: instrument ---
+instrument_name  properties         last_update_time   
+---------------  -----------------  -------------------
+AAA              {"type":"Equity"}  2023-02-05 16:31:04
+BBB              {"type":"Equity"}  2023-02-05 16:31:04
+CCC              {"type":"Equity"}  2023-02-05 16:31:04
+
+--- Sample data from: user_code ---
+user_name     user_group          properties                                                      last_update_time   
+------------  ------------------  --------------------------------------------------------------  -------------------
+UST_TRADER_1  UST_TRADER_GROUP_A  {"name":"UST TEST TRADER 1","type":"TRADER","password":"TEST"}  2022-10-29 14:29:13
+UST_TRADER_2  UST_TRADER_GROUP_A  {"name":"UST TEST TRADER 2","type":"TRADER","password":"TEST"}  2022-10-29 14:29:13
+UST_TRADER_3  UST_TRADER_GROUP_B  {"name":"UST TEST TRADER 3","type":"TRADER","password":"TEST"}  2022-10-29 14:29:13
+
+--- Sample data from: instrument_market_map ---
+instrument_name  market_name  last_update_time   
+---------------  -----------  -------------------
+BTC-USD          BTC_MARKET   2025-07-18 17:31:08
+BTC-EUR          BTC_MARKET   2025-07-18 17:31:08
+BTC-GBP          BTC_MARKET   2025-07-18 17:31:08
+
+--- Sample data from: user_group ---
+user_group           properties  last_update_time   
+-------------------  ----------  -------------------
+UST_TRADER_GROUP_A   {}          2022-10-29 14:29:13
+UST_TRADER_GROUP_B   {}          2022-10-29 14:29:13
+MATCHING_ENGINE_UST  {}          2022-10-29 14:29:13
+
