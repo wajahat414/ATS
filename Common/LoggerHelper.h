@@ -21,3 +21,5 @@ namespace LoggerHelper
         LOG4CXX_INFO(logger, context << ":" << ss.str());
     };
 };
+
+ 

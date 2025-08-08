@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -63,98 +63,95 @@ namespace LatencyTest
     class SocketAcceptor;
     typedef FIX::Queue<FIX::Message> FIXMessageQueue;
     typedef std::map<const FIX::SessionID, FIX::Message> SessionReLoginMap;
-    
+
     class Application : public FIX::Application, public FIX::MessageCracker
     {
-        private:
-        
-            void onCreate( const FIX::SessionID& ) {}
-            void onLogon( const FIX::SessionID& sessionID );
-            void onLogout( const FIX::SessionID& sessionID );
-            void toAdmin( FIX::Message&, const FIX::SessionID& );
-            void toApp( FIX::Message&, const FIX::SessionID& ) throw( FIX::DoNotSend );
-            void fromAdmin( const FIX::Message&, const FIX::SessionID& ) throw( FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::RejectLogon ) {};
+    private:
+        void onCreate(const FIX::SessionID &) {}
+        void onLogon(const FIX::SessionID &sessionID);
+        void onLogout(const FIX::SessionID &sessionID);
+        void toAdmin(FIX::Message &, const FIX::SessionID &);
+        void toApp(FIX::Message &, const FIX::SessionID &) throw(FIX::DoNotSend);
+        void fromAdmin(const FIX::Message &, const FIX::SessionID &) throw (FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::RejectLogon){};
 
-            void fromApp( const FIX::Message& message, const FIX::SessionID& sessionID ) throw( FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::UnsupportedMessageType );
-            void onMessage( const FIX44::ExecutionReport&, const FIX::SessionID& );
-            void onMessage( const FIX44::MarketDataIncrementalRefresh&, const FIX::SessionID&);
+        void fromApp(const FIX::Message &message, const FIX::SessionID &sessionID) throw(FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::UnsupportedMessageType);
+        void onMessage(const FIX44::ExecutionReport &, const FIX::SessionID &);
+        void onMessage(const FIX44::MarketDataIncrementalRefresh &, const FIX::SessionID &);
 
-        public:
-            void submitOrder(const FIX::SessionID& sessionID,
-                         const FIX::Symbol& symbol,
-                         const FIX::SecurityExchange& securityExchange,
-                         const FIX::ClOrdID& clOrdID,
-                         const FIX::Side& side,
-                         const FIX::OrderQty& orderQty,
-                         const FIX::Price& price);
+    public:
+        void submitOrder(const FIX::SessionID &sessionID,
+                         const FIX::Symbol &symbol,
+                         const FIX::SecurityExchange &securityExchange,
+                         const FIX::ClOrdID &clOrdID,
+                         const FIX::Side &side,
+                         const FIX::OrderQty &orderQty,
+                         const FIX::Price &price);
 
-            void cancelOrder(const FIX::SessionID& sessionID,
-                             const FIX::Symbol& symbol,
-                             const FIX::OrigClOrdID& origClOrdID,
-                             const FIX::ClOrdID& clOrdID,
-                             const FIX::Side& side);
+        void cancelOrder(const FIX::SessionID &sessionID,
+                         const FIX::Symbol &symbol,
+                         const FIX::OrigClOrdID &origClOrdID,
+                         const FIX::ClOrdID &clOrdID,
+                         const FIX::Side &side);
 
-            void massCancelRequest(const FIX::SessionID& sessionID,
-                                   const FIX::ClOrdID& clOrdID);
+        void massCancelRequest(const FIX::SessionID &sessionID,
+                               const FIX::ClOrdID &clOrdID);
 
-            void SecurityListRequest(const FIX::SessionID& sessionID,
-                                     const FIX::SecurityReqID& secListRequestID);
+        void SecurityListRequest(const FIX::SessionID &sessionID,
+                                 const FIX::SecurityReqID &secListRequestID);
 
-            void OrderMassStatusRequest(const FIX::SessionID& sessionID,
-                                        const FIX::MassStatusReqID& massStatusReqID);
-        
-            static const FIX::SessionID SessionIDFromMessage(const FIX::Message&, const std::string& sessionQualifier = "");
-        
-            bool publicCreateSession(const FIX::SessionID& );
-            bool enqueueOutgoingMessage( FIX::Message& );
-            bool insertReLogin( const FIX::SessionID&, FIX::Message& );
+        void OrderMassStatusRequest(const FIX::SessionID &sessionID,
+                                    const FIX::MassStatusReqID &massStatusReqID);
 
-            void onDisconnect( const FIX::SessionID& sessionID );
+        static const FIX::SessionID SessionIDFromMessage(const FIX::Message &, const std::string &sessionQualifier = "");
 
-            std::string m_password;
-            static uint32_t _order_index;
-            std::string m_last_order_id;
-            uint32_t m_number_of_orders;
+        bool publicCreateSession(const FIX::SessionID &);
+        bool enqueueOutgoingMessage(FIX::Message &);
+        bool insertReLogin(const FIX::SessionID &, FIX::Message &);
 
-            std::string getNextOrderId(const std::string& symbol)
-            {
-                _order_index++;
+        void onDisconnect(const FIX::SessionID &sessionID);
 
-                std::stringstream order_id_stream;
+        std::string m_password;
+        static uint32_t _order_index;
+        std::string m_last_order_id;
+        uint32_t m_number_of_orders;
 
-                FIX::UtcTimeStamp utcTime;
-                order_id_stream << utcTime.m_time << ":" << _order_index << ":" << symbol;
+        std::string getNextOrderId(const std::string &symbol)
+        {
+            _order_index++;
 
-                return order_id_stream.str();
-            }
+            std::stringstream order_id_stream;
 
-        
-        public:
-            bool enqueueLogin(const FIX::Message&);
-            bool getNextLogin(FIX::Message&);
+            FIX::UtcTimeStamp utcTime;
+            order_id_stream << utcTime.m_time << ":" << _order_index << ":" << symbol;
 
-        public:
-            bool processNextMessage(FIX::Message& nextMessage);
+            return order_id_stream.str();
+        }
 
-            Application(FIX::SessionSettings& sessionSettings, LatencyStatsPtr latencyStatsPtr ) : m_sessionSettings( sessionSettings ), m_pLatencyStatsPtr( latencyStatsPtr )
-            {};
+    public:
+        bool enqueueLogin(const FIX::Message &);
+        bool getNextLogin(FIX::Message &);
 
-            void run();
-    
-        private:
-            FIXMessageQueue m_outgoingMessageQueue;
-            FIXMessageQueue m_pendingLoginQueue;
-            SessionReLoginMap m_sessionReloginMap;
-            FIX::SessionSettings m_sessionSettings;
+    public:
+        bool processNextMessage(FIX::Message &nextMessage);
 
-            LatencyStatsPtr m_pLatencyStatsPtr;
-        
-            std::condition_variable _login_cv;
-            std::mutex _login_mutex;
-        
-            long _min_latency {std::numeric_limits<long>::max()};
-            long _max_latency {std::numeric_limits<long>::min()};
-            long _total_latency {0};
+        Application(FIX::SessionSettings &sessionSettings, LatencyStatsPtr latencyStatsPtr) : m_sessionSettings(sessionSettings), m_pLatencyStatsPtr(latencyStatsPtr) {};
+
+        void run();
+
+    private:
+        FIXMessageQueue m_outgoingMessageQueue;
+        FIXMessageQueue m_pendingLoginQueue;
+        SessionReLoginMap m_sessionReloginMap;
+        FIX::SessionSettings m_sessionSettings;
+
+        LatencyStatsPtr m_pLatencyStatsPtr;
+
+        std::condition_variable _login_cv;
+        std::mutex _login_mutex;
+
+        long _min_latency{std::numeric_limits<long>::max()};
+        long _max_latency{std::numeric_limits<long>::min()};
+        long _total_latency{0};
     };
 
 };

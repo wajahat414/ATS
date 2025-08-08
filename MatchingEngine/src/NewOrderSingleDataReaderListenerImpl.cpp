@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -35,120 +35,144 @@
 #include <LoggerHelper.h>
 #include <NewOrderSingleLogger.hpp>
 
-
-
-namespace MatchingEngine {
-
-NewOrderSingleDataReaderListenerImpl::NewOrderSingleDataReaderListenerImpl(
-    std::shared_ptr<DistributedATS::Market> market)
-    : _market(market) {
-  // TODO Auto-generated constructor stub
-}
-
-NewOrderSingleDataReaderListenerImpl::~NewOrderSingleDataReaderListenerImpl() {
-  // TODO Auto-generated destructor stub
-
-} /* namespace MatchingEngine */
-
-void NewOrderSingleDataReaderListenerImpl::on_data_available(
-       eprosima::fastdds::dds::DataReader* reader)
+namespace MatchingEngine
 {
-    
-    DistributedATS_NewOrderSingle::NewOrderSingle new_order_single;
-    eprosima::fastdds::dds::SampleInfo info;
-        
-    if (reader->take_next_sample(&new_order_single, &info) == eprosima::fastdds::dds::RETCODE_OK)
+
+    NewOrderSingleDataReaderListenerImpl::NewOrderSingleDataReaderListenerImpl(
+        std::shared_ptr<DistributedATS::Market> market)
+        : _market(market)
     {
-        if (info.valid_data)
+        // TODO Auto-generated constructor stub
+    }
+
+    NewOrderSingleDataReaderListenerImpl::~NewOrderSingleDataReaderListenerImpl()
+    {
+        // TODO Auto-generated destructor stub
+
+    } /* namespace MatchingEngine */
+
+    void NewOrderSingleDataReaderListenerImpl::on_data_available(
+        eprosima::fastdds::dds::DataReader *reader)
+    {
+        std::cout << "*** DataReader callback triggered ***" << std::endl;
+        LOG4CXX_INFO(logger, "DataReader on_data_available called");
+
+        DistributedATS_NewOrderSingle::NewOrderSingle new_order_single;
+        eprosima::fastdds::dds::SampleInfo info;
+
+        auto ret = reader->take_next_sample(&new_order_single, &info);
+        std::cout << "take_next_sample returned: " << ret << std::endl;
+
+        if (ret == eprosima::fastdds::dds::RETCODE_OK)
         {
-            
-            LoggerHelper::log_debug<std::stringstream, NewOrderSingleLogger,
-            DistributedATS_NewOrderSingle::NewOrderSingle>( logger,
-                                                           new_order_single, "NewOrderSingle");
-            
-            std::string symbol = new_order_single.Symbol();
-            std::string securityExchange = new_order_single.SecurityExchange();
-            
-            try {
-                auto book = _market->findBook(symbol);
-                
-                if (!book) {
-                    throw DistributedATS::OrderException(
-                                                         new_order_single, FIX::OrdRejReason_UNKNOWN_SYMBOL);
-                }
-                
-                std::string clientOrderId = new_order_single.ClOrdID();
-                
-                bool buy_side = false;
-                
-                if (new_order_single.Side() == '1')
-                    buy_side = true;
-                
-                std::string gateway = new_order_single.DATS_Source();
-                std::string dataService = new_order_single.DATS_DestinationUser();
-                std::string contra_party = new_order_single.DATS_SourceUser();
-                
-                auto quantity = new_order_single.OrderQty();
-                auto price = new_order_single.Price();
-                auto stop_price = new_order_single.StopPx();
-                
-                liquibook::book::OrderCondition order_condition = liquibook::book::OrderCondition::oc_no_conditions;
-                
-                // ExecInst is string in the data dictionary but char in quickfix/c++
-                // <field number='18' name='ExecInst' type='MULTIPLEVALUESTRING'>
-                if ( new_order_single.ExecInst().length() > 0 && new_order_single.ExecInst()[0] == FIX::ExecInst_ALL_OR_NONE )
+            std::cout << "Sample taken successfully" << std::endl;
+            if (info.valid_data)
+            {
+                std::cout << "Valid data received!" << std::endl;
+                std::cout << "DATS_Destination: " << new_order_single.DATS_Destination() << std::endl;
+                std::cout << "SecurityExchange: " << new_order_single.SecurityExchange() << std::endl;
+
+                LoggerHelper::log_debug<std::stringstream, NewOrderSingleLogger,
+                                        DistributedATS_NewOrderSingle::NewOrderSingle>(logger,
+                                                                                       new_order_single, "NewOrderSingle");
+                LoggerHelper::log_info<std::stringstream, NewOrderSingleLogger,
+                                       DistributedATS_NewOrderSingle::NewOrderSingle>(logger,
+                                                                                      new_order_single, "NewOrderSingle");
+
+                std::string symbol = new_order_single.Symbol();
+                std::string securityExchange = new_order_single.SecurityExchange();
+
+                try
                 {
-                    order_condition = liquibook::book::OrderCondition::oc_all_or_none;
+                    auto book = _market->findBook(symbol);
+
+                    if (!book)
+                    {
+                        throw DistributedATS::OrderException(
+                            new_order_single, FIX::OrdRejReason_UNKNOWN_SYMBOL);
+                    }
+
+                    std::string clientOrderId = new_order_single.ClOrdID();
+
+                    bool buy_side = false;
+
+                    if (new_order_single.Side() == '1')
+                        buy_side = true;
+
+                    std::string gateway = new_order_single.DATS_Source();
+                    std::string dataService = new_order_single.DATS_DestinationUser();
+                    std::string contra_party = new_order_single.DATS_SourceUser();
+
+                    auto quantity = new_order_single.OrderQty();
+                    auto price = new_order_single.Price();
+                    auto stop_price = new_order_single.StopPx();
+
+                    liquibook::book::OrderCondition order_condition = liquibook::book::OrderCondition::oc_no_conditions;
+
+                    // ExecInst is string in the data dictionary but char in quickfix/c++
+                    // <field number='18' name='ExecInst' type='MULTIPLEVALUESTRING'>
+                    if (new_order_single.ExecInst().length() > 0 && new_order_single.ExecInst()[0] == FIX::ExecInst_ALL_OR_NONE)
+                    {
+                        order_condition = liquibook::book::OrderCondition::oc_all_or_none;
+                    }
+
+                    if (new_order_single.TimeInForce() == FIX::TimeInForce_IMMEDIATE_OR_CANCEL)
+                    {
+                        order_condition = liquibook::book::OrderCondition::oc_immediate_or_cancel;
+                    }
+                    else if (new_order_single.TimeInForce() == FIX::TimeInForce_FILL_OR_KILL)
+                    {
+                        order_condition = liquibook::book::OrderCondition::oc_fill_or_kill;
+                    }
+
+                    DistributedATS::OrderPtr order =
+                        std::make_shared<DistributedATS::Order>(
+                            _market->getDataWriterContainer(),
+                            gateway, dataService, contra_party, clientOrderId, buy_side,
+                            quantity, symbol, securityExchange, price, stop_price, order_condition);
+
+                    order->onSubmitted();
+
+                    _market->submit(book, order);
                 }
-                
-                if ( new_order_single.TimeInForce() == FIX::TimeInForce_IMMEDIATE_OR_CANCEL)
+                catch (DistributedATS::OrderException &orderException)
                 {
-                    order_condition = liquibook::book::OrderCondition::oc_immediate_or_cancel;
-                } else if ( new_order_single.TimeInForce() == FIX::TimeInForce_FILL_OR_KILL )
-                {
-                    order_condition = liquibook::book::OrderCondition::oc_fill_or_kill;
+                    DistributedATS_ExecutionReport::ExecutionReport executionReport;
+
+                    executionReport.DATS_Source("MATCHING_ENGINE");
+                    executionReport.DATS_SourceUser(new_order_single.DATS_DestinationUser());
+                    executionReport.DATS_Destination(new_order_single.DATS_Source());
+                    executionReport.DATS_DestinationUser(new_order_single.DATS_SourceUser());
+
+                    executionReport.fix_header().MsgType("8");
+                    executionReport.Symbol(symbol);
+                    executionReport.SecurityExchange(securityExchange);
+                    executionReport.Side(new_order_single.Side());
+                    executionReport.Text("Order Rejected");
+                    executionReport.CumQty(0);
+                    executionReport.LeavesQty(0);
+                    executionReport.Price(0);
+                    executionReport.TimeInForce(new_order_single.TimeInForce());
+                    executionReport.OrdType(new_order_single.OrdType());
+                    executionReport.ExecInst(new_order_single.ExecInst());
+
+                    executionReport.TransactTime(
+                        std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
+
+                    orderException.populateExecutionReportWithRejectCode(executionReport);
+
+                    _market->publishExecutionReport(executionReport);
                 }
-                
-                DistributedATS::OrderPtr order =
-                std::make_shared<DistributedATS::Order>(
-                                                        _market->getDataWriterContainer(),
-                                                        gateway, dataService, contra_party, clientOrderId, buy_side,
-                                                        quantity, symbol, securityExchange, price, stop_price, order_condition);
-                
-                order->onSubmitted();
-                
-                _market->submit(book, order);
-                
-            } catch (DistributedATS::OrderException &orderException) {
-                DistributedATS_ExecutionReport::ExecutionReport executionReport;
-                
-                executionReport.DATS_Source("MATCHING_ENGINE");
-                executionReport.DATS_SourceUser(new_order_single.DATS_DestinationUser());
-                executionReport.DATS_Destination(new_order_single.DATS_Source());
-                executionReport.DATS_DestinationUser(new_order_single.DATS_SourceUser());
-                
-                executionReport.fix_header().MsgType("8");
-                executionReport.Symbol(symbol);
-                executionReport.SecurityExchange(securityExchange);
-                executionReport.Side(new_order_single.Side());
-                executionReport.Text("Order Rejected");
-                executionReport.CumQty(0);
-                executionReport.LeavesQty(0);
-                executionReport.Price(0);
-                executionReport.TimeInForce(new_order_single.TimeInForce());
-                executionReport.OrdType(new_order_single.OrdType());
-                executionReport.ExecInst(new_order_single.ExecInst());
-                
-                executionReport.TransactTime(
-                  std::chrono::duration_cast<std::chrono::microseconds>
-                          (std::chrono::system_clock::now().time_since_epoch()).count());
-                
-                orderException.populateExecutionReportWithRejectCode(executionReport);
-                
-                _market->publishExecutionReport(executionReport);
+            }
+            else
+            {
+                std::cout << "Invalid data received" << std::endl;
             }
         }
+        else
+        {
+            std::cout << "Failed to take sample, error: " << ret << std::endl;
+        }
     }
-}
 
 } // namespace MatchingEngine

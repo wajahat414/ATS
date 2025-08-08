@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -25,233 +25,238 @@
    SOFTWARE.
 */
 
-
 #include "Application.h"
 #include "quickfix/Session.h"
 #include <iostream>
 
 #include <algorithm>
+#include <log4cxx/logger.h>
+
+static log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("LatencyTest.Application"));
 
 using namespace LatencyTest;
 
 uint32_t Application::_order_index = 0;
 
-void Application::submitOrder(const FIX::SessionID& sessionID, 
-		const FIX::Symbol& symbol,
-		const FIX::SecurityExchange& securityExchange,
-		const FIX::ClOrdID& clOrdID,
-		const FIX::Side& side,
-		const FIX::OrderQty& orderQty, 
-		const FIX::Price& price
-		)
+void Application::submitOrder(const FIX::SessionID &sessionID,
+                              const FIX::Symbol &symbol,
+                              const FIX::SecurityExchange &securityExchange,
+                              const FIX::ClOrdID &clOrdID,
+                              const FIX::Side &side,
+                              const FIX::OrderQty &orderQty,
+                              const FIX::Price &price)
 {
 
-	std::cout << "Lets submit an order" << std::endl;
-	FIX::OrdType ordType;
+  std::cout << "Lets submit an order" << std::endl;
+  FIX::OrdType ordType;
 
-	FIX44::NewOrderSingle newOrderSingle(clOrdID, side, FIX::TransactTime(), FIX::OrdType_LIMIT);
+  FIX44::NewOrderSingle newOrderSingle(clOrdID, side, FIX::TransactTime(), FIX::OrdType_LIMIT);
 
-	newOrderSingle.set(FIX::HandlInst('1'));
+  newOrderSingle.set(FIX::HandlInst('1'));
 
-	newOrderSingle.set(symbol);
-	newOrderSingle.set(securityExchange);
-	newOrderSingle.set(orderQty);
-	newOrderSingle.set(FIX::TimeInForce(FIX::TimeInForce_GOOD_TILL_CANCEL));
-	newOrderSingle.set(price);
-    
-    m_pLatencyStatsPtr->insertStats( m_last_order_id, OrderHopLatency::NEW_ORDER_SINGLE_FIX );
-    
-	std::cout << "Sending New Order Single : " <<  newOrderSingle << std::endl;
+  newOrderSingle.set(symbol);
+  newOrderSingle.set(securityExchange);
+  newOrderSingle.set(orderQty);
+  newOrderSingle.set(FIX::TimeInForce(FIX::TimeInForce_GOOD_TILL_CANCEL));
+  newOrderSingle.set(price);
 
-	FIX::Session::sendToTarget(newOrderSingle, sessionID);
+  m_pLatencyStatsPtr->insertStats(m_last_order_id, OrderHopLatency::NEW_ORDER_SINGLE_FIX);
+
+  std::cout << "Sending New Order Single : " << newOrderSingle << std::endl;
+
+  FIX::Session::sendToTarget(newOrderSingle, sessionID);
 }
 
-void Application::cancelOrder(const FIX::SessionID& sessionID,
-	const FIX::Symbol& symbol,
-	const FIX::OrigClOrdID& origClOrdID,
-	const FIX::ClOrdID& clOrdID,
-	const FIX::Side& side
-	)
+void Application::cancelOrder(const FIX::SessionID &sessionID,
+                              const FIX::Symbol &symbol,
+                              const FIX::OrigClOrdID &origClOrdID,
+                              const FIX::ClOrdID &clOrdID,
+                              const FIX::Side &side)
 {
-	FIX44::OrderCancelRequest orderCancelRequest(origClOrdID, clOrdID, side, FIX::TransactTime());
+  FIX44::OrderCancelRequest orderCancelRequest(origClOrdID, clOrdID, side, FIX::TransactTime());
 
-	orderCancelRequest.set(symbol);
+  orderCancelRequest.set(symbol);
 
-	FIX::Header& header = orderCancelRequest.getHeader();
+  FIX::Header &header = orderCancelRequest.getHeader();
 
-	FIX::SenderCompID senderCompID(sessionID.getSenderCompID());
-	FIX::TargetCompID targetCompID(sessionID.getTargetCompID());
-	header.setField(senderCompID);
-	header.setField(targetCompID);
+  FIX::SenderCompID senderCompID(sessionID.getSenderCompID());
+  FIX::TargetCompID targetCompID(sessionID.getTargetCompID());
+  header.setField(senderCompID);
+  header.setField(targetCompID);
 
-	FIX::Session::sendToTarget(orderCancelRequest);
+  FIX::Session::sendToTarget(orderCancelRequest);
 }
 
-
-void Application::onLogon( const FIX::SessionID& sessionID )
+void Application::onLogon(const FIX::SessionID &sessionID)
 {
-    std::cout << std::endl << "Logon received lets start : " << sessionID << std::endl;
-    _login_cv.notify_all();
+  std::cout << std::endl
+            << "Logon received lets start : " << sessionID << std::endl;
+  _login_cv.notify_all();
 }
 
-void Application::onLogout( const FIX::SessionID& sessionID )
+void Application::onLogout(const FIX::SessionID &sessionID)
 {
-  std::cout << std::endl << "Logout - " << sessionID << std::endl;
+  std::cout << std::endl
+            << "Logout - " << sessionID << std::endl;
   exit(0);
 }
 
-void Application::fromApp( const FIX::Message& message, const FIX::SessionID& sessionID )
-throw( FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::UnsupportedMessageType )
+void Application::fromApp(const FIX::Message &message, const FIX::SessionID &sessionID) throw(FIX::FieldNotFound, FIX::IncorrectDataFormat, FIX::IncorrectTagValue, FIX::UnsupportedMessageType)
 {
-  crack( message, sessionID );
+  crack(message, sessionID);
 }
 
-void Application::toApp( FIX::Message& message, const FIX::SessionID& sessionID )
-throw( FIX::DoNotSend )
+void Application::toApp(FIX::Message &message, const FIX::SessionID &sessionID) throw(FIX::DoNotSend)
 {
   try
   {
     FIX::PossDupFlag possDupFlag;
-    message.getHeader().getField( possDupFlag );
+    message.getHeader().getField(possDupFlag);
 
-    if ( possDupFlag ) throw FIX::DoNotSend();
+    if (possDupFlag)
+      throw FIX::DoNotSend();
   }
-  catch ( FIX::FieldNotFound& ) {}
+  catch (FIX::FieldNotFound &)
+  {
+  }
 }
 
-void Application::toAdmin( FIX::Message& message, const FIX::SessionID& sessionID )
+void Application::toAdmin(FIX::Message &message, const FIX::SessionID &sessionID)
 {
-  const FIX::Header& header = message.getHeader();
+  const FIX::Header &header = message.getHeader();
 
-  const FIX::MsgType& msgType = FIELD_GET_REF( header, MsgType );
+  const FIX::MsgType &msgType = FIELD_GET_REF(header, MsgType);
 
-  if ( msgType == FIX::MsgType_Logon )
+  if (msgType == FIX::MsgType_Logon)
   {
-    std::cout << std::endl << "Sending Logon : " << sessionID << std::endl;
+    std::cout << std::endl
+              << "Sending Logon : " << sessionID << std::endl;
 
-	FIX::Dictionary sessionSettingDictionary = m_sessionSettings.get(sessionID);
+    FIX::Dictionary sessionSettingDictionary = m_sessionSettings.get(sessionID);
 
-	std::string sessionPassword = sessionSettingDictionary.getString("Password");
+    std::string sessionPassword = sessionSettingDictionary.getString("Password");
 
     FIX::Username userName(sessionID.getSenderCompID());
     message.setField(userName);
 
     FIX::Password password(sessionPassword);
     message.setField(password);
-
-  } else if (  msgType == FIX::MsgType_Logout )
+  }
+  else if (msgType == FIX::MsgType_Logout)
   {
-  	std::cout << "Logout : " <<  message << std::endl;
+    std::cout << "Logout : " << message << std::endl;
   }
 }
 
-
-
-void Application::onMessage
-(const FIX44::ExecutionReport& message, const FIX::SessionID& sessionID )
+void Application::onMessage(const FIX44::ExecutionReport &message, const FIX::SessionID &sessionID)
 {
-	FIX::OrderID orderID;
-	message.getField( orderID );
+  FIX::OrderID orderID;
+  message.getField(orderID);
 
-	std::cout << "Received Execution Report : " << orderID << std::endl;
+  std::cout << "Received Execution Report : " << orderID << std::endl;
+  LOG4CXX_INFO(logger, "Received Execution Report : " << orderID);
+  if (orderID.getValue() == m_last_order_id)
+  {
+    std::cout << "Recieved Execution Report for Order Id : " << orderID << std::endl;
 
-	if (orderID.getValue() == m_last_order_id )
-	{
-		std::cout << "Recieved Execution Report for Order Id : " << orderID << std::endl;
+    FIX::Symbol symbol;
+    FIX::SecurityExchange securityExchange;
+    FIX::Side side;
+    FIX::Price price;
+    FIX::OrderQty orderQty;
 
-		FIX::Symbol symbol;
-		FIX::SecurityExchange securityExchange;
-		FIX::Side side;
-		FIX::Price price;
-		FIX::OrderQty orderQty;
+    m_last_order_id = getNextOrderId(symbol);
+    FIX::ClOrdID clOrderID(m_last_order_id);
+    message.get(securityExchange);
+    message.get(symbol);
+    message.get(side);
+    message.get(price);
+    message.get(orderQty);
 
-		m_last_order_id = getNextOrderId( symbol );
-		FIX::ClOrdID clOrderID( m_last_order_id );
-		message.get(securityExchange);
-		message.get(symbol);
-		message.get(side);
-		message.get(price);
-		message.get(orderQty);
-        
-        m_pLatencyStatsPtr->insertStats(orderID.getValue(), OrderHopLatency::EXECUTION_REPORT_FIX);
-        
-        if ( m_number_of_orders == _order_index )
-        {
-            std::cout << "Orders : " << m_number_of_orders << ":" << _order_index << std::endl;
-            FIX::Session* session = FIX::Session::lookupSession(sessionID);
-            session->logout("Done.");
-            std::cout << "Stats:" << _min_latency << "|"<< _max_latency << "|" << _total_latency/m_number_of_orders << std::endl;
-        } else {
-            std::tuple<long,long,long,long> latency_stats;
-            
-            m_pLatencyStatsPtr->getLatencyStats(orderID.getValue(), latency_stats);
+    m_pLatencyStatsPtr->insertStats(orderID.getValue(), OrderHopLatency::EXECUTION_REPORT_FIX);
 
-            long gatewayNewOrderSingleLatency = std::get<FIX_NEW_ORDER_SINGLE>(latency_stats);
-            long matchingEngineLatency =  std::get<MATCHING_ENGINE>(latency_stats);
-            long gatewayExecutionReportLatency =  std::get<DDS_EXECUTION_REPORT>(latency_stats);
-            long roundTripLatency =  std::get<ROUND_TRIP>(latency_stats);
-            
-            
-            std::cerr << "Round trip latency (Microseconds) |" << orderID << "|"
-                    << gatewayNewOrderSingleLatency << "|"
-                    << matchingEngineLatency << "|"
-                    << gatewayExecutionReportLatency << "|"
-                    << roundTripLatency << std::endl;
-            
-           // if ( _min_latency > roundTripLatency )
-            _min_latency = std::min(_min_latency, roundTripLatency);
-            _max_latency = std::max(_max_latency, roundTripLatency);
-            
-            _total_latency += roundTripLatency;
-            
-            
-            submitOrder( sessionID, symbol, securityExchange ,  clOrderID, side, orderQty, price
-                        );
-        };
-	}
+    if (m_number_of_orders == _order_index)
+    {
+      std::cout << "Orders : " << m_number_of_orders << ":" << _order_index << std::endl;
+      LOG4CXX_INFO(logger, "Orders : " << m_number_of_orders << ":" << _order_index);
+      FIX::Session *session = FIX::Session::lookupSession(sessionID);
+      session->logout("Done.");
+      std::cout << "Stats:" << _min_latency << "|" << _max_latency << "|" << _total_latency / m_number_of_orders << std::endl;
+      LOG4CXX_INFO(logger, "Stats: " << _min_latency << "|" << _max_latency << "|" << _total_latency / m_number_of_orders);
+    }
+    else
+    {
+      std::tuple<long, long, long, long> latency_stats;
+
+      m_pLatencyStatsPtr->getLatencyStats(orderID.getValue(), latency_stats);
+
+      long gatewayNewOrderSingleLatency = std::get<FIX_NEW_ORDER_SINGLE>(latency_stats);
+      long matchingEngineLatency = std::get<MATCHING_ENGINE>(latency_stats);
+      long gatewayExecutionReportLatency = std::get<DDS_EXECUTION_REPORT>(latency_stats);
+      long roundTripLatency = std::get<ROUND_TRIP>(latency_stats);
+
+      std::cerr << "Round trip latency (Microseconds) |" << orderID << "|"
+                << gatewayNewOrderSingleLatency << "|"
+                << matchingEngineLatency << "|"
+                << gatewayExecutionReportLatency << "|"
+                << roundTripLatency << std::endl;
+      LOG4CXX_INFO(logger, "Round trip latency (Microseconds) |" << orderID << "|"
+                                                                 << gatewayNewOrderSingleLatency << "|"
+                                                                 << matchingEngineLatency << "|"
+                                                                 << gatewayExecutionReportLatency << "|"
+                                                                 << roundTripLatency);
+
+      // if ( _min_latency > roundTripLatency )
+      _min_latency = std::min(_min_latency, roundTripLatency);
+      _max_latency = std::max(_max_latency, roundTripLatency);
+
+      _total_latency += roundTripLatency;
+
+      submitOrder(sessionID, symbol, securityExchange, clOrderID, side, orderQty, price);
+    };
+  }
 }
 
-void Application::onMessage(const FIX44::MarketDataIncrementalRefresh& marketDataIncrementalRefresh, const FIX::SessionID& sessionID )
-{
+void Application::onMessage(const FIX44::MarketDataIncrementalRefresh &marketDataIncrementalRefresh, const FIX::SessionID &sessionID) {
 };
-
 
 void Application::run()
 {
-    try
+  try
+  {
+    std::unique_lock<std::mutex> lk(_login_mutex);
+    _login_cv.wait(lk);
+
+    sleep(1); // this sleep is required when running everything on a single core box - FIXGateway might be still at the session reset state
+
+    for (auto &fixSession : FIX::Session::getSessions())
     {
-        std::unique_lock<std::mutex> lk( _login_mutex );
-        _login_cv.wait( lk );
+      FIX::Dictionary sessionSettingDictionary = m_sessionSettings.get(fixSession);
 
-	sleep(1); // this sleep is required when running everything on a single core box - FIXGateway might be still at the session reset state 
+      std::string symbol = sessionSettingDictionary.getString("Symbol");
+      std::string securityExchange = sessionSettingDictionary.getString("SecurityExchange");
 
-        for ( auto& fixSession : FIX::Session::getSessions() )
-        {
-            FIX::Dictionary sessionSettingDictionary = m_sessionSettings.get(fixSession);
+      m_number_of_orders = sessionSettingDictionary.getInt("NumberOfOrders");
+      std::cout << "Number of orders to send : " << m_number_of_orders << std::endl;
+      LOG4CXX_INFO(logger, "Number of orders to send " << m_number_of_orders);
 
-            std::string symbol = sessionSettingDictionary.getString("Symbol");
-            std::string securityExchange = sessionSettingDictionary.getString("SecurityExchange");
+      m_last_order_id = getNextOrderId(symbol);
 
-            m_number_of_orders = sessionSettingDictionary.getInt("NumberOfOrders");
-            std::cout << "Number of orders to send : " << m_number_of_orders << std::endl;
+      FIX::ClOrdID clOrderID(m_last_order_id);
+      FIX::Side side(FIX::Side_BUY);
+      FIX::OrderQty orderQty(10);
+      FIX::Price price(10050);
 
-            m_last_order_id = getNextOrderId( symbol );
-
-            FIX::ClOrdID clOrderID( m_last_order_id );
-            FIX::Side side( FIX::Side_BUY );
-            FIX::OrderQty orderQty( 10 );
-            FIX::Price price( 10050 );
-
-            submitOrder( fixSession, symbol, securityExchange, clOrderID, side, orderQty, price );
-        }
-    
-        while ( true )
-        {
-            sleep(1000);
-        }
-        
-    } catch ( std::exception & e )
-    {
-        std::cout << "Exception: " << e.what();
+      submitOrder(fixSession, symbol, securityExchange, clOrderID, side, orderQty, price);
     }
+
+    while (true)
+    {
+      sleep(1000);
+    }
+  }
+  catch (std::exception &e)
+  {
+    std::cout << "Exception: " << e.what();
+  }
 }

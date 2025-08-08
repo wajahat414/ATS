@@ -90,4 +90,4 @@ case $1 in
         ;;
 esac
 
-echo $(date '+%Y%m%d.%H%M%S') run-done : pid,$PROG_PID >> $logfile
+# echo $(date '+%Y%m%d.%H%M%S') run-done : pid,$PROG_PID >> $logfile

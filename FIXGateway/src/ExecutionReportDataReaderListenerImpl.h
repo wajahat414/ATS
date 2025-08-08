@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -42,20 +42,20 @@
 
 #include "Application.hpp"
 
-namespace DistributedATS {
+namespace DistributedATS
+{
 
-class ExecutionReportDataReaderListenerImpl
-    : public eprosima::fastdds::dds::DataReaderListener {
+    class ExecutionReportDataReaderListenerImpl
+        : public eprosima::fastdds::dds::DataReaderListener
+    {
     public:
         ExecutionReportDataReaderListenerImpl(DistributedATS::DATSApplication &application);
         ~ExecutionReportDataReaderListenerImpl() override {};
 
+        void on_data_available(eprosima::fastdds::dds::DataReader *reader) override;
 
-        void on_data_available(eprosima::fastdds::dds::DataReader* reader) override;
-
-        
     private:
         fix_message_composer_thread<DistributedATS_ExecutionReport::ExecutionReport> _processor;
-};
+    };
 
 } // namespace DistributedATS

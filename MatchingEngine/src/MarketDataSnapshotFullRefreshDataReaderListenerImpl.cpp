@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -31,43 +31,45 @@
 
 #include <LoggerHelper.h>
 
+namespace DistributedATS
+{
 
-namespace DistributedATS {
-
-MarketDataSnapshotFullRefreshDataReaderListenerImpl::
-    ~MarketDataSnapshotFullRefreshDataReaderListenerImpl() {
-  // TODO Auto-generated destructor stub
-}
-
-void MarketDataSnapshotFullRefreshDataReaderListenerImpl::on_data_available(
-       eprosima::fastdds::dds::DataReader* reader) {
-
-    
-    DistributedATS_MarketDataSnapshotFullRefresh::MarketDataSnapshotFullRefresh
-          marketDataSnapshotFullRefresh;
-    
-    eprosima::fastdds::dds::SampleInfo info;
-    
-    if (reader->take_next_sample(&marketDataSnapshotFullRefresh, &info) == eprosima::fastdds::dds::RETCODE_OK)
+    MarketDataSnapshotFullRefreshDataReaderListenerImpl::
+        ~MarketDataSnapshotFullRefreshDataReaderListenerImpl()
     {
-        if (info.valid_data)
+        // TODO Auto-generated destructor stub
+    }
+
+    void MarketDataSnapshotFullRefreshDataReaderListenerImpl::on_data_available(
+        eprosima::fastdds::dds::DataReader *reader)
+    {
+
+        DistributedATS_MarketDataSnapshotFullRefresh::MarketDataSnapshotFullRefresh
+            marketDataSnapshotFullRefresh;
+
+        eprosima::fastdds::dds::SampleInfo info;
+
+        if (reader->take_next_sample(&marketDataSnapshotFullRefresh, &info) == eprosima::fastdds::dds::RETCODE_OK)
         {
-            LoggerHelper::log_info<
-                std::stringstream, MarketDataSnapshotFullRefreshLogger,
-                DistributedATS_MarketDataSnapshotFullRefresh::MarketDataSnapshotFullRefresh>
-                    (logger, marketDataSnapshotFullRefresh, "MarketDataSnapshotFullRefresh");
-                
-            for (int index = 0;
+            if (info.valid_data)
+            {
+                // LoggerHelper::log_info<
+                //     std::stringstream, MarketDataSnapshotFullRefreshLogger,
+                //     DistributedATS_MarketDataSnapshotFullRefresh::MarketDataSnapshotFullRefresh>
+                //         (logger, marketDataSnapshotFullRefresh, "MarketDataSnapshotFullRefresh");
+
+                for (int index = 0;
                      index < marketDataSnapshotFullRefresh.c_NoMDEntries().size();
-                     index++) {
+                     index++)
                 {
-                    auto symbol = marketDataSnapshotFullRefresh.Symbol();
-                        
-                    _market->set_market_price( symbol, marketDataSnapshotFullRefresh.c_NoMDEntries()[index].MDEntryPx() );
+                    {
+                        auto symbol = marketDataSnapshotFullRefresh.Symbol();
+
+                        _market->set_market_price(symbol, marketDataSnapshotFullRefresh.c_NoMDEntries()[index].MDEntryPx());
+                    }
                 }
             }
         }
     }
-}
 
 } /* namespace DistributedATS */

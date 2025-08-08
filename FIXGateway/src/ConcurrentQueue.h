@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -32,50 +32,51 @@
 #include <mutex>
 #include <condition_variable>
 
-
-namespace DistributedATS {
-
-template<typename T>
-class concurrent_queue
+namespace DistributedATS
 {
-public:
-    void push(T const& v)
-    {
-        
-        std::unique_lock<std::mutex> lock(_mutex);
-        _queue.push(v);
-        lock.unlock();
-        _condition_variable.notify_one();
-    }
 
-    bool empty() const
+    template <typename T>
+    class concurrent_queue
     {
-        std::unique_lock<std::mutex> lock(_mutex);
-        return _queue.empty();
-    }
+    public:
+        void push(T const &v)
+        {
 
-    bool try_pop(T& popped_value)
-    {
-        std::unique_lock<std::mutex> lock(_mutex);
-        if (_queue.empty())
-            return false;
-        popped_value = _queue.front();
-        _queue.pop();
-        return true;
-    }
+            std::unique_lock<std::mutex> lock(_mutex);
+            _queue.push(v);
+            lock.unlock();
+            _condition_variable.notify_one();
+        }
 
-    void wait_and_pop(T& popped_value)
-    {
-        std::unique_lock<std::mutex> lock(_mutex);
-        while (_queue.empty())
-            _condition_variable.wait(lock);
-        popped_value = _queue.front();
-        _queue.pop();
-    }
-private:
-    std::queue<T> _queue;
-    std::mutex _mutex;
-    std::condition_variable _condition_variable;
-};
+        bool empty() const
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            return _queue.empty();
+        }
+
+        bool try_pop(T &popped_value)
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            if (_queue.empty())
+                return false;
+            popped_value = _queue.front();
+            _queue.pop();
+            return true;
+        }
+
+        void wait_and_pop(T &popped_value)
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            while (_queue.empty())
+                _condition_variable.wait(lock);
+            popped_value = _queue.front();
+            _queue.pop();
+        }
+
+    private:
+        std::queue<T> _queue;
+        mutable std::mutex _mutex;
+        std::condition_variable _condition_variable;
+    };
 
 };

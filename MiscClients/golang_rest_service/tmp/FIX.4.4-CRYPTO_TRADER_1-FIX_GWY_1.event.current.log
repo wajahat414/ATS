@@ -1,0 +1,17 @@
+2025/07/30 13:52:00.305876 Created session
+2025/07/30 13:52:01.000140 Connecting to: 127.0.0.1:15001
+2025/07/30 13:52:01.000490 Sending logon request
+2025/07/30 13:52:01.200299 Received logon response
+2025/07/30 13:52:39.054493 Sent test request TEST
+2025/07/30 13:55:56.600331 Created session
+2025/07/30 13:55:57.000046 Connecting to: 127.0.0.1:15001
+2025/07/30 13:55:57.000417 Sending logon request
+2025/07/30 13:55:57.691348 Received logon response
+2025/07/30 13:56:35.553301 Sent test request TEST
+2025/07/30 14:07:33.123069 Created session
+2025/07/30 14:07:34.001053 Connecting to: 127.0.0.1:15001
+2025/07/30 14:07:34.001984 Sending logon request
+2025/07/30 14:07:34.170858 Received logon response
+2025/07/30 14:08:12.107699 Sent test request TEST
+2025/07/30 14:39:24.078751 Sent test request TEST
+2025/07/30 14:42:43.127444 Created session

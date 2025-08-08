@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -38,7 +38,7 @@
 
 #include "Application.hpp"
 
-auto const exec_report_processor = [] (DistributedATS::DATSApplication &application, DistributedATS_ExecutionReport::ExecutionReport& executionReport)
+auto const exec_report_processor = [](DistributedATS::DATSApplication &application, DistributedATS_ExecutionReport::ExecutionReport &executionReport)
 {
     FIX::Message executionReportMessage;
 
@@ -46,34 +46,33 @@ auto const exec_report_processor = [] (DistributedATS::DATSApplication &applicat
     executionReport.fix_header().TargetCompID(executionReport.DATS_Destination());
     executionReport.fix_header().SenderCompID(executionReport.DATS_DestinationUser());
     executionReport.fix_header().SendingTime(0);
-    
+
     ExecutionReportAdapter::DDS2FIX(executionReport, executionReportMessage);
 
     DistributedATS::DATSApplication::publishToClient(executionReportMessage);
 };
 
-
-namespace DistributedATS {
-
-ExecutionReportDataReaderListenerImpl::ExecutionReportDataReaderListenerImpl(DistributedATS::DATSApplication &application)
-    : _processor(application, exec_report_processor, "ExecutionReportDataReaderListenerImpl", 100)
+namespace DistributedATS
 {
-}
 
-void ExecutionReportDataReaderListenerImpl::on_data_available(
-                    eprosima::fastdds::dds::DataReader* reader)
-{
-    DistributedATS_ExecutionReport::ExecutionReport executionReport;
-    eprosima::fastdds::dds::SampleInfo info;
-    
-    if (reader->take_next_sample(&executionReport, &info) == eprosima::fastdds::dds::RETCODE_OK)
+    ExecutionReportDataReaderListenerImpl::ExecutionReportDataReaderListenerImpl(DistributedATS::DATSApplication &application)
+        : _processor(application, exec_report_processor, "ExecutionReportDataReaderListenerImpl", 100)
     {
-        if (info.valid_data)
+    }
+
+    void ExecutionReportDataReaderListenerImpl::on_data_available(
+        eprosima::fastdds::dds::DataReader *reader)
+    {
+        DistributedATS_ExecutionReport::ExecutionReport executionReport;
+        eprosima::fastdds::dds::SampleInfo info;
+
+        if (reader->take_next_sample(&executionReport, &info) == eprosima::fastdds::dds::RETCODE_OK)
         {
-            _processor.enqueue_dds_message(executionReport);
+            if (info.valid_data)
+            {
+                _processor.enqueue_dds_message(executionReport);
+            }
         }
     }
-    
-}
 
 } // namespace DistributedATS
