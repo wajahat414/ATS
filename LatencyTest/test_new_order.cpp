@@ -8,7 +8,7 @@
 #include <fastdds/dds/publisher/Publisher.hpp>
 #include <fastdds/dds/publisher/DataWriter.hpp>
 #include <fastdds/dds/publisher/DataWriterListener.hpp>
-#include <fastdds/dds/domain/DomainPartici
+#include <fastdds/dds/domain/DomainParticipantListener.hpp>
 // Include the generated types
 #include "NewOrderSinglePubSubTypes.hpp"
 #include "NewOrderSingle.hpp"
@@ -36,14 +36,6 @@ public:
     {
         std::cout << "*** PUBLICATION MATCHED! Readers: " << info.current_count << " ***" << std::endl;
         matched_ = (info.current_count > 0);
-    }
-
-    void on_subscriber_discovery(
-        DomainParticipant *participant,
-        eprosima::fastrtps::rtps::ReaderDiscoveryInfo &&info) override
-    {
-        std::cout << "DISCOVERED SUBSCRIBER - Topic: " << info.info.topicName()
-                  << " Type: " << info.info.typeName() << std::endl;
     }
 
     bool matched_ = false;
@@ -81,8 +73,8 @@ int main()
 
     // Create topic using the full type name
     Topic *topic = participant->create_topic(
-        "NEW_ORDER_SINGLE", // Topic name - verify this matches exactly
-        type_name,          // Full type name
+        "NEW_ORDER_SINGLE_TOPIC", // Topic name - verify this matches exactly
+        type_name,                // Full type name
         TOPIC_QOS_DEFAULT);
 
     if (topic == nullptr)

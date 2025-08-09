@@ -1,60 +1,59 @@
-20250808.174645 run-done : pid,90531
-17:46:45,615 INFO  root - Starting up
-Problem to set affinity of thread with id [0x16b387000,dds.log] to value 0. Error 'Protocol family not supported'
-[37;1m2025-08-08 17:46:45.623 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b2fb000,dds.ev.0] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.624 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b52b000,dds.udp.7415] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.624 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b49f000,dds.udp.7400] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.624 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b413000,dds.udp.7414] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.625 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b5b7000,dds.asyn.0.0] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.625 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b643000,dds.tls.request] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.625 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b6cf000,dds.asyn.0.1] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-[37;1m2025-08-08 17:46:45.626 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16b75b000,dds.tls.replies] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
-17:46:45,627 INFO  root - SenderCompID : [FIX_GWY_1] | DataService : [DATA_SERVICE_A]
-17:46:45,627 INFO  root - PubListener Description : Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+13:14:47,737 INFO  root - Starting up
+Problem to set affinity of thread with id [0x16bc0f000,dds.log] to value 0. Error 'Protocol family not supported'
+[37;1m2025-08-09 13:14:47.744 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bb83000,dds.ev.0] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.744 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bc9b000,dds.udp.7414] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.744 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bd27000,dds.udp.7400] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.744 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bdb3000,dds.udp.7415] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.745 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16be3f000,dds.asyn.0.0] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.745 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16becb000,dds.tls.request] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.745 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bf57000,dds.asyn.0.1] to value 0. Error 'Protocol family not supported'[34;1m13:14:47,745 INFO  root - SenderCompID : [FIX_GWY_1] | DataService : [DATA_SERVICE_A]
+ -> Function [36mconfigure_current_thread_affinity[m
+[37;1m2025-08-09 13:14:47.745 [31;1m[[37;1mSYSTEM[31;1m Error] [37mProblem to set affinity of thread with id [0x16bfe3000,dds.tls.replies] to value 0. Error 'Protocol family not supported'[34;1m -> Function [36mconfigure_current_thread_affinity[m
+13:14:47,745 INFO  root - PubListener Description : Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+13:14:47,745 INFO  root - PubListener Description : Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+13:14:47,745 INFO  root - PubListener Description : Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+13:14:47,746 INFO  root - PubListener Description : Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+13:14:47,746 INFO  root - PubListener Description : Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
+13:14:47,746 INFO  root - PubListener Description : Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
 
-17:46:45,628 INFO  root - PubListener Description : Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
+13:14:47,746 INFO  root - PubListener Description : Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
 
-17:46:45,629 INFO  root - PubListener Description : Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
+13:14:47,746 INFO  root - PubListener Description : Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
 
-17:46:45,692 INFO  root - Session Created :FIX.4.4:DEFAULT->DEFAULT
-17:46:45,694 INFO  root - Starting processor : [LogonDataReaderListenerImpl]
-17:46:45,694 INFO  root - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+20250809.131447 run-done : pid,88598
+13:14:47,801 INFO  root - Session Created :FIX.4.4:DEFAULT->DEFAULT
+13:14:47,804 INFO  root - Starting processor : [LogonDataReaderListenerImpl]
+13:14:47,805 INFO  root - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
  Count : 1
-17:46:45,694 INFO  root - Starting processor : [LogoutDataReaderListenerImpl]
-17:46:45,694 INFO  root - Starting processor : [SecurityListDataReaderListenerImpl]
-17:46:45,695 INFO  root - Starting processor : [MarketDataIncrementalRefreshDataReaderListenerImpl]
-17:46:45,695 INFO  root - Starting processor : [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:45,695 INFO  root - Starting processor : [ExecutionReportDataReaderListenerImpl]
-17:46:45,695 INFO  root - Starting processor : [OrderCancelRejectDataReaderListenerImpl]
-17:46:45,695 INFO  root - Starting processor : [OrderMassCancelReportDataReaderListenerImpl]
-17:46:45,740 INFO  root - Publisher matched:Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
+13:14:47,805 INFO  root - Starting processor : [LogoutDataReaderListenerImpl]
+13:14:47,805 INFO  root - Starting processor : [SecurityListDataReaderListenerImpl]
+13:14:47,805 INFO  root - Starting processor : [MarketDataIncrementalRefreshDataReaderListenerImpl]
+13:14:47,805 INFO  root - Starting processor : [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,806 INFO  root - Starting processor : [ExecutionReportDataReaderListenerImpl]
+13:14:47,806 INFO  root - Starting processor : [OrderCancelRejectDataReaderListenerImpl]
+13:14:47,806 INFO  root - Starting processor : [OrderMassCancelReportDataReaderListenerImpl]
+13:14:47,859 INFO  root - Publisher matched:Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
  Count : 1
-17:46:45,740 INFO  root - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+13:14:47,859 INFO  root - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
  Count : 2
-17:46:45,740 INFO  root - Publisher matched:Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
+13:14:47,859 INFO  root - Publisher matched:Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
  Count : 1
-17:46:45,741 INFO  root - Publisher matched:Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
+13:14:47,860 INFO  root - Publisher matched:Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
  Count : 1
-17:46:45,741 INFO  root - Publisher matched:Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+13:14:47,860 INFO  root - Publisher matched:Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
  Count : 1
-17:46:45,741 INFO  root - Publisher matched:Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+13:14:47,860 INFO  root - Publisher matched:Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
  Count : 1
-17:46:45,741 INFO  root - Publisher matched:Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+13:14:47,861 INFO  root - Publisher matched:Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
  Count : 1
-17:46:45,741 INFO  root - Publisher matched:Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+13:14:47,861 INFO  root - Publisher matched:Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
  Count : 1
-20250808.174646 run-done : pid,90526
-17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+13:14:47,879 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -78,7 +77,7 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -102,7 +101,7 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -126,7 +125,7 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -150,7 +149,8 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 20100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -174,7 +174,13 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 30100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,370 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -198,7 +204,10 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,371 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,880 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,880 INFO  root - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
 ddsMsg.DATS_Source : DATA_SERVICE
 ddsMsg.DATS_Destination : MATCHING_ENGINE
 ddsMsg.DATS_SourceUser : 
@@ -222,675 +231,320 @@ ddsMsg.c_NoMDEntries
 ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
 ddsMsg.c_NoMDEntries()[0].MDEntryPx : 10100
 ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
-ddsMsg.c_NoMDEntries()[0].TimeInForce : 17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-17:46:46,371 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-20250808.174647 run-done : pid,90586
-20250808.174649 run-done : pid,90643
-20250808.174651 run-done : pid,90697
-20250808.174653 run-done : pid,90756
-20250808.174656 run-done : pid,90810
-20250808.174658 run-done : pid,90870
-20250808.174700 run-done : pid,90927
-20250808.174702 run-done : pid,91228
-20250808.174704 run-done : pid,91292
-20250808.174706 run-done : pid,91348
-20250808.174708 run-done : pid,91407
-20250808.174710 run-done : pid,91461
-20250808.174713 run-done : pid,91517
-20250808.174715 run-done : pid,91572
-20250808.174717 run-done : pid,91626
-20250808.174719 run-done : pid,91683
-20250808.174721 run-done : pid,91848
-20250808.174723 run-done : pid,91978
-20250808.174725 run-done : pid,92033
-20250808.174728 run-done : pid,92137
-20250808.174730 run-done : pid,92211
-20250808.174732 run-done : pid,92267
-20250808.174734 run-done : pid,92327
-20250808.174736 run-done : pid,92477
-20250808.174738 run-done : pid,92536
-20250808.174740 run-done : pid,92591
-20250808.174743 run-done : pid,92646
-20250808.174745 run-done : pid,92704
-20250808.174747 run-done : pid,92763
-20250808.174749 run-done : pid,92824
-20250808.174751 run-done : pid,92881
-20250808.174753 run-done : pid,92943
-20250808.174755 run-done : pid,92996
-20250808.174758 run-done : pid,93060
-20250808.174800 run-done : pid,93117
-20250808.174802 run-done : pid,93176
-20250808.174804 run-done : pid,93233
-20250808.174806 run-done : pid,93287
-20250808.174808 run-done : pid,93348
-20250808.174810 run-done : pid,93402
-20250808.174812 run-done : pid,93460
-20250808.174815 run-done : pid,93517
-20250808.174817 run-done : pid,93575
-20250808.174819 run-done : pid,93632
-20250808.174821 run-done : pid,93686
-20250808.174823 run-done : pid,93748
-20250808.174825 run-done : pid,93801
-20250808.174827 run-done : pid,93883
-20250808.174830 run-done : pid,93940
-20250808.174832 run-done : pid,94028
-20250808.174834 run-done : pid,94086
-20250808.174836 run-done : pid,94139
-20250808.174838 run-done : pid,94199
-20250808.174840 run-done : pid,94254
-20250808.174842 run-done : pid,94312
-20250808.174844 run-done : pid,94369
-20250808.174847 run-done : pid,94424
-20250808.174849 run-done : pid,94485
-20250808.174851 run-done : pid,94538
-20250808.174853 run-done : pid,94599
-20250808.174855 run-done : pid,94653
-20250808.174857 run-done : pid,94713
-20250808.174859 run-done : pid,94770
-20250808.174902 run-done : pid,94825
-20250808.174904 run-done : pid,94886
-20250808.174906 run-done : pid,94939
-20250808.174908 run-done : pid,94999
-20250808.174910 run-done : pid,95055
-20250808.174912 run-done : pid,95113
-20250808.174914 run-done : pid,95170
-20250808.174916 run-done : pid,95223
-20250808.174919 run-done : pid,95284
-20250808.174921 run-done : pid,95338
-20250808.174923 run-done : pid,95400
-20250808.174925 run-done : pid,95454
-20250808.174927 run-done : pid,95508
-20250808.174929 run-done : pid,95570
-20250808.174931 run-done : pid,95649
-20250808.174934 run-done : pid,95710
-20250808.174936 run-done : pid,95767
-20250808.174938 run-done : pid,95829
-20250808.174940 run-done : pid,95916
-20250808.174942 run-done : pid,95981
-20250808.174944 run-done : pid,96042
-20250808.174946 run-done : pid,96096
-20250808.174948 run-done : pid,96156
-20250808.174951 run-done : pid,96211
-20250808.174953 run-done : pid,96272
-20250808.174955 run-done : pid,96326
-20250808.174957 run-done : pid,96381
-20250808.174959 run-done : pid,96439
-20250808.175001 run-done : pid,96494
-20250808.175003 run-done : pid,96552
-20250808.175006 run-done : pid,96607
-20250808.175008 run-done : pid,96663
-20250808.175010 run-done : pid,96721
-20250808.175012 run-done : pid,96775
-20250808.175014 run-done : pid,96831
-20250808.175016 run-done : pid,96884
-20250808.175018 run-done : pid,96940
-20250808.175021 run-done : pid,96995
-20250808.175023 run-done : pid,97050
-20250808.175025 run-done : pid,97107
-20250808.175027 run-done : pid,97161
-20250808.175029 run-done : pid,97242
-20250808.175031 run-done : pid,97302
-20250808.175033 run-done : pid,97362
-20250808.175036 run-done : pid,97440
-20250808.175038 run-done : pid,97496
-20250808.175040 run-done : pid,97551
-20250808.175042 run-done : pid,97605
-20250808.175044 run-done : pid,97662
-20250808.175046 run-done : pid,97716
-20250808.175048 run-done : pid,97772
-20250808.175051 run-done : pid,97827
-20250808.175053 run-done : pid,97882
-20250808.175055 run-done : pid,97939
-20250808.175057 run-done : pid,97993
-20250808.175059 run-done : pid,98051
-20250808.175101 run-done : pid,98106
-20250808.175103 run-done : pid,98163
-20250808.175106 run-done : pid,98217
-20250808.175108 run-done : pid,98271
-20250808.175110 run-done : pid,98329
-20250808.175112 run-done : pid,98383
-20250808.175114 run-done : pid,98439
-20250808.175116 run-done : pid,98493
-20250808.175118 run-done : pid,98549
-20250808.175121 run-done : pid,98605
-20250808.175123 run-done : pid,98660
-20250808.175125 run-done : pid,98717
-20250808.175127 run-done : pid,98770
-20250808.175129 run-done : pid,98850
-20250808.175131 run-done : pid,98906
-20250808.175133 run-done : pid,98988
-20250808.175136 run-done : pid,99042
-20250808.175138 run-done : pid,99095
-20250808.175140 run-done : pid,99153
-20250808.175142 run-done : pid,99211
-20250808.175144 run-done : pid,99267
-20250808.175146 run-done : pid,99322
-20250808.175148 run-done : pid,99378
-20250808.175150 run-done : pid,99433
-20250808.175153 run-done : pid,99487
-20250808.175155 run-done : pid,99543
-20250808.175157 run-done : pid,99598
-20250808.175159 run-done : pid,99655
-20250808.175201 run-done : pid,99712
-20250808.175203 run-done : pid,99770
-20250808.175205 run-done : pid,99828
-20250808.175208 run-done : pid,99881
-20250808.175210 run-done : pid,99939
-20250808.175212 run-done : pid,99998
-20250808.175214 run-done : pid,156
-20250808.175216 run-done : pid,214
-20250808.175218 run-done : pid,270
-20250808.175220 run-done : pid,339
-20250808.175222 run-done : pid,437
-20250808.175225 run-done : pid,496
-20250808.175227 run-done : pid,576
-20250808.175229 run-done : pid,660
-20250808.175231 run-done : pid,777
-20250808.175233 run-done : pid,845
-20250808.175235 run-done : pid,906
-20250808.175237 run-done : pid,992
-20250808.175240 run-done : pid,1048
-20250808.175242 run-done : pid,1114
-20250808.175244 run-done : pid,1178
-20250808.175246 run-done : pid,1233
-20250808.175248 run-done : pid,1296
-20250808.175250 run-done : pid,1351
-20250808.175252 run-done : pid,1413
-20250808.175255 run-done : pid,1469
-20250808.175257 run-done : pid,1524
-20250808.175259 run-done : pid,1582
-20250808.175301 run-done : pid,1637
-20250808.175303 run-done : pid,1694
-20250808.175305 run-done : pid,1748
-20250808.175307 run-done : pid,1812
-20250808.175310 run-done : pid,1870
-20250808.175312 run-done : pid,1926
-20250808.175314 run-done : pid,1990
-20250808.175316 run-done : pid,2044
-20250808.175318 run-done : pid,2099
-20250808.175320 run-done : pid,2154
-20250808.175322 run-done : pid,2217
-20250808.175325 run-done : pid,2272
-20250808.175327 run-done : pid,2333
-20250808.175329 run-done : pid,2388
-20250808.175331 run-done : pid,2451
-20250808.175333 run-done : pid,2534
-20250808.175335 run-done : pid,2611
-20250808.175337 run-done : pid,2674
-20250808.175339 run-done : pid,2731
-20250808.175342 run-done : pid,2794
-20250808.175344 run-done : pid,2854
-20250808.175346 run-done : pid,2909
-20250808.175348 run-done : pid,2973
-20250808.175350 run-done : pid,3028
-20250808.175352 run-done : pid,3091
-20250808.175354 run-done : pid,3147
-20250808.175357 run-done : pid,3225
-20250808.175359 run-done : pid,3300
-20250808.175401 run-done : pid,3844
-20250808.175403 run-done : pid,3905
-20250808.175405 run-done : pid,3960
-20250808.175407 run-done : pid,4258
-20250808.175409 run-done : pid,4324
-20250808.175412 run-done : pid,4381
-20250808.175414 run-done : pid,4439
-20250808.175416 run-done : pid,4492
-20250808.175418 run-done : pid,4659
-20250808.175420 run-done : pid,4715
-20250808.175422 run-done : pid,4774
-20250808.175424 run-done : pid,4836
-20250808.175427 run-done : pid,4890
-20250808.175429 run-done : pid,4947
-20250808.175431 run-done : pid,5011
-20250808.175433 run-done : pid,5205
-20250808.175435 run-done : pid,5285
-20250808.175437 run-done : pid,5341
-20250808.175439 run-done : pid,5396
-20250808.175442 run-done : pid,5451
-20250808.175444 run-done : pid,5512
-20250808.175446 run-done : pid,5566
-20250808.175448 run-done : pid,5624
-20250808.175450 run-done : pid,5679
-20250808.175452 run-done : pid,5735
-20250808.175454 run-done : pid,5793
-20250808.175457 run-done : pid,5847
-20250808.175459 run-done : pid,5907
-20250808.175501 run-done : pid,5962
-20250808.175503 run-done : pid,6021
-20250808.175505 run-done : pid,6077
-20250808.175507 run-done : pid,6131
-20250808.175509 run-done : pid,6187
-20250808.175511 run-done : pid,6243
-20250808.175514 run-done : pid,6305
-20250808.175516 run-done : pid,6358
-20250808.175518 run-done : pid,6415
-20250808.175520 run-done : pid,6470
-20250808.175522 run-done : pid,6527
-20250808.175524 run-done : pid,6583
-20250808.175526 run-done : pid,6637
-20250808.175529 run-done : pid,6692
-20250808.175531 run-done : pid,6747
-20250808.175533 run-done : pid,6833
-20250808.175535 run-done : pid,6889
-20250808.175537 run-done : pid,6967
-20250808.175539 run-done : pid,7023
-20250808.175541 run-done : pid,7078
-20250808.175544 run-done : pid,7136
-20250808.175546 run-done : pid,7190
-20250808.175548 run-done : pid,7249
-20250808.175550 run-done : pid,7304
-20250808.175552 run-done : pid,7360
-20250808.175554 run-done : pid,7417
-20250808.175556 run-done : pid,7471
-20250808.175559 run-done : pid,7529
-20250808.175601 run-done : pid,7583
-20250808.175603 run-done : pid,7640
-20250808.175605 run-done : pid,7696
-20250808.175607 run-done : pid,7750
-20250808.175609 run-done : pid,7806
-20250808.175611 run-done : pid,7861
-20250808.175614 run-done : pid,7919
-20250808.175616 run-done : pid,7973
-20250808.175618 run-done : pid,8033
-20250808.175620 run-done : pid,8090
-20250808.175622 run-done : pid,8150
-20250808.175624 run-done : pid,8209
-20250808.175626 run-done : pid,8262
-20250808.175629 run-done : pid,8318
-20250808.175631 run-done : pid,8377
-20250808.175633 run-done : pid,8457
-20250808.175635 run-done : pid,8539
-20250808.175637 run-done : pid,8593
-20250808.175639 run-done : pid,8650
-20250808.175641 run-done : pid,8708
-20250808.175644 run-done : pid,8766
-20250808.175646 run-done : pid,8820
-20250808.175648 run-done : pid,8874
-20250808.175650 run-done : pid,8929
-20250808.175652 run-done : pid,8985
-20250808.175654 run-done : pid,9042
-20250808.175656 run-done : pid,9095
-20250808.175658 run-done : pid,9155
-20250808.175701 run-done : pid,9212
-20250808.175703 run-done : pid,9268
-20250808.175705 run-done : pid,9326
-20250808.175707 run-done : pid,9379
-20250808.175709 run-done : pid,9436
-20250808.175711 run-done : pid,9490
-20250808.175713 run-done : pid,9549
-20250808.175716 run-done : pid,9602
-20250808.175718 run-done : pid,9657
-20250808.175720 run-done : pid,9712
-20250808.175722 run-done : pid,9769
-20250808.175724 run-done : pid,9826
-20250808.175726 run-done : pid,9879
-20250808.175728 run-done : pid,9938
-20250808.175730 run-done : pid,9993
-20250808.175733 run-done : pid,10051
-20250808.175735 run-done : pid,10110
-20250808.175737 run-done : pid,10163
-20250808.175739 run-done : pid,10245
-20250808.175741 run-done : pid,10322
-20250808.175743 run-done : pid,10382
-20250808.175745 run-done : pid,10435
-20250808.175747 run-done : pid,10490
-20250808.175750 run-done : pid,10545
-20250808.175752 run-done : pid,10600
-20250808.175754 run-done : pid,10658
-20250808.175756 run-done : pid,10711
-20250808.175758 run-done : pid,10769
-20250808.175800 run-done : pid,10822
-20250808.175802 run-done : pid,10878
-20250808.175804 run-done : pid,10936
-20250808.175807 run-done : pid,10989
-20250808.175809 run-done : pid,11045
-20250808.175811 run-done : pid,11261
-20250808.175813 run-done : pid,11488
-20250808.175815 run-done : pid,11543
-20250808.175817 run-done : pid,11603
-20250808.175819 run-done : pid,11660
-20250808.175822 run-done : pid,11741
-20250808.175824 run-done : pid,11802
-20250808.175826 run-done : pid,11856
-20250808.175828 run-done : pid,11915
-20250808.175830 run-done : pid,11973
-20250808.175832 run-done : pid,12029
-20250808.175834 run-done : pid,12088
-20250808.175837 run-done : pid,12143
-20250808.175839 run-done : pid,12202
-20250808.175841 run-done : pid,12257
-20250808.175843 run-done : pid,12421
-20250808.175845 run-done : pid,12499
-20250808.175847 run-done : pid,12577
-20250808.175849 run-done : pid,12635
-20250808.175852 run-done : pid,12689
-20250808.175854 run-done : pid,12748
-20250808.175856 run-done : pid,12904
-20250808.175858 run-done : pid,12961
-20250808.175900 run-done : pid,13199
-20250808.175903 run-done : pid,13279
-20250808.175905 run-done : pid,13354
-20250808.175907 run-done : pid,13504
-20250808.175909 run-done : pid,13567
-20250808.175911 run-done : pid,13621
-20250808.175913 run-done : pid,13685
-20250808.175915 run-done : pid,13739
-20250808.175918 run-done : pid,13792
-20250808.175920 run-done : pid,13848
-20250808.175922 run-done : pid,13903
-20250808.175924 run-done : pid,13961
-20250808.175926 run-done : pid,14015
-20250808.175928 run-done : pid,14071
-20250808.175930 run-done : pid,14124
-20250808.175933 run-done : pid,14180
-20250808.175935 run-done : pid,14238
-20250808.175937 run-done : pid,14292
-20250808.175939 run-done : pid,14372
-20250808.175941 run-done : pid,14449
-20250808.175943 run-done : pid,14508
-20250808.175945 run-done : pid,14562
-20250808.175947 run-done : pid,14616
-20250808.175950 run-done : pid,14672
-20250808.175952 run-done : pid,14725
-20250808.175954 run-done : pid,14785
-20250808.175956 run-done : pid,14839
-20250808.175958 run-done : pid,14896
-20250808.180000 run-done : pid,14950
-20250808.180002 run-done : pid,15004
-20250808.180004 run-done : pid,15062
-20250808.180007 run-done : pid,15118
-20250808.180009 run-done : pid,15174
-20250808.180011 run-done : pid,15228
-20250808.180013 run-done : pid,15284
-20250808.180015 run-done : pid,15342
-20250808.180017 run-done : pid,15395
-20250808.180019 run-done : pid,15451
-20250808.180021 run-done : pid,15505
-20250808.180024 run-done : pid,15564
-20250808.180026 run-done : pid,15618
-20250808.180028 run-done : pid,15671
-20250808.180030 run-done : pid,15727
-20250808.180032 run-done : pid,15786
-20250808.180034 run-done : pid,15845
-20250808.180036 run-done : pid,15900
-20250808.180039 run-done : pid,15955
-20250808.180041 run-done : pid,16009
-20250808.180043 run-done : pid,16064
-20250808.180045 run-done : pid,16122
-20250808.180047 run-done : pid,16200
-20250808.180049 run-done : pid,16256
-20250808.180051 run-done : pid,16333
-20250808.180053 run-done : pid,16396
-20250808.180056 run-done : pid,16450
-20250808.180058 run-done : pid,16504
-20250808.180100 run-done : pid,16563
-20250808.180102 run-done : pid,16620
-20250808.180104 run-done : pid,16682
-20250808.180106 run-done : pid,16738
-20250808.180108 run-done : pid,16804
-20250808.180111 run-done : pid,16859
-20250808.180113 run-done : pid,16913
-20250808.180115 run-done : pid,16971
-20250808.180117 run-done : pid,17025
-20250808.180119 run-done : pid,17080
-20250808.180121 run-done : pid,17135
-20250808.180123 run-done : pid,17194
-20250808.180125 run-done : pid,17248
-20250808.180128 run-done : pid,17301
-20250808.180130 run-done : pid,17357
-20250808.180132 run-done : pid,17410
-20250808.180134 run-done : pid,17470
-20250808.180136 run-done : pid,17525
-20250808.180138 run-done : pid,17912
-20250808.180141 run-done : pid,17967
-20250808.180143 run-done : pid,18024
-20250808.180145 run-done : pid,18089
-20250808.180147 run-done : pid,18168
-20250808.180149 run-done : pid,18248
-20250808.180151 run-done : pid,18302
-20250808.180153 run-done : pid,18542
-20250808.180156 run-done : pid,18629
-20250808.180158 run-done : pid,18699
-20250808.180200 run-done : pid,18849
-20250808.180202 run-done : pid,18912
-20250808.180204 run-done : pid,18971
-20250808.180207 run-done : pid,19026
-20250808.180209 run-done : pid,19081
-20250808.180211 run-done : pid,19176
-20250808.180213 run-done : pid,19303
-20250808.180215 run-done : pid,19380
-20250808.180217 run-done : pid,19531
-20250808.180219 run-done : pid,19586
-20250808.180221 run-done : pid,19643
-20250808.180224 run-done : pid,19705
-20250808.180226 run-done : pid,19761
-20250808.180228 run-done : pid,19815
-20250808.180230 run-done : pid,19875
-20250808.180232 run-done : pid,19934
-20250808.180234 run-done : pid,19993
-20250808.180236 run-done : pid,20048
-20250808.180239 run-done : pid,20105
-20250808.180241 run-done : pid,20159
-20250808.180243 run-done : pid,20237
-20250808.180245 run-done : pid,20295
-20250808.180247 run-done : pid,20374
-20250808.180249 run-done : pid,20429
-20250808.180251 run-done : pid,20483
-20250808.180253 run-done : pid,20540
-20250808.180256 run-done : pid,20596
-20250808.180258 run-done : pid,20651
-20250808.180300 run-done : pid,20707
-20250808.180302 run-done : pid,20761
-20250808.180304 run-done : pid,20823
-20250808.180306 run-done : pid,20881
-20250808.180308 run-done : pid,20937
-20250808.180311 run-done : pid,20993
-20250808.180313 run-done : pid,21053
-20250808.180315 run-done : pid,21111
-20250808.180317 run-done : pid,21170
-20250808.180319 run-done : pid,21225
-20250808.180321 run-done : pid,21280
-20250808.180323 run-done : pid,21340
-20250808.180325 run-done : pid,21395
-20250808.180328 run-done : pid,21453
-20250808.180330 run-done : pid,21508
-20250808.180332 run-done : pid,21566
-20250808.180334 run-done : pid,21624
-20250808.180336 run-done : pid,21678
-20250808.180338 run-done : pid,21740
-20250808.180340 run-done : pid,21794
-20250808.180343 run-done : pid,21854
-20250808.180345 run-done : pid,21914
-20250808.180347 run-done : pid,21999
-20250808.180349 run-done : pid,22078
-20250808.180351 run-done : pid,22132
-20250808.180353 run-done : pid,22200
-20250808.180355 run-done : pid,22255
-20250808.180358 run-done : pid,22314
-20250808.180400 run-done : pid,22370
-20250808.180402 run-done : pid,22428
-20250808.180404 run-done : pid,22485
-20250808.180406 run-done : pid,22540
-20250808.180408 run-done : pid,22601
-20250808.180410 run-done : pid,22655
-20250808.180413 run-done : pid,22715
-20250808.180415 run-done : pid,22772
-20250808.180417 run-done : pid,22827
-20250808.180419 run-done : pid,22886
-20250808.180421 run-done : pid,22941
-20250808.180423 run-done : pid,23002
-20250808.180425 run-done : pid,23058
-20250808.180427 run-done : pid,23116
-20250808.180430 run-done : pid,23171
-20250808.180432 run-done : pid,23230
-20250808.180434 run-done : pid,23292
-20250808.180436 run-done : pid,23354
-20250808.180438 run-done : pid,23418
-20250808.180440 run-done : pid,23478
-20250808.180443 run-done : pid,23540
-20250808.180445 run-done : pid,23597
-20250808.180447 run-done : pid,23657
-20250808.180449 run-done : pid,23744
-20250808.180451 run-done : pid,23798
-20250808.180453 run-done : pid,23878
-20250808.180455 run-done : pid,23934
-20250808.180457 run-done : pid,23990
-20250808.180500 run-done : pid,24048
-20250808.180502 run-done : pid,24102
-20250808.180504 run-done : pid,24159
-20250808.180506 run-done : pid,24220
-20250808.180508 run-done : pid,24278
-20250808.180510 run-done : pid,24332
-20250808.180512 run-done : pid,24387
-20250808.180515 run-done : pid,24444
-20250808.180517 run-done : pid,24506
-20250808.180519 run-done : pid,24562
-20250808.180521 run-done : pid,24615
-20250808.180523 run-done : pid,24671
-20250808.180525 run-done : pid,24728
-20250808.180527 run-done : pid,24782
-20250808.180529 run-done : pid,24839
-20250808.180532 run-done : pid,24901
-20250808.180534 run-done : pid,24959
-20250808.180536 run-done : pid,25021
-20250808.180538 run-done : pid,25078
-20250808.180540 run-done : pid,25134
-20250808.180542 run-done : pid,25190
-20250808.180544 run-done : pid,25253
-20250808.180547 run-done : pid,25309
-20250808.180549 run-done : pid,25365
-20250808.180551 run-done : pid,25450
-20250808.180553 run-done : pid,25505
-20250808.180555 run-done : pid,25588
-20250808.180557 run-done : pid,25642
-20250808.180559 run-done : pid,25700
-20250808.180601 run-done : pid,25762
-20250808.180604 run-done : pid,25820
-20250808.180606 run-done : pid,25984
-20250808.180608 run-done : pid,26038
-20250808.180610 run-done : pid,26261
-20250808.180612 run-done : pid,26414
-20250808.180614 run-done : pid,26582
-20250808.180616 run-done : pid,26637
-20250808.180619 run-done : pid,26695
-20250808.180621 run-done : pid,26748
-20250808.180623 run-done : pid,26820
-20250808.180625 run-done : pid,26876
-20250808.180627 run-done : pid,26941
-20250808.180629 run-done : pid,26997
-20250808.180631 run-done : pid,27058
-20250808.180634 run-done : pid,27121
-20250808.180636 run-done : pid,27177
-20250808.180638 run-done : pid,27231
-20250808.180640 run-done : pid,27289
-20250808.180642 run-done : pid,27348
-20250808.180644 run-done : pid,27404
-20250808.180646 run-done : pid,27462
-20250808.180648 run-done : pid,27518
-20250808.180651 run-done : pid,27573
-20250808.180653 run-done : pid,27628
-20250808.180655 run-done : pid,27685
-20250808.180657 run-done : pid,27766
-20250808.180659 run-done : pid,27848
-20250808.180701 run-done : pid,27905
-20250808.180703 run-done : pid,27963
-20250808.180706 run-done : pid,28021
-20250808.180708 run-done : pid,28079
-20250808.180710 run-done : pid,28138
-20250808.180712 run-done : pid,28196
-20250808.180714 run-done : pid,28253
-20250808.180716 run-done : pid,28307
-20250808.180718 run-done : pid,28364
-20250808.180721 run-done : pid,28418
-20250808.180723 run-done : pid,28478
-20250808.180725 run-done : pid,28533
-20250808.180727 run-done : pid,28592
-20250808.180729 run-done : pid,28648
-20250808.180731 run-done : pid,28701
-20250808.180733 run-done : pid,28763
-20250808.180735 run-done : pid,28817
-20250808.180738 run-done : pid,28877
-20250808.180740 run-done : pid,28934
-20250808.180742 run-done : pid,28991
-20250808.180744 run-done : pid,29048
-20250808.180746 run-done : pid,29103
-20250808.180748 run-done : pid,29163
-20250808.180751 run-done : pid,29241
-20250808.180753 run-done : pid,29324
-20250808.180755 run-done : pid,29380
-20250808.180757 run-done : pid,29439
-20250808.180759 run-done : pid,29497
-20250808.180801 run-done : pid,29550
-20250808.180804 run-done : pid,29612
-20250808.180806 run-done : pid,29666
-20250808.180808 run-done : pid,29724
-20250808.180810 run-done : pid,29782
-20250808.180812 run-done : pid,29839
-20250808.180814 run-done : pid,29897
-20250808.180816 run-done : pid,29951
-20250808.180818 run-done : pid,30011
-20250808.180821 run-done : pid,30065
-20250808.180823 run-done : pid,30125
-20250808.180825 run-done : pid,30181
-20250808.180827 run-done : pid,30235
-20250808.180829 run-done : pid,30296
-20250808.180831 run-done : pid,30356
-20250808.180833 run-done : pid,30427
-20250808.180836 run-done : pid,30482
-20250808.180838 run-done : pid,30540
-20250808.180840 run-done : pid,30596
-20250808.180842 run-done : pid,30650
-20250808.180844 run-done : pid,30712
-20250808.180846 run-done : pid,30767
-20250808.180848 run-done : pid,30828
-20250808.180851 run-done : pid,30882
-20250808.180853 run-done : pid,30965
-20250808.180855 run-done : pid,31045
-20250808.180857 run-done : pid,31099
-20250808.180859 run-done : pid,31161
-20250808.180901 run-done : pid,31215
-20250808.180903 run-done : pid,31276
-20250808.180905 run-done : pid,31330
-20250808.180908 run-done : pid,31389
-20250808.180910 run-done : pid,31449
-20250808.180912 run-done : pid,31504
-20250808.180914 run-done : pid,31566
-18:09:16,020 INFO  root - Signal number 2Gracefully stopping the timer and exiting
-~DataReaderContrainer
-18:09:16,504 INFO  root - Stopping processor : [SecurityListDataReaderListenerImpl]
-18:09:16,504 INFO  root - Exiting processes: [SecurityListDataReaderListenerImpl]
-18:09:16,504 INFO  root - Stopped processor
-18:09:16,504 INFO  root - Stopping processor : [OrderMassCancelReportDataReaderListenerImpl]
-18:09:16,505 INFO  root - Exiting processes: [OrderMassCancelReportDataReaderListenerImpl]
-18:09:16,505 INFO  root - Stopped processor
-18:09:16,505 INFO  root - Stopping processor : [OrderCancelRejectDataReaderListenerImpl]
-18:09:16,505 INFO  root - Exiting processes: [OrderCancelRejectDataReaderListenerImpl]
-18:09:16,505 INFO  root - Stopped processor
-18:09:16,505 INFO  root - Stopping processor : [ExecutionReportDataReaderListenerImpl]
-18:09:16,505 INFO  root - Exiting processes: [ExecutionReportDataReaderListenerImpl]
-18:09:16,505 INFO  root - Stopped processor
-18:09:16,505 INFO  root - Stopping processor : [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-18:09:16,507 INFO  root - Exiting processes: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
-18:09:16,507 INFO  root - Stopped processor
-18:09:16,507 INFO  root - Stopping processor : [MarketDataIncrementalRefreshDataReaderListenerImpl]
-18:09:16,507 INFO  root - Exiting processes: [MarketDataIncrementalRefreshDataReaderListenerImpl]
-18:09:16,507 INFO  root - Stopped processor
-18:09:16,507 INFO  root - Stopping processor : [LogoutDataReaderListenerImpl]
-18:09:16,508 INFO  root - Exiting processes: [LogoutDataReaderListenerImpl]
-18:09:16,508 INFO  root - Stopped processor
-18:09:16,508 INFO  root - Stopping processor : [LogonDataReaderListenerImpl]
-18:09:16,508 INFO  root - Exiting processes: [LogonDataReaderListenerImpl]
-18:09:16,508 INFO  root - Stopped processor
-20250808.180920 run-done : pid,31728
+ddsMsg.c_NoMDEntries()[0].TimeInForce : 13:14:47,882 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,882 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,882 INFO  root - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+13:14:47,882 INFO  root - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+20250809.131448 run-done : pid,88593
+20250809.131449 run-done : pid,88657
+20250809.131452 run-done : pid,88715
+20250809.131454 run-done : pid,88771
+20250809.131456 run-done : pid,88830
+20250809.131458 run-done : pid,88883
+20250809.131500 run-done : pid,88941
+20250809.131502 run-done : pid,88998
+20250809.131504 run-done : pid,89056
+20250809.131506 run-done : pid,89115
+20250809.131509 run-done : pid,89172
+20250809.131511 run-done : pid,89230
+20250809.131513 run-done : pid,89308
+20250809.131515 run-done : pid,89390
+20250809.131517 run-done : pid,89450
+20250809.131519 run-done : pid,89509
+20250809.131521 run-done : pid,89568
+20250809.131523 run-done : pid,89630
+20250809.131526 run-done : pid,89691
+20250809.131528 run-done : pid,89754
+20250809.131530 run-done : pid,89812
+20250809.131532 run-done : pid,89869
+20250809.131534 run-done : pid,89925
+20250809.131536 run-done : pid,89984
+20250809.131538 run-done : pid,90041
+20250809.131540 run-done : pid,90096
+20250809.131543 run-done : pid,90153
+20250809.131545 run-done : pid,90209
+20250809.131547 run-done : pid,90268
+20250809.131549 run-done : pid,90326
+20250809.131551 run-done : pid,90381
+20250809.131553 run-done : pid,90446
+20250809.131555 run-done : pid,90499
+20250809.131557 run-done : pid,90558
+20250809.131600 run-done : pid,90616
+20250809.131602 run-done : pid,90673
+20250809.131604 run-done : pid,90730
+20250809.131606 run-done : pid,90785
+20250809.131608 run-done : pid,90844
+20250809.131610 run-done : pid,90900
+20250809.131612 run-done : pid,90957
+20250809.131615 run-done : pid,91013
+20250809.131617 run-done : pid,91074
+20250809.131619 run-done : pid,91131
+20250809.131621 run-done : pid,91210
+20250809.131623 run-done : pid,91267
+20250809.131625 run-done : pid,91348
+20250809.131627 run-done : pid,91408
+20250809.131629 run-done : pid,91482
+20250809.131632 run-done : pid,91537
+20250809.131634 run-done : pid,91595
+20250809.131636 run-done : pid,91648
+20250809.131638 run-done : pid,91703
+20250809.131640 run-done : pid,91766
+20250809.131642 run-done : pid,91822
+20250809.131644 run-done : pid,91880
+20250809.131646 run-done : pid,91935
+20250809.131649 run-done : pid,91994
+20250809.131651 run-done : pid,92144
+20250809.131653 run-done : pid,92197
+20250809.131655 run-done : pid,92256
+20250809.131657 run-done : pid,92311
+20250809.131659 run-done : pid,92368
+20250809.131701 run-done : pid,92426
+20250809.131703 run-done : pid,92503
+20250809.131706 run-done : pid,92558
+20250809.131708 run-done : pid,92617
+13:17:08,761 INFO  root - Processing: [MarketDataIncrementalRefreshDataReaderListenerImpl]
+13:17:08,761 INFO  root - Processed: [MarketDataIncrementalRefreshDataReaderListenerImpl]
+20250809.131710 run-done : pid,92677
+20250809.131712 run-done : pid,92734
+20250809.131714 run-done : pid,92793
+20250809.131716 run-done : pid,92852
+20250809.131718 run-done : pid,92911
+20250809.131720 run-done : pid,92968
+20250809.131723 run-done : pid,93025
+20250809.131725 run-done : pid,93208
+20250809.131727 run-done : pid,93273
+20250809.131729 run-done : pid,93330
+20250809.131731 run-done : pid,93410
+20250809.131733 run-done : pid,93493
+20250809.131735 run-done : pid,93547
+20250809.131738 run-done : pid,93608
+20250809.131740 run-done : pid,93666
+20250809.131742 run-done : pid,93724
+20250809.131744 run-done : pid,93780
+20250809.131746 run-done : pid,93833
+20250809.131748 run-done : pid,93894
+20250809.131750 run-done : pid,93951
+20250809.131752 run-done : pid,94009
+20250809.131755 run-done : pid,94068
+20250809.131757 run-done : pid,94126
+20250809.131759 run-done : pid,94187
+20250809.131801 run-done : pid,94241
+20250809.131803 run-done : pid,94299
+20250809.131805 run-done : pid,94355
+20250809.131807 run-done : pid,94414
+20250809.131809 run-done : pid,94471
+20250809.131812 run-done : pid,94527
+20250809.131814 run-done : pid,94600
+20250809.131816 run-done : pid,94656
+20250809.131818 run-done : pid,94715
+20250809.131820 run-done : pid,94773
+20250809.131822 run-done : pid,94831
+20250809.131824 run-done : pid,94887
+20250809.131826 run-done : pid,94942
+20250809.131829 run-done : pid,95006
+20250809.131831 run-done : pid,95064
+20250809.131833 run-done : pid,95121
+20250809.131835 run-done : pid,95177
+20250809.131837 run-done : pid,95238
+20250809.131839 run-done : pid,95320
+20250809.131841 run-done : pid,95374
+20250809.131844 run-done : pid,95457
+20250809.131846 run-done : pid,95511
+20250809.131848 run-done : pid,95571
+20250809.131850 run-done : pid,95628
+20250809.131852 run-done : pid,95684
+20250809.131854 run-done : pid,95744
+20250809.131856 run-done : pid,95797
+20250809.131858 run-done : pid,95860
+20250809.131901 run-done : pid,95914
+20250809.131903 run-done : pid,95972
+20250809.131905 run-done : pid,96028
+20250809.131907 run-done : pid,96081
+20250809.131909 run-done : pid,96144
+20250809.131911 run-done : pid,96198
+20250809.131913 run-done : pid,96257
+20250809.131915 run-done : pid,96313
+20250809.131918 run-done : pid,96372
+20250809.131920 run-done : pid,96429
+20250809.131922 run-done : pid,96484
+20250809.131924 run-done : pid,96543
+20250809.131926 run-done : pid,96602
+20250809.131928 run-done : pid,96662
+20250809.131930 run-done : pid,96720
+20250809.131932 run-done : pid,96774
+20250809.131935 run-done : pid,96834
+20250809.131937 run-done : pid,96887
+20250809.131939 run-done : pid,96951
+20250809.131941 run-done : pid,97005
+20250809.131943 run-done : pid,97062
+20250809.131945 run-done : pid,97118
+20250809.131947 run-done : pid,97176
+20250809.131949 run-done : pid,97263
+20250809.131952 run-done : pid,97324
+20250809.131954 run-done : pid,97407
+20250809.131956 run-done : pid,97461
+20250809.131958 run-done : pid,97520
+20250809.132000 run-done : pid,97587
+20250809.132002 run-done : pid,97643
+20250809.132004 run-done : pid,97704
+20250809.132007 run-done : pid,97757
+20250809.132009 run-done : pid,97820
+20250809.132011 run-done : pid,97873
+20250809.132013 run-done : pid,97927
+20250809.132015 run-done : pid,97987
+20250809.132017 run-done : pid,98042
+20250809.132019 run-done : pid,98107
+20250809.132021 run-done : pid,98162
+20250809.132024 run-done : pid,98217
+20250809.132026 run-done : pid,98277
+20250809.132028 run-done : pid,98331
+20250809.132030 run-done : pid,98390
+20250809.132032 run-done : pid,98444
+20250809.132034 run-done : pid,98499
+20250809.132036 run-done : pid,98553
+20250809.132038 run-done : pid,98613
+20250809.132041 run-done : pid,98672
+20250809.132043 run-done : pid,98726
+20250809.132045 run-done : pid,98782
+20250809.132047 run-done : pid,98836
+20250809.132049 run-done : pid,98897
+20250809.132051 run-done : pid,98983
+20250809.132054 run-done : pid,99042
+20250809.132056 run-done : pid,99097
+20250809.132058 run-done : pid,99177
+20250809.132100 run-done : pid,99236
+20250809.132102 run-done : pid,99294
+20250809.132104 run-done : pid,99350
+20250809.132106 run-done : pid,99404
+20250809.132108 run-done : pid,99467
+20250809.132111 run-done : pid,99520
+20250809.132113 run-done : pid,99578
+20250809.132115 run-done : pid,99635
+20250809.132117 run-done : pid,99696
+20250809.132119 run-done : pid,99754
+20250809.132121 run-done : pid,99808
+20250809.132123 run-done : pid,99868
+20250809.132125 run-done : pid,99928
+20250809.132128 run-done : pid,99986
+20250809.132130 run-done : pid,145
+20250809.132132 run-done : pid,203
+20250809.132134 run-done : pid,258
+20250809.132136 run-done : pid,317
+20250809.132138 run-done : pid,423
+20250809.132140 run-done : pid,489
+20250809.132143 run-done : pid,579
+20250809.132145 run-done : pid,660
+20250809.132147 run-done : pid,742
+20250809.132149 run-done : pid,820
+20250809.132151 run-done : pid,881
+20250809.132153 run-done : pid,944
+20250809.132155 run-done : pid,1002
+20250809.132158 run-done : pid,1060
+20250809.132200 run-done : pid,1119
+20250809.132202 run-done : pid,1196
+20250809.132204 run-done : pid,1281
+20250809.132206 run-done : pid,1335
+20250809.132208 run-done : pid,1392
+20250809.132210 run-done : pid,1451
+20250809.132212 run-done : pid,1509
+20250809.132215 run-done : pid,1565
+20250809.132217 run-done : pid,1621
+20250809.132219 run-done : pid,1682
+20250809.132221 run-done : pid,1741
+20250809.132223 run-done : pid,1800
+20250809.132225 run-done : pid,1856
+20250809.132227 run-done : pid,1913
+20250809.132229 run-done : pid,1973
+20250809.132232 run-done : pid,2026
+20250809.132234 run-done : pid,2086
+20250809.132236 run-done : pid,2140
+20250809.132238 run-done : pid,2199
+20250809.132240 run-done : pid,2259
+20250809.132242 run-done : pid,2312
+20250809.132244 run-done : pid,2376
+20250809.132246 run-done : pid,2431
+20250809.132249 run-done : pid,2495
+20250809.132251 run-done : pid,2550
+20250809.132253 run-done : pid,2610
+20250809.132255 run-done : pid,2666
+20250809.132257 run-done : pid,2720
+20250809.132259 run-done : pid,2782
+20250809.132301 run-done : pid,2837
+20250809.132303 run-done : pid,2898
+20250809.132306 run-done : pid,2952
+20250809.132308 run-done : pid,3005
+20250809.132310 run-done : pid,3075
+20250809.132312 run-done : pid,3130
+20250809.132314 run-done : pid,3233
+20250809.132316 run-done : pid,3315
+20250809.132318 run-done : pid,3376
+20250809.132321 run-done : pid,3431
+20250809.132323 run-done : pid,3486
+20250809.132325 run-done : pid,3545
+20250809.132327 run-done : pid,3604
+20250809.132329 run-done : pid,3666
+20250809.132331 run-done : pid,3721
+20250809.132333 run-done : pid,3781
+20250809.132335 run-done : pid,3836
+20250809.132338 run-done : pid,3891
+20250809.132340 run-done : pid,3953
+20250809.132342 run-done : pid,4010
+20250809.132344 run-done : pid,4070
+20250809.132346 run-done : pid,4124
+20250809.132348 run-done : pid,4177
+20250809.132350 run-done : pid,4240
+20250809.132352 run-done : pid,4295
+20250809.132355 run-done : pid,4355
+20250809.132357 run-done : pid,4409
+20250809.132359 run-done : pid,4471
+20250809.132401 run-done : pid,4526
+20250809.132403 run-done : pid,4582
+20250809.132405 run-done : pid,4641
+20250809.132407 run-done : pid,4695
+20250809.132409 run-done : pid,4756
+20250809.132412 run-done : pid,4812
+20250809.132414 run-done : pid,4876
+20250809.132416 run-done : pid,4932
+20250809.132418 run-done : pid,4986
+20250809.132420 run-done : pid,5047
+20250809.132422 run-done : pid,5102
+20250809.132424 run-done : pid,5186
+20250809.132426 run-done : pid,5264
+20250809.132429 run-done : pid,5321
+20250809.132431 run-done : pid,5380
+20250809.132433 run-done : pid,5433
+20250809.132435 run-done : pid,5493
+20250809.132437 run-done : pid,5548
+20250809.132439 run-done : pid,5609
+20250809.132441 run-done : pid,5665
+20250809.132444 run-done : pid,5724
+20250809.132446 run-done : pid,5783
+20250809.132448 run-done : pid,5838
+20250809.132450 run-done : pid,5899
+20250809.132452 run-done : pid,5955
+20250809.132454 run-done : pid,6017
+20250809.132456 run-done : pid,6071
+20250809.132458 run-done : pid,6126
+20250809.132501 run-done : pid,6187
+20250809.132503 run-done : pid,6242
+20250809.132505 run-done : pid,6304
+20250809.132507 run-done : pid,6358
+20250809.132509 run-done : pid,6419
+20250809.132511 run-done : pid,6474
+20250809.132513 run-done : pid,6531
+20250809.132515 run-done : pid,6592
+20250809.132518 run-done : pid,6647
+20250809.132520 run-done : pid,6708
+20250809.132522 run-done : pid,6765
+20250809.132524 run-done : pid,6822
+20250809.132526 run-done : pid,6884
+20250809.132528 run-done : pid,6939
+20250809.132530 run-done : pid,7000
+20250809.132532 run-done : pid,7079
+20250809.132535 run-done : pid,7163
+20250809.132537 run-done : pid,7324
+20250809.132539 run-done : pid,7403
+20250809.132541 run-done : pid,7580
+20250809.132543 run-done : pid,7635
+20250809.132545 run-done : pid,7820
+20250809.132547 run-done : pid,7874
