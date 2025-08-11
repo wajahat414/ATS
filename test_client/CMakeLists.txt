@@ -58,9 +58,10 @@ endforeach()
 
 # Create test executable with available sources
 add_executable(test_new_order 
-    test_new_order.cpp
+    discovery_test.cpp
     ${AVAILABLE_IDL_SOURCES}
 )
+
 
 
 # Link libraries
@@ -78,6 +79,7 @@ if(APPLE)
         BUILD_RPATH "${DDS_HOME}/lib"
     )
 endif()
+
 
 # Print build information
 message(STATUS "====================================")

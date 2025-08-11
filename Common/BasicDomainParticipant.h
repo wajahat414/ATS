@@ -147,6 +147,8 @@ namespace distributed_ats_utils
 
             type_support_ptr->register_type(_participant.get());
 
+            std::cout << "Topic:" << topic_name << "Type" << type_support_ptr->get_type_name() << std::endl;
+
             std::unique_ptr<eprosima::fastdds::dds::Topic> topic_ptr(_participant->create_topic(topic_name, type_support_ptr->get_type_name(), eprosima::fastdds::dds::TOPIC_QOS_DEFAULT));
 
             return topic_tuple_ptr<TOPIC_TYPE>(new topic_tuple<TOPIC_TYPE>(std::move(topic_ptr), std::move(topic_type_ptr), std::move(type_support_ptr)));
