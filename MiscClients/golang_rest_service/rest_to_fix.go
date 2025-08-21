@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path/filepath"
 
 	"github.com/gin-gonic/gin"
 	"github.com/quickfixgo/quickfix"
@@ -29,6 +30,21 @@ func main() {
 	var investors_db *string = flag.String("investor_db", "investors/investors.db", "Investors DB")
 
 	flag.Parse()
+	logDir := "logs"
+	_ = os.MkdirAll(logDir, 0o755)
+	logFilePath := filepath.Join(logDir, "gin.log")
+	logFile, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0o644)
+
+	if err != nil {
+		fmt.Printf("unable to open gin log file: %v\n", err)
+		os.Exit(1)
+	}
+	defer logFile.Close()
+	gin.DisableConsoleColor()
+	gin.DefaultWriter = io.MultiWriter(logFile, os.Stdout) // info logs
+	gin.DefaultErrorWriter = gin.DefaultWriter
+
+	components.InitLogger(gin.DefaultWriter)
 
 	var investors = components.PopulateInvestorCredenital(*investors_db)
 

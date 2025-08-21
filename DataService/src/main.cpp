@@ -1,29 +1,3 @@
-/*
-   Copyright (C) 2021 Mike Kipnis
-
-   This file is part of DistributedATS, a free-software/open-source project
-   that integrates QuickFIX and LiquiBook over DDS. This project simplifies
-   the process of having multiple FIX gateways communicating with multiple
-   matching engines in realtime.
-   
-   Permission is hereby granted, free of charge, to any person obtaining a copy
-   of this software and associated documentation files (the "Software"), to deal
-   in the Software without restriction, including without limitation the rights
-   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   copies of the Software, and to permit persons to whom the Software is
-   furnished to do so, subject to the following conditions:
-
-   The above copyright notice and this permission notice shall be included in all
-   copies or substantial portions of the Software.
-
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   SOFTWARE.
-*/
 
 #include <iostream>
 #include <BasicDomainParticipant.h>
@@ -53,110 +27,107 @@
 
 std::atomic<bool> is_running;
 
-
-int main(int argc, char* argv[] )
+int main(int argc, char *argv[])
 {
     LOG4CXX_INFO(logger, "DataService");
-    
-    eprosima::fastdds::dds::Log::SetVerbosity(eprosima::fastdds::dds::Log::Info);
-    
-    try {
 
-        if ( argc < 2 )
+    eprosima::fastdds::dds::Log::SetVerbosity(eprosima::fastdds::dds::Log::Info);
+
+    try
+    {
+
+        if (argc < 2)
         {
-            std::cout << "usage: " << argv[ 0 ] << std::endl << "\t\t-c data_service_config_file_name" << std::endl;
+            std::cout << "usage: " << argv[0] << std::endl
+                      << "\t\t-c data_service_config_file_name" << std::endl;
             return -1;
         }
 
         std::string data_service_config_file = "";
-        
+
         boost::program_options::options_description options_desc{"Options"};
-        
-        options_desc.add_options()
-          ("help,h", "Help screen")
-          ("config,c", boost::program_options::value<std::string>()->default_value(""), "DataService ConfigFile");
-        
+
+        options_desc.add_options()("help,h", "Help screen")("config,c", boost::program_options::value<std::string>()->default_value(""), "DataService ConfigFile");
+
         boost::program_options::variables_map vm;
         boost::program_options::store(parse_command_line(argc, argv, options_desc), vm);
         boost::program_options::notify(vm);
 
         if (vm.count("help"))
-          std::cout << options_desc << '\n';
+            std::cout << options_desc << '\n';
         else if (vm.count("config"))
             data_service_config_file = vm["config"].as<std::string>();
-        
 
-
-        if ( data_service_config_file.empty() )
+        if (data_service_config_file.empty())
         {
             std::cerr << "Error: Config file name is not specified." << std::endl;
             return -1;
         }
-        
+
         boost::property_tree::ptree pt;
         boost::property_tree::ini_parser::read_ini(data_service_config_file, pt);
-        
+
         auto base_dir_ats = std::getenv("BASEDIR_ATS");
-      
-        if ( base_dir_ats == NULL )
+
+        if (base_dir_ats == NULL)
             throw std::runtime_error("BASEDIR_ATS is not set");
-        
+
         std::string data_service_name = pt.get<std::string>("dataservice.name");
         std::string database_file = pt.get<std::string>("database.database_file");
-        
+
         distributed_ats_utils::basic_domain_participant_ptr basic_domain_participant_ptr =
-            std::make_shared<distributed_ats_utils::basic_domain_participant>( 0, data_service_name );
-        
+            std::make_shared<distributed_ats_utils::basic_domain_participant>(0, data_service_name);
+
         basic_domain_participant_ptr->create_subscriber();
         basic_domain_participant_ptr->create_publisher();
 
-        FIX::DatabaseConnectionID databaseConnectionID(std::string(base_dir_ats) + "/data/" + database_file,"", "", "", 0);
-        
+        FIX::DatabaseConnectionID databaseConnectionID(std::string(base_dir_ats) + "/data/" + database_file, "", "", "", 0);
+
         std::shared_ptr<DistributedATS::SQLiteConnection> sql_connection =
-            std::make_shared<DistributedATS::SQLiteConnection>( databaseConnectionID );
-        
-        if ( !sql_connection->connected() )
+            std::make_shared<DistributedATS::SQLiteConnection>(databaseConnectionID);
+
+        if (!sql_connection->connected())
         {
             LOG4CXX_ERROR(logger, "Data Service is not connected to the database");
             return -1;
         };
-        
+
         auto authServicePtr =
-                std::make_shared<DistributedATS::AuthService>(basic_domain_participant_ptr, databaseConnectionID );
-        
+            std::make_shared<DistributedATS::AuthService>(basic_domain_participant_ptr, databaseConnectionID);
+
         auto refServicePtr =
-                std::make_shared<DistributedATS::RefDataService>(basic_domain_participant_ptr, databaseConnectionID);
-        
+            std::make_shared<DistributedATS::RefDataService>(basic_domain_participant_ptr, databaseConnectionID);
+
         auto marketDataServicePtr =
-                std::make_shared<DistributedATS::MarketDataService>(basic_domain_participant_ptr, databaseConnectionID);
-        
-       auto orderMassStatusServicePtr =
-                std::make_shared<DistributedATS::OrderMassStatusRequestService>( basic_domain_participant_ptr );
-                
+            std::make_shared<DistributedATS::MarketDataService>(basic_domain_participant_ptr, databaseConnectionID);
+
+        auto orderMassStatusServicePtr =
+            std::make_shared<DistributedATS::OrderMassStatusRequestService>(basic_domain_participant_ptr);
+
         // Ref Data
         refServicePtr->createSecurityListRequestListener();
         refServicePtr->createSecurityListDataWriter();
-        
+
         // Authentication
         authServicePtr->createLogonTopic();
         authServicePtr->createLogoutTopic();
-        
-        
+
         // Market Data
         marketDataServicePtr->createMarketDataRequestListener();
         marketDataServicePtr->createMarketDataIncrementalRefreshListener();
         marketDataServicePtr->createMarketDataFullRefreshDataWriter();
-        
+
         // Order Status
         orderMassStatusServicePtr->createOrderMassStatusRequestListener();
         orderMassStatusServicePtr->createExecutionReportListener();
-        
+
         std::atomic_init(&is_running, true);
 
         boost::asio::io_context io_service;
         boost::asio::signal_set signals(io_service, SIGINT, SIGTERM);
-        
-        signals.async_wait([&](const boost::system::error_code& ec, int signal_number) {
+
+        signals.async_wait([&](const boost::system::error_code &ec, int signal_number)
+                           {
             if (!ec) {
                 std::cout << "Signal number " << signal_number << std::endl;
                 std::cout << "Gracefully stopping the timer and exiting"
@@ -165,15 +136,14 @@ int main(int argc, char* argv[] )
             } else {
                 std::cout << "Error " << ec.value() << " - " << ec.message()
                           << " - Signal number - " << signal_number << std::endl;
-            }
-        });
-        
+            } });
+
         io_service.run();
-        
-    } catch ( std::exception & e) {
-        
-        LOG4CXX_ERROR(logger, "Exception during the initialization of Data Service" << e.what());
-    	return 1;
     }
-    
+    catch (std::exception &e)
+    {
+
+        LOG4CXX_ERROR(logger, "Exception during the initialization of Data Service" << e.what());
+        return 1;
+    }
 };

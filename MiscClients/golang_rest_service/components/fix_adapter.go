@@ -7,7 +7,10 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 
+	"github.com/gin-gonic/gin"
 	"github.com/quickfixgo/enum"
 	"github.com/quickfixgo/field"
 	fix44incr "github.com/quickfixgo/fix44/marketdataincrementalrefresh"
@@ -21,6 +24,14 @@ import (
 
 	"sync"
 )
+
+var AppLog = log.New(io.Discard, "", 0)
+
+func InitLogger(w io.Writer) {
+	AppLog.SetOutput(w)
+	AppLog.SetFlags(log.LstdFlags | log.Lshortfile)
+	AppLog.SetPrefix("APP ")
+}
 
 type FIXTradeClient struct {
 	market_data_lock sync.Mutex
@@ -86,12 +97,28 @@ func (fix_trade_client *FIXTradeClient) getInstrumentMarketData(instrument Instr
 
 func (fix_trade_client *FIXTradeClient) UpdateMarketData(instrument Instrument, entry_type enum.MDEntryType, price int, size int) {
 	fix_trade_client.market_data_lock.Lock()
-	(*fix_trade_client.market_data[instrument]).InsertMarketDataEntry(entry_type, price, size)
-	//instrument_market_data.InsertMarketDataEntry(entry_type, price, size)
-	//fix_trade_client.market_data[instrument] = instrument_market_data
-	fix_trade_client.market_data_lock.Unlock()
-}
+	defer fix_trade_client.market_data_lock.Unlock()
 
+	// Ensure a snapshot exists to avoid nil pointer deref
+	md, ok := fix_trade_client.market_data[instrument]
+	if !ok || md == nil {
+		snap := NewMarketDataSnapshot()
+		fix_trade_client.market_data[instrument] = &snap
+		md = &snap
+	}
+
+	// Log to the same writer as Gin (logs/gin.log + stdout)
+
+	fmt.Printf("MD update %s/%s type=%s price=%d size=%d",
+		instrument.SecurityExchange, instrument.Symbol, entry_type, price, size)
+
+	// Or, direct write without logger prefix/flags:
+	fmt.Fprintf(gin.DefaultWriter, "APP MD update %s/%s type=%s price=%d size=%d\n",
+		instrument.SecurityExchange, instrument.Symbol, entry_type, price, size)
+
+	// Apply the update
+	md.InsertMarketDataEntry(entry_type, price, size)
+}
 func (e *FIXTradeClient) insertInvestorOrderMap(investor_name string, client_order_id string) {
 	e.order_status_lock.Lock()
 	e.investor_order_map[investor_name] =
@@ -328,7 +355,6 @@ func (fix_trade_client *FIXTradeClient) FromApp(msg *quickfix.Message, sessionID
 		msg.Body.Get(&avg_px)
 
 		fmt.Printf("ExecutionReport: %s", msg.String())
-
 
 		var instrument_out = Instrument{security_exchange.String(), symbol_field.String()}
 		var execution_report_out ExecutionReport

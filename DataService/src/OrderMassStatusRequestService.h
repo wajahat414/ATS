@@ -31,11 +31,8 @@
 #include <memory>
 #include <map>
 #include <thread>
-
 #include <BasicDomainParticipant.h>
-
 #include "OrderMassStatusRequestDataReaderListenerImpl.h"
-
 #include <ExecutionReport.hpp>
 
 typedef std::shared_ptr<DistributedATS_ExecutionReport::ExecutionReport> ExecutionReportPtr;

@@ -1,0 +1,63 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /instruments              --> golang_rest_service/components.InstrumentService.func1 (3 handlers)
+[GIN-debug] POST   /market_data              --> golang_rest_service/components.MarketDataService.func1 (3 handlers)
+[GIN-debug] POST   /submit_order             --> golang_rest_service/components.SubmitOrderService.func1 (3 handlers)
+[GIN-debug] POST   /cancel_order             --> golang_rest_service/components.CancelOrderService.func1 (3 handlers)
+[GIN-debug] POST   /investor_orders          --> golang_rest_service/components.InvestorOrdersService.func1 (3 handlers)
+[GIN-debug] POST   /order_status_request     --> golang_rest_service/components.InvestorOrderStatusService.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :28100
+[GIN] 2025/08/21 - 17:24:57 | 200 |     187.542µs |       127.0.0.1 | POST     "/market_data"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /instruments              --> golang_rest_service/components.InstrumentService.func1 (3 handlers)
+[GIN-debug] POST   /market_data              --> golang_rest_service/components.MarketDataService.func1 (3 handlers)
+[GIN-debug] POST   /submit_order             --> golang_rest_service/components.SubmitOrderService.func1 (3 handlers)
+[GIN-debug] POST   /cancel_order             --> golang_rest_service/components.CancelOrderService.func1 (3 handlers)
+[GIN-debug] POST   /investor_orders          --> golang_rest_service/components.InvestorOrdersService.func1 (3 handlers)
+[GIN-debug] POST   /order_status_request     --> golang_rest_service/components.InvestorOrderStatusService.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :28100
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /instruments              --> golang_rest_service/components.InstrumentService.func1 (3 handlers)
+[GIN-debug] POST   /market_data              --> golang_rest_service/components.MarketDataService.func1 (3 handlers)
+[GIN-debug] POST   /submit_order             --> golang_rest_service/components.SubmitOrderService.func1 (3 handlers)
+[GIN-debug] POST   /cancel_order             --> golang_rest_service/components.CancelOrderService.func1 (3 handlers)
+[GIN-debug] POST   /investor_orders          --> golang_rest_service/components.InvestorOrdersService.func1 (3 handlers)
+[GIN-debug] POST   /order_status_request     --> golang_rest_service/components.InvestorOrderStatusService.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :28100
+[GIN] 2025/08/21 - 17:42:41 | 200 |     132.292µs |       127.0.0.1 | POST     "/market_data"
+[GIN] 2025/08/21 - 17:42:48 | 200 |     136.167µs |       127.0.0.1 | POST     "/submit_order"
+APP MD update BTC_MARKET/BTC-CNY type=0 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=0 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=0 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=0 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=0 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=1 price=40200 size=400
+APP MD update BTC_MARKET/BTC-CNY type=1 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=1 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=1 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=1 price=0 size=0
+APP MD update BTC_MARKET/BTC-CNY type=2 price=40200 size=0
+APP MD update BTC_MARKET/BTC-CNY type=B price=0 size=500
+APP MD update BTC_MARKET/BTC-CNY type=4 price=40100 size=0
+APP MD update BTC_MARKET/BTC-CNY type=8 price=40100 size=0
+[GIN] 2025/08/21 - 17:43:25 | 200 |      47.625µs |       127.0.0.1 | POST     "/market_data"

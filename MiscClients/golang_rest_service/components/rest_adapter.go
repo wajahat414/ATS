@@ -162,14 +162,13 @@ func SubmitOrderService(rest_service *gin.Engine, fix_trade_client *FIXTradeClie
 		print("SessionID : " + fix_trade_client.serviceSessionID.String())
 		quickfix.SendToTarget(new_order, fix_trade_client.serviceSessionID)
 
-		var order_reply InvestorOrderReply
-		order_reply.ClientOrderId = client_order_id
+		order_reply := InvestorOrderReply{ClientOrderId: client_order_id}
 
 		fix_trade_client.insertInvestorOrderMap(investor_credentials.InvestorName, client_order_id)
 
-		var message_out, _ = create_order_token(order_reply, investor_credentials.InvestorSecret)
+		// var message_out, _ = create_order_token(order_reply, investor_credentials.InvestorSecret)
 
-		c.String(200, string(message_out))
+		c.JSON(200, order_reply)
 	})
 }
 
@@ -198,9 +197,9 @@ func CancelOrderService(rest_service *gin.Engine, fix_trade_client *FIXTradeClie
 		var order_cancel_reply InvestorOrderReply
 		order_cancel_reply.ClientOrderId = cancel_client_order_id
 
-		var message_out, _ = create_order_token(order_cancel_reply, investor_credentials.InvestorSecret)
+		// var message_out, _ = create_order_token(order_cancel_reply, investor_credentials.InvestorSecret)
 
-		c.String(200, string(message_out))
+		c.JSON(200, order_cancel_reply)
 
 	})
 }
@@ -216,9 +215,9 @@ func InvestorOrdersService(rest_service *gin.Engine, fix_trade_client *FIXTradeC
 		var investor_orders_out InvestorOrdersReply
 		investor_orders_out.Orders = fix_trade_client.investor_order_map[investor_credentials.InvestorName]
 
-		var message_out, _ = create_order_token(investor_orders_out, investor_credentials.InvestorSecret)
+		// var message_out, _ = create_order_token(investor_orders_out, investor_credentials.InvestorSecret)
 
-		c.String(200, string(message_out))
+		c.JSON(200, investor_orders_out)
 
 	})
 }
@@ -229,7 +228,7 @@ func InvestorOrderStatusService(rest_service *gin.Engine, fix_trade_client *FIXT
 
 		var order_status_request_in OrderStatusRequest
 		c.BindJSON(&order_status_request_in)
-		var investor_credentials = (*investors)[order_status_request_in.UserToken]
+		// var investor_credentials = (*investors)[order_status_request_in.UserToken]
 
 		var order_status_request_reply_out OrderStatusRequestReply
 
@@ -239,9 +238,9 @@ func InvestorOrderStatusService(rest_service *gin.Engine, fix_trade_client *FIXT
 			order_status_request_reply_out.OrderStatus[order] = fix_trade_client.getExecutionReport(order)
 		}
 
-		var message_out, _ = create_order_token(order_status_request_reply_out, investor_credentials.InvestorSecret)
+		// var message_out, _ = create_order_token(order_status_request_reply_out, investor_credentials.InvestorSecret)
 
-		c.String(200, string(message_out))
+		c.JSON(200, order_status_request_reply_out)
 
 	})
 }

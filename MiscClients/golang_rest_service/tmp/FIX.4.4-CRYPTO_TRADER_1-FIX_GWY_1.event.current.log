@@ -1,17 +1,26 @@
-2025/07/30 13:52:00.305876 Created session
-2025/07/30 13:52:01.000140 Connecting to: 127.0.0.1:15001
-2025/07/30 13:52:01.000490 Sending logon request
-2025/07/30 13:52:01.200299 Received logon response
-2025/07/30 13:52:39.054493 Sent test request TEST
-2025/07/30 13:55:56.600331 Created session
-2025/07/30 13:55:57.000046 Connecting to: 127.0.0.1:15001
-2025/07/30 13:55:57.000417 Sending logon request
-2025/07/30 13:55:57.691348 Received logon response
-2025/07/30 13:56:35.553301 Sent test request TEST
-2025/07/30 14:07:33.123069 Created session
-2025/07/30 14:07:34.001053 Connecting to: 127.0.0.1:15001
-2025/07/30 14:07:34.001984 Sending logon request
-2025/07/30 14:07:34.170858 Received logon response
-2025/07/30 14:08:12.107699 Sent test request TEST
-2025/07/30 14:39:24.078751 Sent test request TEST
-2025/07/30 14:42:43.127444 Created session
+2025/08/21 13:15:17.307721 Created session
+2025/08/21 13:15:18.000203 Connecting to: 127.0.0.1:15001
+2025/08/21 13:15:18.000510 Sending logon request
+2025/08/21 13:15:18.392097 Received logon response
+2025/08/21 13:26:28.794433 Created session
+2025/08/21 13:26:29.000142 Connecting to: 127.0.0.1:15001
+2025/08/21 13:26:29.000453 Sending logon request
+2025/08/21 13:26:29.834826 Received logon response
+2025/08/21 13:42:02.160509 Created session
+2025/08/21 13:42:03.001046 Connecting to: 127.0.0.1:15001
+2025/08/21 13:42:03.001506 Sending logon request
+2025/08/21 13:42:03.885996 Received logon response
+2025/08/21 13:54:09.709553 Disconnected
+2025/08/21 13:54:09.709608 Reconnecting in 30s
+2025/08/21 13:54:39.710325 Connecting to: 127.0.0.1:15001
+2025/08/21 13:54:39.710912 Failed to connect: dial tcp 127.0.0.1:15001: connect: connection refused
+2025/08/21 13:54:39.710971 Reconnecting in 30s
+2025/08/21 13:55:09.711607 Connecting to: 127.0.0.1:15001
+2025/08/21 13:55:09.712321 Failed to connect: dial tcp 127.0.0.1:15001: connect: connection refused
+2025/08/21 13:55:09.712453 Reconnecting in 30s
+2025/08/21 13:55:39.713158 Connecting to: 127.0.0.1:15001
+2025/08/21 13:55:39.714041 Failed to connect: dial tcp 127.0.0.1:15001: connect: connection refused
+2025/08/21 13:55:39.714169 Reconnecting in 30s
+2025/08/21 13:56:09.714965 Connecting to: 127.0.0.1:15001
+2025/08/21 13:56:09.715659 Failed to connect: dial tcp 127.0.0.1:15001: connect: connection refused
+2025/08/21 13:56:09.715758 Reconnecting in 30s

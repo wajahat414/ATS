@@ -34,19 +34,20 @@ func NewMarketDataSnapshot() InstrumentMarketData {
 
 func (mds *InstrumentMarketData) InsertMarketDataEntry(entry_type enum.MDEntryType, price int, size int) {
 
-	if entry_type == enum.MDEntryType_BID {
+	switch entry_type {
+case enum.MDEntryType_BID:
 		mds.Bids[price] = size
-	} else if entry_type == enum.MDEntryType_OFFER {
+	case enum.MDEntryType_OFFER:
 		mds.Asks[price] = size
-	} else if entry_type == enum.MDEntryType_TRADE {
+	case enum.MDEntryType_TRADE:
 		mds.LastTradedPrice = price
-	} else if entry_type == enum.MDEntryType_OPENING_PRICE {
+	case enum.MDEntryType_OPENING_PRICE:
 		mds.OpenPrice = price
-	} else if entry_type == enum.MDEntryType_TRADING_SESSION_LOW_PRICE {
+	case enum.MDEntryType_TRADING_SESSION_LOW_PRICE:
 		mds.LowPrice = price
-	} else if entry_type == enum.MDEntryType_TRADING_SESSION_HIGH_PRICE {
+	case enum.MDEntryType_TRADING_SESSION_HIGH_PRICE:
 		mds.HighPrice = price
-	} else if entry_type == enum.MDEntryType_TRADE_VOLUME {
+	case enum.MDEntryType_TRADE_VOLUME:
 		mds.Volume = size
 	}
 
