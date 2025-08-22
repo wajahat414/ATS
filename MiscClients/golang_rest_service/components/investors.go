@@ -29,12 +29,15 @@ func PopulateInvestorCredenital(investors_db string) map[string]InvestorCredenti
 	}
 
 	row, err := db.Query("SELECT * FROM investor")
-	defer row.Close()
-
+	if err != nil {
+		fmt.Println("Query failed:", err)
+		os.Exit(0)
+	}
 	if row == nil {
 		fmt.Println("Investor database is empty ... exiting")
 		os.Exit(0)
 	}
+	defer row.Close()
 
 	for row.Next() { // Iterate and fetch the records from result cursor
 		var jwt_token string
@@ -45,7 +48,7 @@ func PopulateInvestorCredenital(investors_db string) map[string]InvestorCredenti
 		token, err := jwt.Parse(jwt_token, func(token *jwt.Token) (interface{}, error) {
 			// Don't forget to validate the alg is what you expect:
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-				return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
+				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 			}
 
 			return []byte(secret), nil
@@ -61,7 +64,9 @@ func PopulateInvestorCredenital(investors_db string) map[string]InvestorCredenti
 			investor_credentials.InvestorSecret = secret
 			investor_credentials.InvestorName = name
 
+			// Map both the JWT token and the plain username to the same credentials
 			investor_credentials_map[jwt_token] = investor_credentials
+			investor_credentials_map[name] = investor_credentials
 
 		} else {
 			fmt.Println(err)

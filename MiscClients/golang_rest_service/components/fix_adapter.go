@@ -46,6 +46,9 @@ type FIXTradeClient struct {
 
 	serviceSessionID     quickfix.SessionID
 	fix_session_password string
+
+	// Optional callback to publish execution reports (e.g., to Kafka)
+	execReportHandler func(ExecutionReport)
 }
 
 func NewFIXTradeClient(password_in string) *FIXTradeClient {
@@ -90,9 +93,11 @@ func (fix_trade_client *FIXTradeClient) hasMarketData(instrument Instrument) boo
 func (fix_trade_client *FIXTradeClient) getInstrumentMarketData(instrument Instrument) InstrumentMarketData {
 	fix_trade_client.market_data_lock.Lock()
 	defer fix_trade_client.market_data_lock.Unlock()
-	var market_data_out = NewMarketDataSnapshot()
-	market_data_out = (*fix_trade_client.market_data[instrument])
-	return market_data_out
+	if md, ok := fix_trade_client.market_data[instrument]; ok && md != nil {
+		return *md
+	}
+	// return an empty snapshot if none exists
+	return NewMarketDataSnapshot()
 }
 
 func (fix_trade_client *FIXTradeClient) UpdateMarketData(instrument Instrument, entry_type enum.MDEntryType, price int, size int) {
@@ -117,8 +122,11 @@ func (fix_trade_client *FIXTradeClient) UpdateMarketData(instrument Instrument, 
 		instrument.SecurityExchange, instrument.Symbol, entry_type, price, size)
 
 	// Apply the update
-	md.InsertMarketDataEntry(entry_type, price, size)
+	if price > 0 {
+		md.InsertMarketDataEntry(entry_type, price, size)
+	}
 }
+
 func (e *FIXTradeClient) insertInvestorOrderMap(investor_name string, client_order_id string) {
 	e.order_status_lock.Lock()
 	e.investor_order_map[investor_name] =
@@ -136,6 +144,11 @@ func (fix_trade_client *FIXTradeClient) getExecutionReport(order_id string) []Ex
 	fix_trade_client.order_status_lock.Lock()
 	defer fix_trade_client.order_status_lock.Unlock()
 	return fix_trade_client.order_execution_report_map[order_id]
+}
+
+// SetExecutionReportHandler registers a callback invoked for every parsed execution report.
+func (fix_trade_client *FIXTradeClient) SetExecutionReportHandler(h func(ExecutionReport)) {
+	fix_trade_client.execReportHandler = h
 }
 
 // OnCreate implemented as part of Application interface
@@ -288,8 +301,11 @@ func (fix_trade_client *FIXTradeClient) FromApp(msg *quickfix.Message, sessionID
 			md_entry_type_repeating_group.Get(market_data_entry_index).Get(&entry_price)
 			md_entry_type_repeating_group.Get(market_data_entry_index).Get(&entry_size)
 
-			instrument_market_data.InsertMarketDataEntry(enum.MDEntryType(entry_type.String()),
-				int(entry_price.IntPart()), int(entry_size.IntPart()))
+			if entry_price.IntPart() > 0 {
+
+				instrument_market_data.InsertMarketDataEntry(enum.MDEntryType(entry_type.String()),
+					int(entry_price.IntPart()), int(entry_size.IntPart()))
+			}
 		}
 
 		fix_trade_client.insertMarketData(market_data_instrument, &instrument_market_data)
@@ -375,6 +391,10 @@ func (fix_trade_client *FIXTradeClient) FromApp(msg *quickfix.Message, sessionID
 		execution_report_out.AvgPx = int32(avg_px.IntPart())
 
 		fix_trade_client.insertExecutionReport(execution_report_out)
+		if fix_trade_client.execReportHandler != nil {
+			// Publish asynchronously to avoid blocking FIX processing path
+			go fix_trade_client.execReportHandler(execution_report_out)
+		}
 	}
 	return
 }
