@@ -301,20 +301,44 @@ namespace DistributedATS
     return result;
   }
 
+  // ...existing code...
   void Market::publishExecutionReport(DistributedATS_ExecutionReport::ExecutionReport &executionReport)
   {
-
     executionReport.ExecID(getNextExecutionReportID());
-    LoggerHelper::log_debug<std::stringstream, ExecutionReportLogger, DistributedATS_ExecutionReport::ExecutionReport>(logger,
-                                                                                                                       executionReport, "ExecutionReport");
+
+    // Count ERs before publish
+    er_published_.fetch_add(1, std::memory_order_relaxed);
+    try
+    {
+      // Prefer ExecType — this repo populates ExecType on fills
+      const char exec_type = executionReport.ExecType();
+      if (exec_type == FIX::ExecType_FILL || exec_type == FIX::ExecType_PARTIAL_FILL)
+      {
+        er_matched_.fetch_add(1, std::memory_order_relaxed);
+      }
+      // Optional: fall back on OrdStatus codes if your populate sets those
+      const char ord_status = executionReport.OrdStatus();
+      if (ord_status == '8')
+      { // Reject
+        er_rejected_.fetch_add(1, std::memory_order_relaxed);
+      }
+    }
+    catch (...)
+    {
+      // defensive
+    }
+
+    std::stringstream ss;
+    ExecutionReportLogger::log(ss, executionReport);
+    LOG4CXX_INFO(logger, "ER_PUBLISH " << ss.str());
 
     bool ret = dataWriterContainerPtr_->execution_report_dw->write(&executionReport);
-
     if (!ret)
     {
       LOG4CXX_ERROR(logger, "Execution Report write returned : " << ret);
     }
   }
+  // ...existing code...
 
   void Market::publishOrderMassCancelReport(DistributedATS_OrderMassCancelReport::OrderMassCancelReport &orderMassCancelReport)
   {
@@ -338,7 +362,7 @@ namespace DistributedATS
 
     bool ret = dataWriterContainerPtr_->order_cancel_reject_dw->write(&orderCancelReject);
 
-    if (ret)
+    if (!ret)
     {
       LOG4CXX_ERROR(logger, "Order Cancel Reject write returned: " << ret);
     }
@@ -471,6 +495,30 @@ namespace DistributedATS
 
     auto current_stats = stats_ptr_->find(book->symbol());
 
+    TOB tob;
+    {
+      auto it = depth->bids();
+      if (it != depth->end())
+      {
+        tob.bid_qty = static_cast<uint64_t>(it->aggregate_qty());
+        tob.ask_px = tob.ask_qty ? static_cast<double>(it->price()) : 0.0;
+      }
+    }
+    {
+      // Liquibook Depth supports asks() iterator
+      auto it = depth->asks();
+      if (it != depth->end())
+      {
+        tob.ask_qty = static_cast<uint64_t>(it->aggregate_qty());
+        tob.ask_px = tob.ask_qty ? static_cast<double>(it->price()) : 0.0;
+      }
+    }
+    tob.valid = (tob.bid_qty > 0 || tob.ask_qty > 0);
+    {
+      std::lock_guard<std::mutex> lk(tob_mtx_);
+      tob_cache_[book->symbol()] = tob;
+    }
+
     // populating stats
     if (current_stats != stats_ptr_->end())
     {
@@ -590,6 +638,43 @@ namespace DistributedATS
       mdEntry.MDEntrySize(MDEntrySize);
     else
       mdEntry.MDEntryPx(MDEntryPx);
+  }
+
+  // metrics related helper functions
+  bool Market::get_top_of_book(double &bid_px, uint64_t &bid_qty,
+                               double &ask_px, uint64_t &ask_qty) const
+  {
+    std::lock_guard<std::mutex> lk(tob_mtx_);
+    for (const auto &kv : tob_cache_)
+    {
+      const TOB &t = kv.second;
+      if (t.valid)
+      {
+        bid_px = t.bid_px;
+        bid_qty = t.bid_qty;
+        ask_px = t.ask_px;
+        ask_qty = t.ask_qty;
+        return true;
+      }
+    }
+    return false;
+  }
+  void Market::dump_metrics_and_book()
+  {
+    double bb_px = 0, ba_px = 0;
+    uint64_t bb_qty = 0, ba_qty = 0;
+    const bool has_tob = get_top_of_book(bb_px, bb_qty, ba_px, ba_qty);
+
+    LOG4CXX_INFO(logger,
+                 "ME_METRICS"
+                     << " nos_received=" << nos_received_.load()
+                     << " er_published=" << er_published_.load()
+                     << " er_matched=" << er_matched_.load()
+                     << " er_rejected=" << er_rejected_.load()
+                     << (has_tob
+                             ? (" tob={bid:" + std::to_string(bb_px) + "x" + std::to_string(bb_qty) +
+                                ", ask:" + std::to_string(ba_px) + "x" + std::to_string(ba_qty) + "}")
+                             : " tob={na}"));
   }
 
 } // namespace DistributedATS

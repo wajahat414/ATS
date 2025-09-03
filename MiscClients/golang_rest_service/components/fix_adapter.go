@@ -122,7 +122,7 @@ func (fix_trade_client *FIXTradeClient) UpdateMarketData(instrument Instrument, 
 		instrument.SecurityExchange, instrument.Symbol, entry_type, price, size)
 
 	// Apply the update
-	if price > 0 {
+	if price > 0 || size > 0 {
 		md.InsertMarketDataEntry(entry_type, price, size)
 	}
 }
@@ -393,7 +393,7 @@ func (fix_trade_client *FIXTradeClient) FromApp(msg *quickfix.Message, sessionID
 		fix_trade_client.insertExecutionReport(execution_report_out)
 		if fix_trade_client.execReportHandler != nil {
 			// Publish asynchronously to avoid blocking FIX processing path
-			go fix_trade_client.execReportHandler(execution_report_out)
+			fix_trade_client.execReportHandler(execution_report_out)
 		}
 	}
 	return

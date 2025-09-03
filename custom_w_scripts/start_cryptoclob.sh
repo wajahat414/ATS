@@ -12,6 +12,8 @@ export BASEDIR_ATS=/Users/wajahat/Documents/WorkSpace/ForexSystem/RefernceCodes/
 # change directory to MiscATS
 cd MiscATS
 
+rm -rf CryptoCLOB/logs
+
 # Run  start_ats.py script with path to crypto_ats.json
 python3 start_ats.py --ats CryptoCLOB/crypto_ats.json
 

@@ -1,9 +1,0 @@
-FROM ghcr.io/mkipnis/distributed_ats:latest
-
-EXPOSE 15001
-EXPOSE 16001
-EXPOSE 17001
-
-COPY dats_env.sh /usr/local/dats_env.sh
-COPY FastDDS.xml /usr/local/
-RUN chmod +x /usr/local/dats_env.sh

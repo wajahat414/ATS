@@ -1,8 +1,8 @@
-version: '3'
+version: "3"
 
 services:
   fast_dds_discovery:
-    container_name: fast_dds_discovery 
+    container_name: fast_dds_discovery
     image: ghcr.io/mkipnis/distributed_ats:latest
     command: >
       bash -c "LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/fastdds discovery -q 51000"
@@ -25,13 +25,13 @@ services:
       - "17001:17001"
     restart: unless-stopped
 
-  distributed_ats_webtrader:
-    container_name: distributed_ats_webtrader
-    image: ghcr.io/mkipnis/distributed_ats_webtrader:latest
-    depends_on:
-      - distributed_ats
-    volumes:
-      - ./webtrader_logs:/usr/local/tomcat/logs
-    ports:
-      - "8080:8080"
-    restart: unless-stopped
+  # distributed_ats_webtrader:
+  #   container_name: distributed_ats_webtrader
+  #   image: ghcr.io/mkipnis/distributed_ats_webtrader:latest
+  #   depends_on:
+  #     - distributed_ats
+  #   volumes:
+  #     - ./webtrader_logs:/usr/local/tomcat/logs
+  #   ports:
+  #     - "8080:8080"
+  #   restart: unless-stopped

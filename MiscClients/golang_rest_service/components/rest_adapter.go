@@ -48,9 +48,10 @@ type ExecutionReport struct {
 }
 
 type InvestorOrderRequest struct {
-	Instrument     Instrument     `json:"instrument"`
-	UserToken      string         `json:"user_token"`
-	NewOrderSingle NewOrderSingle `json:"new_order_single"`
+	Instrument        Instrument     `json:"instrument"`
+	UserToken         string         `json:"user_token"`
+	NewOrderSingle    NewOrderSingle `json:"new_order_single"`
+	OrigClientOrderID string         `json:"orig_cl_ord_id"`
 }
 
 type InvestorOrderReply struct {

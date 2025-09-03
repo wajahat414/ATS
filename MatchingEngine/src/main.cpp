@@ -81,247 +81,265 @@ std::atomic<bool> is_running;
 int main(int argc, char *argv[])
 {
 
-  try
-  {
-
-    std::string matching_engine_config_file = "";
-
-    boost::program_options::options_description options_desc{"Options"};
-
-    options_desc.add_options()("help,h", "Help screen")("config,c", boost::program_options::value<std::string>()->default_value(""), "Matching Engine Config File");
-
-    boost::program_options::variables_map vm;
-    boost::program_options::store(parse_command_line(argc, argv, options_desc), vm);
-    boost::program_options::notify(vm);
-
-    if (vm.count("help"))
-      std::cout << options_desc << '\n';
-    else if (vm.count("config"))
-      matching_engine_config_file = vm["config"].as<std::string>();
-
-    if (matching_engine_config_file.empty())
+    try
     {
-      std::cerr << "Error: Config file name is not specified." << std::endl;
-      return -1;
-    }
 
-    boost::property_tree::ptree pt;
-    boost::property_tree::ini_parser::read_ini(matching_engine_config_file, pt);
+        std::string matching_engine_config_file = "";
 
-    std::string data_service_name = pt.get<std::string>("matchingengine.dataservice_name");
-    std::string market_name = pt.get<std::string>("matchingengine.market_name");
+        boost::program_options::options_description options_desc{"Options"};
 
-    int price_depth_pub_interval = pt.get<int>("marketdata.price_depth_pub_interval");
+        options_desc.add_options()("help,h", "Help screen")("config,c", boost::program_options::value<std::string>()->default_value(""), "Matching Engine Config File");
 
-    LOG4CXX_INFO(logger, "Market Name|" << market_name
-                                        << "|Data Service Name|" << data_service_name << "|Price Depth Publication Interval|" << price_depth_pub_interval);
+        boost::program_options::variables_map vm;
+        boost::program_options::store(parse_command_line(argc, argv, options_desc), vm);
+        boost::program_options::notify(vm);
 
-    // Enqueue incremental market data update,
-    // but publish conflated updates from
-    // the MarketData Service Thread
-    auto price_depth_publisher_queue_ptr =
-        std::make_shared<DistributedATS::PriceDepthPublisherQueue>();
+        if (vm.count("help"))
+            std::cout << options_desc << '\n';
+        else if (vm.count("config"))
+            matching_engine_config_file = vm["config"].as<std::string>();
 
-    auto dataWriterContainer = std::make_shared<DistributedATS::DataWriterContainer>();
+        if (matching_engine_config_file.empty())
+        {
+            std::cerr << "Error: Config file name is not specified." << std::endl;
+            return -1;
+        }
 
-    auto market =
-        std::make_shared<DistributedATS::Market>(dataWriterContainer,
-                                                 market_name, data_service_name,
-                                                 price_depth_publisher_queue_ptr);
+        boost::property_tree::ptree pt;
+        boost::property_tree::ini_parser::read_ini(matching_engine_config_file, pt);
 
-    std::atomic_init(&is_running, true);
+        std::string data_service_name = pt.get<std::string>("matchingengine.dataservice_name");
+        std::string market_name = pt.get<std::string>("matchingengine.market_name");
 
-    // filter expression for the MARKET_NAME specified in config file
-    // filter for messages for this market/security exchange
-    std::string destination_market_filter = "DATS_Destination = %0 and SecurityExchange = %1";
+        int price_depth_pub_interval = pt.get<int>("marketdata.price_depth_pub_interval");
 
-    // filter for mass cancel - when client disconnects all orders get cancelled
-    std::string matching_engine_filter = "DATS_Destination = %0";
+        LOG4CXX_INFO(logger, "Market Name|" << market_name
+                                            << "|Data Service Name|" << data_service_name << "|Price Depth Publication Interval|" << price_depth_pub_interval);
 
-    // market filter: Securities List, Open Prices(Market Data Snap Shot)
-    std::string market_filter = "DATS_DestinationUser = %0";
+        // Enqueue incremental market data update,
+        // but publish conflated updates from
+        // the MarketData Service Thread
+        auto price_depth_publisher_queue_ptr =
+            std::make_shared<DistributedATS::PriceDepthPublisherQueue>();
 
-    auto participant_ptr =
-        std::make_shared<distributed_ats_utils::basic_domain_participant>(0, market_name);
+        auto dataWriterContainer = std::make_shared<DistributedATS::DataWriterContainer>();
 
-    participant_ptr->create_subscriber();
-    participant_ptr->create_publisher();
+        auto market =
+            std::make_shared<DistributedATS::Market>(dataWriterContainer,
+                                                     market_name, data_service_name,
+                                                     price_depth_publisher_queue_ptr);
 
-    // Incoming data
-    // New Order Single:
-    // Topic
-    auto new_order_single_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_NewOrderSingle::NewOrderSinglePubSubType,
-            DistributedATS_NewOrderSingle::NewOrderSingle>(NEW_ORDER_SINGLE_TOPIC_NAME);
+        std::atomic_init(&is_running, true);
 
-    std::cout << "Kuddos Here is the config of the new order starts" << std::endl;
+        // thread for printing metrics
 
-    auto new_order_single_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(new_order_single_topic_tuple,
-                                                new MatchingEngine::NewOrderSingleDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_NEW_ORDER_SINGLE", destination_market_filter,
-                                                {"MATCHING_ENGINE", market_name});
+        std::atomic<bool> metrics_run{true};
+        std::thread metrics_thread([&]()
+                                   {
+            using namespace std::chrono_literals;
+            while(metrics_run.load()){
+                try {
+                    market->dump_metrics_and_book();
+                    std::this_thread::sleep_for(5s);
+                }
+                catch(...){}
+            } });
+        //
 
-    auto order_cancel_request_topic_tuple = participant_ptr->make_topic<
-        DistributedATS_OrderCancelRequest::OrderCancelRequestPubSubType,
-        DistributedATS_OrderCancelRequest::OrderCancelRequest>(ORDER_CANCEL_REQUEST_TOPIC_NAME);
+        // filter expression for the MARKET_NAME specified in config file
+        // filter for messages for this market/security exchange
+        std::string destination_market_filter = "DATS_Destination = %0 and SecurityExchange = %1";
 
-    auto order_cancel_request_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(order_cancel_request_topic_tuple,
-                                                new MatchingEngine::OrderCancelRequestDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_ORDER_CANCEL_REQUEST",
-                                                destination_market_filter,
-                                                {"MATCHING_ENGINE", market_name});
+        // filter for mass cancel - when client disconnects all orders get cancelled
+        std::string matching_engine_filter = "DATS_Destination = %0";
 
-    auto order_mass_cancel_request_topic_tuple = participant_ptr->make_topic<
-        DistributedATS_OrderMassCancelRequest::OrderMassCancelRequestPubSubType,
-        DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest>(ORDER_MASS_CANCEL_REQUEST_TOPIC_NAME);
-    auto order_mass_cancel_request_topic_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(order_mass_cancel_request_topic_tuple,
-                                                new MatchingEngine::OrderMassCancelRequestDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_ORDER_MASS_CANCEL_REQUEST",
-                                                matching_engine_filter, {"MATCHING_ENGINE"});
+        // market filter: Securities List, Open Prices(Market Data Snap Shot)
+        std::string market_filter = "DATS_DestinationUser = %0";
 
-    auto order_cancel_replace_request_topic_tuple = participant_ptr->make_topic<
-        DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequestPubSubType,
-        DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest>(ORDER_CANCEL_REPLACE_REQUEST_TOPIC_NAME);
-    auto order_cancel_replace_request_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(order_cancel_replace_request_topic_tuple,
-                                                new MatchingEngine::OrderCancelReplaceRequestDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_ORDER_CANCEL_REPLACE_REQUEST", destination_market_filter,
-                                                {"MATCHING_ENGINE", "SecurityExchange"});
+        auto participant_ptr =
+            std::make_shared<distributed_ats_utils::basic_domain_participant>(0, market_name);
 
-    auto security_list_topic_tuple = participant_ptr->make_topic<
-        DistributedATS_SecurityList::SecurityListPubSubType,
-        DistributedATS_SecurityList::SecurityList>(SECURITY_LIST_TOPIC_NAME);
-    auto security_list_topic_request_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(security_list_topic_tuple,
-                                                new DistributedATS::SecurityListDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_SECURITY_LIST", market_filter, {market->getMarketName()});
+        participant_ptr->create_subscriber();
+        participant_ptr->create_publisher();
 
-    auto market_data_snapshot_full_refresh_topic_tuple = participant_ptr->make_topic<
-        DistributedATS_MarketDataSnapshotFullRefresh::
-            MarketDataSnapshotFullRefreshPubSubType,
-        DistributedATS_MarketDataSnapshotFullRefresh::
-            MarketDataSnapshotFullRefresh>(MARKET_DATA_SNAPSHOT_FULL_REFRESH_TOPIC_NAME);
-    auto market_data_snapshot_full_refresh_data_reader_tuple =
-        participant_ptr->make_data_reader_tuple(market_data_snapshot_full_refresh_topic_tuple,
-                                                new DistributedATS::MarketDataSnapshotFullRefreshDataReaderListenerImpl(market),
-                                                "FILTER_MATCHING_ENGINE_FULL_SNAPSHOT_REQUEST", market_filter, {market->getMarketName()});
+        // Incoming data
+        // New Order Single:
+        // Topic
+        auto new_order_single_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_NewOrderSingle::NewOrderSinglePubSubType,
+                DistributedATS_NewOrderSingle::NewOrderSingle>(NEW_ORDER_SINGLE_TOPIC_NAME);
 
-    //
-    // Outgoing data
-    //
-    // Execution Reports
-    // Topic
-    auto execution_report_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_ExecutionReport::ExecutionReportPubSubType,
-            DistributedATS_ExecutionReport::ExecutionReport>(
-            EXECUTION_REPORT_TOPIC_NAME);
-    ;
-    // Data Writer
-    dataWriterContainer->execution_report_dw =
-        participant_ptr->make_data_writer(execution_report_topic_tuple);
+        std::cout << "Kuddos Here is the config of the new order starts" << std::endl;
 
-    // Topic to publish status of mass cancel report
-    // Topic
-    auto order_mass_cancel_report_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_OrderMassCancelReport::OrderMassCancelReportPubSubType,
-            DistributedATS_OrderMassCancelReport::OrderMassCancelReport>(
-            ORDER_MASS_CANCEL_REPORT_TOPIC_NAME);
+        auto new_order_single_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(new_order_single_topic_tuple,
+                                                    new MatchingEngine::NewOrderSingleDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_NEW_ORDER_SINGLE", destination_market_filter,
+                                                    {"MATCHING_ENGINE", market_name});
 
-    dataWriterContainer->order_mass_cancel_report_dw = participant_ptr->make_data_writer(
-        order_mass_cancel_report_topic_tuple);
+        auto order_cancel_request_topic_tuple = participant_ptr->make_topic<
+            DistributedATS_OrderCancelRequest::OrderCancelRequestPubSubType,
+            DistributedATS_OrderCancelRequest::OrderCancelRequest>(ORDER_CANCEL_REQUEST_TOPIC_NAME);
 
-    // Topic to request list of securities to setup order books
-    // Topic
-    auto security_list_request_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_SecurityListRequest::SecurityListRequestPubSubType,
-            DistributedATS_SecurityListRequest::SecurityListRequest>(
-            SECURITY_LIST_REQUEST_TOPIC_NAME);
+        auto order_cancel_request_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(order_cancel_request_topic_tuple,
+                                                    new MatchingEngine::OrderCancelRequestDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_ORDER_CANCEL_REQUEST",
+                                                    destination_market_filter,
+                                                    {"MATCHING_ENGINE", market_name});
 
-    DistributedATS::security_list_request_data_writer_listener_ptr
-        sec_list_req_dw_ptr(new DistributedATS::SecurityListRequestDataWriterListener(market));
+        auto order_mass_cancel_request_topic_tuple = participant_ptr->make_topic<
+            DistributedATS_OrderMassCancelRequest::OrderMassCancelRequestPubSubType,
+            DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest>(ORDER_MASS_CANCEL_REQUEST_TOPIC_NAME);
+        auto order_mass_cancel_request_topic_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(order_mass_cancel_request_topic_tuple,
+                                                    new MatchingEngine::OrderMassCancelRequestDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_ORDER_MASS_CANCEL_REQUEST",
+                                                    matching_engine_filter, {"MATCHING_ENGINE"});
 
-    dataWriterContainer->security_list_request_dw =
-        participant_ptr->make_data_writer(security_list_request_topic_tuple, sec_list_req_dw_ptr.get());
+        auto order_cancel_replace_request_topic_tuple = participant_ptr->make_topic<
+            DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequestPubSubType,
+            DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest>(ORDER_CANCEL_REPLACE_REQUEST_TOPIC_NAME);
+        auto order_cancel_replace_request_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(order_cancel_replace_request_topic_tuple,
+                                                    new MatchingEngine::OrderCancelReplaceRequestDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_ORDER_CANCEL_REPLACE_REQUEST", destination_market_filter,
+                                                    {"MATCHING_ENGINE", "SecurityExchange"});
 
-    // Topic to publish order cancel reject
-    // Topic
-    auto order_cancel_reject_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_OrderCancelReject::OrderCancelRejectPubSubType,
-            DistributedATS_OrderCancelReject::OrderCancelReject>(
-            ORDER_CANCEL_REJECT_TOPIC_NAME);
+        auto security_list_topic_tuple = participant_ptr->make_topic<
+            DistributedATS_SecurityList::SecurityListPubSubType,
+            DistributedATS_SecurityList::SecurityList>(SECURITY_LIST_TOPIC_NAME);
+        auto security_list_topic_request_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(security_list_topic_tuple,
+                                                    new DistributedATS::SecurityListDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_SECURITY_LIST", market_filter, {market->getMarketName()});
 
-    dataWriterContainer->order_cancel_reject_dw =
-        participant_ptr->make_data_writer(order_cancel_reject_topic_tuple);
+        auto market_data_snapshot_full_refresh_topic_tuple = participant_ptr->make_topic<
+            DistributedATS_MarketDataSnapshotFullRefresh::
+                MarketDataSnapshotFullRefreshPubSubType,
+            DistributedATS_MarketDataSnapshotFullRefresh::
+                MarketDataSnapshotFullRefresh>(MARKET_DATA_SNAPSHOT_FULL_REFRESH_TOPIC_NAME);
+        auto market_data_snapshot_full_refresh_data_reader_tuple =
+            participant_ptr->make_data_reader_tuple(market_data_snapshot_full_refresh_topic_tuple,
+                                                    new DistributedATS::MarketDataSnapshotFullRefreshDataReaderListenerImpl(market),
+                                                    "FILTER_MATCHING_ENGINE_FULL_SNAPSHOT_REQUEST", market_filter, {market->getMarketName()});
 
-    // Topic to publish conflated incremental market data refresh
-    // Topic
-    auto market_data_incremental_refresh_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_MarketDataIncrementalRefresh::
-                MarketDataIncrementalRefreshPubSubType,
-            DistributedATS_MarketDataIncrementalRefresh::
-                MarketDataIncrementalRefresh>(
-            MARKET_DATA_INCREMENTAL_REFRESH_TOPIC_NAME);
+        //
+        // Outgoing data
+        //
+        // Execution Reports
+        // Topic
+        auto execution_report_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_ExecutionReport::ExecutionReportPubSubType,
+                DistributedATS_ExecutionReport::ExecutionReport>(
+                EXECUTION_REPORT_TOPIC_NAME);
+        ;
+        // Data Writer
+        dataWriterContainer->execution_report_dw =
+            participant_ptr->make_data_writer(execution_report_topic_tuple);
 
-    dataWriterContainer->market_data_incremental_refresh_dw = participant_ptr->make_data_writer(
-        market_data_incremental_refresh_topic_tuple);
-    // Market Setter
-    /// dataWriterContainer->setMarketDataIncrementalRefreshDataWriter(
-    //  market_data_incremental_refresh_dw);
+        // Topic to publish status of mass cancel report
+        // Topic
+        auto order_mass_cancel_report_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_OrderMassCancelReport::OrderMassCancelReportPubSubType,
+                DistributedATS_OrderMassCancelReport::OrderMassCancelReport>(
+                ORDER_MASS_CANCEL_REPORT_TOPIC_NAME);
 
-    // Market Data Request
-    // Topic
-    auto market_data_request_topic_tuple =
-        participant_ptr->make_topic<
-            DistributedATS_MarketDataRequest::MarketDataRequestPubSubType,
-            DistributedATS_MarketDataRequest::MarketDataRequest>(
-            MARKET_DATA_REQUEST_TOPIC_NAME);
-    // Data Writer
-    dataWriterContainer->market_data_request_dw =
-        participant_ptr->make_data_writer(market_data_request_topic_tuple);
+        dataWriterContainer->order_mass_cancel_report_dw = participant_ptr->make_data_writer(
+            order_mass_cancel_report_topic_tuple);
 
-    // lets create and active conflated market data publisher
-    auto price_depth_publisher_service_ptr =
-        std::make_shared<DistributedATS::PriceDepthPublisherService>(
-            dataWriterContainer->market_data_incremental_refresh_dw.get(),
-            price_depth_publisher_queue_ptr,
-            price_depth_pub_interval);
+        // Topic to request list of securities to setup order books
+        // Topic
+        auto security_list_request_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_SecurityListRequest::SecurityListRequestPubSubType,
+                DistributedATS_SecurityListRequest::SecurityListRequest>(
+                SECURITY_LIST_REQUEST_TOPIC_NAME);
 
-    std::atomic_init(&is_running, true);
+        DistributedATS::security_list_request_data_writer_listener_ptr
+            sec_list_req_dw_ptr(new DistributedATS::SecurityListRequestDataWriterListener(market));
 
-    boost::asio::io_context io_service;
-    boost::asio::signal_set signals(io_service, SIGINT, SIGTERM);
+        dataWriterContainer->security_list_request_dw =
+            participant_ptr->make_data_writer(security_list_request_topic_tuple, sec_list_req_dw_ptr.get());
 
-    signals.async_wait([&](const boost::system::error_code &ec, int signal_number)
-                       {
+        // Topic to publish order cancel reject
+        // Topic
+        auto order_cancel_reject_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_OrderCancelReject::OrderCancelRejectPubSubType,
+                DistributedATS_OrderCancelReject::OrderCancelReject>(
+                ORDER_CANCEL_REJECT_TOPIC_NAME);
+
+        dataWriterContainer->order_cancel_reject_dw =
+            participant_ptr->make_data_writer(order_cancel_reject_topic_tuple);
+
+        // Topic to publish conflated incremental market data refresh
+        // Topic
+        auto market_data_incremental_refresh_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_MarketDataIncrementalRefresh::
+                    MarketDataIncrementalRefreshPubSubType,
+                DistributedATS_MarketDataIncrementalRefresh::
+                    MarketDataIncrementalRefresh>(
+                MARKET_DATA_INCREMENTAL_REFRESH_TOPIC_NAME);
+
+        dataWriterContainer->market_data_incremental_refresh_dw = participant_ptr->make_data_writer(
+            market_data_incremental_refresh_topic_tuple);
+        // Market Setter
+        /// dataWriterContainer->setMarketDataIncrementalRefreshDataWriter(
+        //  market_data_incremental_refresh_dw);
+
+        // Market Data Request
+        // Topic
+        auto market_data_request_topic_tuple =
+            participant_ptr->make_topic<
+                DistributedATS_MarketDataRequest::MarketDataRequestPubSubType,
+                DistributedATS_MarketDataRequest::MarketDataRequest>(
+                MARKET_DATA_REQUEST_TOPIC_NAME);
+        // Data Writer
+        dataWriterContainer->market_data_request_dw =
+            participant_ptr->make_data_writer(market_data_request_topic_tuple);
+
+        // lets create and active conflated market data publisher
+        auto price_depth_publisher_service_ptr =
+            std::make_shared<DistributedATS::PriceDepthPublisherService>(
+                dataWriterContainer->market_data_incremental_refresh_dw.get(),
+                price_depth_publisher_queue_ptr,
+                price_depth_pub_interval);
+
+        std::atomic_init(&is_running, true);
+
+        boost::asio::io_context io_service;
+        boost::asio::signal_set signals(io_service, SIGINT, SIGTERM);
+
+        signals.async_wait([&](const boost::system::error_code &ec, int signal_number)
+                           {
           if (!ec) {
               std::cout << "Signal number " << signal_number << std::endl;
               std::cout << "Gracefully stopping the timer and exiting"
                         << std::endl;
               is_running.store(false);
+              metrics_run.store(false);
+              if (metrics_thread.joinable()) metrics_thread.join();
+
           } else {
               std::cout << "Error " << ec.value() << " - " << ec.message()
                         << " - Signal number - " << signal_number << std::endl;
           } });
 
-    io_service.run();
-  }
-  catch (std::exception &e)
-  {
+        io_service.run();
+    }
+    catch (std::exception &e)
+    {
 
-    LOG4CXX_ERROR(logger, "Exception during the initialization of Matching Engine :" << e.what());
+        LOG4CXX_ERROR(logger, "Exception during the initialization of Matching Engine :" << e.what());
 
-    std::cout << e.what() << std::endl;
-    return 1;
-  }
+        std::cout << e.what() << std::endl;
+        return 1;
+    }
 
-  return 0;
+    return 0;
 };

@@ -68,6 +68,7 @@ namespace MatchingEngine
             std::cout << "Sample taken successfully" << std::endl;
             if (info.valid_data)
             {
+                _market->on_new_order_received();
                 std::cout << "Valid data received!" << std::endl;
                 std::cout << "DATS_Destination: " << new_order_single.DATS_Destination() << std::endl;
                 std::cout << "SecurityExchange: " << new_order_single.SecurityExchange() << std::endl;

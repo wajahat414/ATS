@@ -1,10 +1,12 @@
 
 #include <iostream>
+
 #include <BasicDomainParticipant.h>
 #include "AuthService.h"
 #include "RefDataService.h"
 #include "MarketDataService.h"
 #include "OrderMassStatusRequestService.h"
+
 #include "SQLiteConnection.hpp"
 #include <memory>
 #include <quickfix/FixValues.h>

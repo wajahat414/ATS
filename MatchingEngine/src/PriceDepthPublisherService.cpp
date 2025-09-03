@@ -5,7 +5,7 @@
    that integrates QuickFIX and LiquiBook over DDS. This project simplifies
    the process of having multiple FIX gateways communicating with multiple
    matching engines in realtime.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
@@ -35,37 +35,38 @@
 #include <thread>
 #include <chrono>
 
-
 using namespace DistributedATS;
 
+static std::atomic<uint64_t> g_md_seq{0};
 
 PriceDepthPublisherService::PriceDepthPublisherService(
-                                                       eprosima::fastdds::dds::DataWriter*
+    eprosima::fastdds::dds::DataWriter *
         market_data_incremental_refresh_dw,
-        PriceDepthPublisherQueuePtr price_depth_publisher_queue_ptr,
-        int price_depth_pub_interval)
-    : _price_depth_publisher_queue_ptr( price_depth_publisher_queue_ptr ),
-        _market_data_incremental_refresh_dw(market_data_incremental_refresh_dw),
-        _price_depth_pub_interval(price_depth_pub_interval)
+    PriceDepthPublisherQueuePtr price_depth_publisher_queue_ptr,
+    int price_depth_pub_interval)
+    : _price_depth_publisher_queue_ptr(price_depth_publisher_queue_ptr),
+      _market_data_incremental_refresh_dw(market_data_incremental_refresh_dw),
+      _price_depth_pub_interval(price_depth_pub_interval)
 {
-    
-    std::atomic_init(&_is_running, true);
-    
-    _publisher_thread = std::thread(&PriceDepthPublisherService::service, this);
-    
+
+  std::atomic_init(&_is_running, true);
+
+  _publisher_thread = std::thread(&PriceDepthPublisherService::service, this);
 }
 
 PriceDepthPublisherService::~PriceDepthPublisherService()
 {
-    std::atomic_init(&_is_running, false);
-    _publisher_thread.join();
+  std::atomic_init(&_is_running, false);
+  _publisher_thread.join();
 };
 
 int PriceDepthPublisherService::service()
 {
-  while (_is_running) {
-    if (_price_depth_publisher_queue_ptr->empty()) {
-        
+  while (_is_running)
+  {
+    if (_price_depth_publisher_queue_ptr->empty())
+    {
+
       std::this_thread::sleep_for(std::chrono::duration<long double, std::micro>(_price_depth_pub_interval));
       continue;
     };
@@ -77,25 +78,22 @@ int PriceDepthPublisherService::service()
     /*std::cout << "Queue Size : "
               << _price_depth_publisher_queue_ptr->size()
               << std::endl;*/
-      
-      std::shared_ptr<DistributedATS::MarketDataUpdate> market_data_update;
-      
-      std::map<std::string,
-        DistributedATS_MarketDataIncrementalRefresh::MarketDataIncrementalRefresh>
-          latestMarketDataUpdates;
-       
-      
-          while (_price_depth_publisher_queue_ptr->pop(market_data_update))
-          {
-              latestMarketDataUpdates[market_data_update->symbol] = market_data_update->priceDepth;
-              
-              std::stringstream ss;
-              MarketDataIncrementalRefreshLogger::log(ss, latestMarketDataUpdates[market_data_update->symbol]);
-              LOG4CXX_INFO(logger, "MarketDataIncrementalRefresh : [" <<  ss.str() << "]");
-              std::cout << "Update : " << ss.str() << std::endl;
-              
-          }
-      
+
+    std::shared_ptr<DistributedATS::MarketDataUpdate> market_data_update;
+
+    std::map<std::string,
+             DistributedATS_MarketDataIncrementalRefresh::MarketDataIncrementalRefresh>
+        latestMarketDataUpdates;
+
+    while (_price_depth_publisher_queue_ptr->pop(market_data_update))
+    {
+      latestMarketDataUpdates[market_data_update->symbol] = market_data_update->priceDepth;
+
+      std::stringstream ss;
+      MarketDataIncrementalRefreshLogger::log(ss, latestMarketDataUpdates[market_data_update->symbol]);
+      LOG4CXX_INFO(logger, "MarketDataIncrementalRefresh : [" << ss.str() << "]");
+      std::cout << "Update : " << ss.str() << std::endl;
+    }
 
     DistributedATS_MarketDataIncrementalRefresh::MarketDataIncrementalRefresh
         chunkedIncrementalMarketDataRefresh;
@@ -124,10 +122,11 @@ int PriceDepthPublisherService::service()
       }
 
       if ((++market_data_update_index) % max_chunk_size == 0 ||
-          market_data_update_index == latestMarketDataUpdates.size()) {
+          market_data_update_index == latestMarketDataUpdates.size())
+      {
         LoggerHelper::log_debug<
             std::stringstream, MarketDataIncrementalRefreshLogger,
-          DistributedATS_MarketDataIncrementalRefresh::MarketDataIncrementalRefresh>(
+            DistributedATS_MarketDataIncrementalRefresh::MarketDataIncrementalRefresh>(
             logger,
             chunkedIncrementalMarketDataRefresh,
             "MarketDataIncrementalRefresh");
@@ -140,11 +139,11 @@ int PriceDepthPublisherService::service()
 
         int ret = _market_data_incremental_refresh_dw->write(
             &chunkedIncrementalMarketDataRefresh);
-          
-          if (ret != eprosima::fastdds::dds::RETCODE_OK) {
-              LOG4CXX_ERROR(logger, "MarketDataIncrementalRefresh :" << ret);
-          }
 
+        if (ret != eprosima::fastdds::dds::RETCODE_OK)
+        {
+          LOG4CXX_ERROR(logger, "MarketDataIncrementalRefresh :" << ret);
+        }
       }
     }
 

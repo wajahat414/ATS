@@ -107,7 +107,7 @@ namespace distributed_ats_utils
             eprosima::fastdds::dds::DomainParticipantQos participantQos;
 
             participantQos.name(_participant_name);
-            participantQos.setup_transports(eprosima::fastdds::rtps::BuiltinTransports::UDPv4);
+            participantQos.setup_transports(eprosima::fastdds::rtps::BuiltinTransports::LARGE_DATA);
 
             _participant = domain_participant_ptr(eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->create_participant(domain_id, participantQos));
 
