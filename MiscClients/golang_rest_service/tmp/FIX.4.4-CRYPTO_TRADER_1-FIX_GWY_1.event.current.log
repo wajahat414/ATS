@@ -1,0 +1,8 @@
+2025/09/09 12:59:59.713494 Created session
+2025/09/09 13:00:00.000503 Connecting to: 127.0.0.1:15001
+2025/09/09 13:00:00.001284 Sending logon request
+2025/09/09 13:00:01.051503 Received logon response
+2025/09/09 13:00:39.058696 Sent test request TEST
+2025/09/09 13:17:14.991966 Sent test request TEST
+2025/09/09 13:38:42.627249 Disconnected
+2025/09/09 13:38:42.627661 Reconnecting in 30s

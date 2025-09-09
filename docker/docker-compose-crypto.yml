@@ -12,7 +12,7 @@ services:
 
   distributed_ats:
     container_name: distributed_ats
-    image: ghcr.io/mkipnis/dats_crypto_clob:latest
+    image: dats_crypto_clob:latest
     depends_on:
       - fast_dds_discovery
     command: >

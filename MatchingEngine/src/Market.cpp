@@ -375,6 +375,9 @@ namespace DistributedATS
   {
     order->onAccepted();
 
+    // Count accepted new orders
+    on_new_order_received();
+
     DistributedATS_ExecutionReport::ExecutionReport executionReport;
     order->populateExecutionReport(executionReport, FIX::ExecType_NEW);
 
@@ -501,7 +504,7 @@ namespace DistributedATS
       if (it != depth->end())
       {
         tob.bid_qty = static_cast<uint64_t>(it->aggregate_qty());
-        tob.ask_px = tob.ask_qty ? static_cast<double>(it->price()) : 0.0;
+        tob.bid_px = tob.bid_qty ? static_cast<double>(it->price()) : 0.0;
       }
     }
     {

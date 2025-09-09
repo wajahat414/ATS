@@ -1,0 +1,1276 @@
+[2025-09-09 12:57:58.730107] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting up
+[2025-09-09 12:57:58.848969] root INFO  FIXGateway 0x7ffffd33cfc0 - SenderCompID : [FIX_GWY_1] | DataService : [DATA_SERVICE_A]
+[2025-09-09 12:57:58.859362] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+
+[2025-09-09 12:57:58.867331] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+
+[2025-09-09 12:57:58.868474] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+
+[2025-09-09 12:57:58.869464] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+
+[2025-09-09 12:57:58.870711] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+
+[2025-09-09 12:57:58.871576] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
+
+[2025-09-09 12:57:58.872471] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
+
+[2025-09-09 12:57:58.876693] root INFO  FIXGateway 0x7ffffd33cfc0 - PubListener Description : Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
+
+[2025-09-09 12:57:58.980541] root INFO  FIXGateway 0x7ffffd33cfc0 - Session Created :FIX.4.4:DEFAULT->DEFAULT
+[2025-09-09 12:57:58.986500] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [LogonDataReaderListenerImpl]
+[2025-09-09 12:57:59.003126] root INFO  FIXGateway 0x7ffffd33cfc0 - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+ Count : 1
+[2025-09-09 12:57:59.009148] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [LogoutDataReaderListenerImpl]
+[2025-09-09 12:57:59.011213] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [SecurityListDataReaderListenerImpl]
+[2025-09-09 12:57:59.014041] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [MarketDataIncrementalRefreshDataReaderListenerImpl]
+[2025-09-09 12:57:59.015870] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 12:57:59.018042] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [ExecutionReportDataReaderListenerImpl]
+[2025-09-09 12:57:59.019977] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [OrderCancelRejectDataReaderListenerImpl]
+[2025-09-09 12:57:59.021784] root INFO  FIXGateway 0x7ffffd33cfc0 - Starting processor : [OrderMassCancelReportDataReaderListenerImpl]
+[2025-09-09 12:57:59.538518] root INFO  dds.tcp.41555 0x7ffff37fe6c0 - Publisher matched:Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+ Count : 1
+[2025-09-09 12:57:59.539197] root INFO  dds.tcp.41555 0x7ffff37fe6c0 - Publisher matched:Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+ Count : 1
+[2025-09-09 12:57:59.539662] root INFO  dds.tcp.41555 0x7ffff37fe6c0 - Publisher matched:Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+ Count : 1
+[2025-09-09 12:57:59.540089] root INFO  dds.tcp.41555 0x7ffff37fe6c0 - Publisher matched:Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+ Count : 1
+[2025-09-09 12:58:00.490440] root INFO  dds.tcp.41555 0x7ffff2ffd6c0 - Publisher matched:Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+ Count : 2
+[2025-09-09 12:58:00.490953] root INFO  dds.tcp.41555 0x7ffff2ffd6c0 - Publisher matched:Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+ Count : 2
+[2025-09-09 12:58:00.491576] root INFO  dds.tcp.41555 0x7ffff2ffd6c0 - Publisher matched:Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+ Count : 2
+[2025-09-09 12:58:00.492054] root INFO  dds.tcp.41555 0x7ffff2ffd6c0 - Publisher matched:Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+ Count : 2
+[2025-09-09 12:58:00.541005] root INFO  dds.tcp.41555 0x7ffff27fc6c0 - Publisher matched:Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
+ Count : 1
+[2025-09-09 12:58:00.541468] root INFO  dds.tcp.41555 0x7ffff27fc6c0 - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+ Count : 2
+[2025-09-09 12:58:00.542078] root INFO  dds.tcp.41555 0x7ffff27fc6c0 - Publisher matched:Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
+ Count : 1
+[2025-09-09 12:58:00.542407] root INFO  dds.tcp.41555 0x7ffff27fc6c0 - Publisher matched:Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
+ Count : 1
+[2025-09-09 12:58:01.590756] root INFO  dds.tcp.40694 0x7fffe8ff96c0 - Publisher matched:Type : DistributedATS_SecurityListRequest::SecurityListRequest - Name : SECURITY_LIST_REQUEST_TOPIC_NAME
+ Count : 2
+[2025-09-09 12:58:01.591261] root INFO  dds.tcp.40694 0x7fffe8ff96c0 - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+ Count : 3
+[2025-09-09 12:58:01.591729] root INFO  dds.tcp.40694 0x7fffe8ff96c0 - Publisher matched:Type : DistributedATS_MarketDataRequest::MarketDataRequest - Name : MARKET_DATA_REQUEST_TOPIC_NAME
+ Count : 2
+[2025-09-09 12:58:01.592215] root INFO  dds.tcp.40694 0x7fffe8ff96c0 - Publisher matched:Type : DistributedATS_OrderMassStatusRequest::OrderMassStatusRequest - Name : ORDER_MASS_STATUS_REQUEST_TOPIC
+ Count : 2
+[2025-09-09 12:58:01.661147] root INFO  dds.tcp.52574 0x7fffe3fff6c0 - Publisher matched:Type : DistributedATS_NewOrderSingle::NewOrderSingle - Name : NEW_ORDER_SINGLE_TOPIC
+ Count : 3
+[2025-09-09 12:58:01.661607] root INFO  dds.tcp.52574 0x7fffe3fff6c0 - Publisher matched:Type : DistributedATS_OrderCancelRequest::OrderCancelRequest - Name : ORDER_CANCEL_REQUEST_TOPIC
+ Count : 3
+[2025-09-09 12:58:01.661849] root INFO  dds.tcp.52574 0x7fffe3fff6c0 - Publisher matched:Type : DistributedATS_OrderMassCancelRequest::OrderMassCancelRequest - Name : ORDER_MASS_CANCEL_REQUEST_TOPIC
+ Count : 3
+[2025-09-09 12:58:01.662181] root INFO  dds.tcp.52574 0x7fffe3fff6c0 - Publisher matched:Type : DistributedATS_OrderCancelReplaceRequest::OrderCancelReplaceRequest - Name : ORDER_CANCEL_REPLACE_REQUEST_TOPIC
+ Count : 3
+[2025-09-09 12:58:02.563615] root INFO  dds.tcp.41555 0x7fffe2ffd6c0 - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+ Count : 4
+[2025-09-09 12:58:02.568832] root INFO  dds.tcp.41555 0x7fffe37fe6c0 - Publisher matched:Type : DistributedATS_Logon::Logon - Name : LOGON_TOPIC
+ Count : 5
+[2025-09-09 13:00:00.033892] root INFO  FIXGateway 0x7fffe97fa6c0 - Connection Token :CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+[2025-09-09 13:00:00.035134] root INFO  FIXGateway 0x7fffe97fa6c0 - Inserting pending connection : [CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0] Socket :[46]
+[2025-09-09 13:00:00.039390] root INFO  FIXGateway 0x7fffe97fa6c0 - Publishing to DDS :Message : Logon { 
+ddsMsg.DATS_Source : FIX_GWY_1
+ddsMsg.DATS_Destination : DATA_SERVICE
+ddsMsg.DATS_SourceUser : CRYPTO_TRADER_1
+ddsMsg.DATS_DestinationUser : DATA_SERVICE_A
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 114
+ddsMsg.MsgType : A
+ddsMsg.SenderCompID : CRYPTO_TRADER_1
+ddsMsg.TargetCompID : FIX_GWY_1
+ddsMsg.MsgSeqNum : 1
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 2460928
+}
+ddsMsg.EncryptMethod : 0
+ddsMsg.HeartBtInt : 30
+ddsMsg.RawData : CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+ddsMsg.Username : CRYPTO_TRADER_1
+ddsMsg.Password : TEST
+}
+
+[2025-09-09 13:00:00.954259] root INFO  FIXGateway 0x7ffff1ffb6c0 - Processing: [LogonDataReaderListenerImpl]
+[2025-09-09 13:00:00.954565] root INFO  FIXGateway 0x7ffff1ffb6c0 - Data Reader Logon  : [Message : Logon { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : DATA_SERVICE
+ddsMsg.DATS_SourceUser : AUTH
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 114
+ddsMsg.MsgType : A
+ddsMsg.SenderCompID : CRYPTO_TRADER_1
+ddsMsg.TargetCompID : FIX_GWY_1
+ddsMsg.MsgSeqNum : 1
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 2460928
+}
+ddsMsg.EncryptMethod : 0
+ddsMsg.HeartBtInt : 30
+ddsMsg.RawData : CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+ddsMsg.Username : CRYPTO_TRADER_1
+ddsMsg.Password : TEST
+}
+]
+[2025-09-09 13:00:00.955081] root INFO  FIXGateway 0x7ffff1ffb6c0 - Received Session ID for Logon : [FIX_GWY_1] Session :[CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0]
+[2025-09-09 13:00:01.039530] root INFO  FIXGateway 0x7ffff1ffb6c0 - Session Created :FIX.4.4:FIX_GWY_1->CRYPTO_TRADER_1:CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+[2025-09-09 13:00:01.039832] root INFO  FIXGateway 0x7ffff1ffb6c0 - Creating QuickFIX Session from message from auth service :FIX.4.4:FIX_GWY_1->CRYPTO_TRADER_1:CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+[2025-09-09 13:00:01.040270] root INFO  FIXGateway 0x7ffff1ffb6c0 - Login-in Session : [FIX.4.4:FIX_GWY_1->CRYPTO_TRADER_1:CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0] Token :[CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0]
+[2025-09-09 13:00:01.051569] root INFO  FIXGateway 0x7ffff1ffb6c0 - Session Logon :FIX.4.4:FIX_GWY_1->CRYPTO_TRADER_1:CRYPTO_TRADER_1:FIX_GWY_1:1757422800:0
+[2025-09-09 13:00:01.052600] root INFO  FIXGateway 0x7ffff1ffb6c0 - Processed: [LogonDataReaderListenerImpl]
+[2025-09-09 13:00:01.052781] root INFO  FIXGateway 0x7fffe97fa6c0 - Publishing to DDS :Message : SecurityListRequest { 
+ddsMsg.DATS_Source : FIX_GWY_1
+ddsMsg.DATS_Destination : DATA_SERVICE
+ddsMsg.DATS_SourceUser : CRYPTO_TRADER_1
+ddsMsg.DATS_DestinationUser : DATA_SERVICE_A
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 98
+ddsMsg.MsgType : x
+ddsMsg.SenderCompID : CRYPTO_TRADER_1
+ddsMsg.TargetCompID : FIX_GWY_1
+ddsMsg.MsgSeqNum : 2
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 2460928
+}
+ddsMsg.SecurityReqID : SecurityListRequest1
+ddsMsg.SecurityListRequestType : 4
+ddsMsg.Symbol : 
+ddsMsg.SecurityExchange : 
+ddsMsg.Text : 
+}
+
+[2025-09-09 13:00:02.055238] root INFO  dds.shm.7421 0x7ffffa2136c0 - SecurityList : [Message : SecurityList { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : 
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : y
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.SecurityReqID : SecurityListRequest1
+ddsMsg.SecurityResponseID : 1
+ddsMsg.SecurityRequestResult : 0
+ddsMsg.c_NoRelatedSym
+{
+ddsMsg.c_NoRelatedSym()[0].Symbol : ADA-USD
+ddsMsg.c_NoRelatedSym()[0].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[0].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[1].Symbol : AVX-AUD
+ddsMsg.c_NoRelatedSym()[1].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[1].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[2].Symbol : BCH-CNY
+ddsMsg.c_NoRelatedSym()[2].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[2].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[3].Symbol : BTC-AUD
+ddsMsg.c_NoRelatedSym()[3].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[3].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[4].Symbol : BTC-CAD
+ddsMsg.c_NoRelatedSym()[4].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[4].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[5].Symbol : BTC-CNY
+ddsMsg.c_NoRelatedSym()[5].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[5].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[6].Symbol : BTC-EUR
+ddsMsg.c_NoRelatedSym()[6].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[6].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[7].Symbol : BTC-GBP
+ddsMsg.c_NoRelatedSym()[7].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[7].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[8].Symbol : BTC-JPY
+ddsMsg.c_NoRelatedSym()[8].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[8].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[9].Symbol : BTC-USD
+ddsMsg.c_NoRelatedSym()[9].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[9].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[10].Symbol : DAI-USD
+ddsMsg.c_NoRelatedSym()[10].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[10].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[11].Symbol : DOT-GBP
+ddsMsg.c_NoRelatedSym()[11].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[11].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[12].Symbol : ETH-AUD
+ddsMsg.c_NoRelatedSym()[12].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[12].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[13].Symbol : ETH-CAD
+ddsMsg.c_NoRelatedSym()[13].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[13].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[14].Symbol : ETH-CNY
+ddsMsg.c_NoRelatedSym()[14].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[14].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[15].Symbol : ETH-EUR
+ddsMsg.c_NoRelatedSym()[15].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[15].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[16].Symbol : ETH-GBP
+ddsMsg.c_NoRelatedSym()[16].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[16].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[17].Symbol : ETH-JPY
+ddsMsg.c_NoRelatedSym()[17].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[17].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[18].Symbol : ETH-USD
+ddsMsg.c_NoRelatedSym()[18].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[18].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[19].Symbol : LTC-JPY
+ddsMsg.c_NoRelatedSym()[19].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[19].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[20].Symbol : LUN-CAD
+ddsMsg.c_NoRelatedSym()[20].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[20].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[21].Symbol : MTC-CAD
+ddsMsg.c_NoRelatedSym()[21].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[21].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[22].Symbol : SOL-EUR
+ddsMsg.c_NoRelatedSym()[22].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[22].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[23].Symbol : UNI-JPY
+ddsMsg.c_NoRelatedSym()[23].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[23].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[24].Symbol : XLM-CNY
+ddsMsg.c_NoRelatedSym()[24].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[24].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[25].Symbol : XLM-EUR
+ddsMsg.c_NoRelatedSym()[25].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[25].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[26].Symbol : XMR-AUD
+ddsMsg.c_NoRelatedSym()[26].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[26].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[27].Symbol : XRP-GBP
+ddsMsg.c_NoRelatedSym()[27].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[27].Text : {"type":"Crypto"}
+}
+}
+]
+[2025-09-09 13:00:02.057566] root INFO  FIXGateway 0x7ffff0ff96c0 - Processing: [SecurityListDataReaderListenerImpl]
+[2025-09-09 13:00:02.063671] root INFO  FIXGateway 0x7ffff0ff96c0 - Processed: [SecurityListDataReaderListenerImpl]
+[2025-09-09 13:00:02.068695] root INFO  FIXGateway 0x7fffe97fa6c0 - Publishing to DDS :Message : MarketDataRequest { 
+ddsMsg.DATS_Source : FIX_GWY_1
+ddsMsg.DATS_Destination : DATA_SERVICE
+ddsMsg.DATS_SourceUser : CRYPTO_TRADER_1
+ddsMsg.DATS_DestinationUser : DATA_SERVICE_A
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 959
+ddsMsg.MsgType : V
+ddsMsg.SenderCompID : CRYPTO_TRADER_1
+ddsMsg.TargetCompID : FIX_GWY_1
+ddsMsg.MsgSeqNum : 3
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 2460928
+}
+ddsMsg.MDReqID : MarketDataRequest1
+ddsMsg.SubscriptionRequestType : 1
+ddsMsg.MarketDepth : 0
+ddsMsg.c_NoMDEntryTypes
+{
+ddsMsg.c_NoMDEntryTypes()[0].MDEntryType : 0
+ddsMsg.c_NoMDEntryTypes()[1].MDEntryType : 1
+}
+ddsMsg.c_NoRelatedSym
+{
+ddsMsg.c_NoRelatedSym()[0].Symbol : ADA-USD
+ddsMsg.c_NoRelatedSym()[0].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[1].Symbol : AVX-AUD
+ddsMsg.c_NoRelatedSym()[1].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[2].Symbol : BCH-CNY
+ddsMsg.c_NoRelatedSym()[2].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[3].Symbol : BTC-AUD
+ddsMsg.c_NoRelatedSym()[3].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[4].Symbol : BTC-CAD
+ddsMsg.c_NoRelatedSym()[4].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[5].Symbol : BTC-CNY
+ddsMsg.c_NoRelatedSym()[5].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[6].Symbol : BTC-EUR
+ddsMsg.c_NoRelatedSym()[6].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[7].Symbol : BTC-GBP
+ddsMsg.c_NoRelatedSym()[7].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[8].Symbol : BTC-JPY
+ddsMsg.c_NoRelatedSym()[8].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[9].Symbol : BTC-USD
+ddsMsg.c_NoRelatedSym()[9].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[10].Symbol : DAI-USD
+ddsMsg.c_NoRelatedSym()[10].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[11].Symbol : DOT-GBP
+ddsMsg.c_NoRelatedSym()[11].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[12].Symbol : ETH-AUD
+ddsMsg.c_NoRelatedSym()[12].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[13].Symbol : ETH-CAD
+ddsMsg.c_NoRelatedSym()[13].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[14].Symbol : ETH-CNY
+ddsMsg.c_NoRelatedSym()[14].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[15].Symbol : ETH-EUR
+ddsMsg.c_NoRelatedSym()[15].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[16].Symbol : ETH-GBP
+ddsMsg.c_NoRelatedSym()[16].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[17].Symbol : ETH-JPY
+ddsMsg.c_NoRelatedSym()[17].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[18].Symbol : ETH-USD
+ddsMsg.c_NoRelatedSym()[18].SecurityExchange : ETH_MARKET
+ddsMsg.c_NoRelatedSym()[19].Symbol : LTC-JPY
+ddsMsg.c_NoRelatedSym()[19].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[20].Symbol : LUN-CAD
+ddsMsg.c_NoRelatedSym()[20].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[21].Symbol : MTC-CAD
+ddsMsg.c_NoRelatedSym()[21].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[22].Symbol : SOL-EUR
+ddsMsg.c_NoRelatedSym()[22].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[23].Symbol : UNI-JPY
+ddsMsg.c_NoRelatedSym()[23].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[24].Symbol : XLM-CNY
+ddsMsg.c_NoRelatedSym()[24].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[25].Symbol : XLM-EUR
+ddsMsg.c_NoRelatedSym()[25].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[26].Symbol : XMR-AUD
+ddsMsg.c_NoRelatedSym()[26].SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoRelatedSym()[27].Symbol : XRP-GBP
+ddsMsg.c_NoRelatedSym()[27].SecurityExchange : OTHER_COIN_MARKET
+}
+}
+
+[2025-09-09 13:00:02.993191] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ADA-USD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 101
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.994580] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : AVX-AUD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.994885] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BCH-CNY
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.995512] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:02.995610] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-AUD
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.996447] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-CAD
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.997589] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-CNY
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.998694] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-EUR
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 20100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:02.999795] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-GBP
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 30100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.000198] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-JPY
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 40100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.000198] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : BTC-USD
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 10100
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.000198] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : DAI-USD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 101
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.001551] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : DOT-GBP
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 301
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.002016] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-AUD
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 4010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.002144] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.002382] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-CAD
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 4010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.002805] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.003173] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-CNY
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 4010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.003634] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.003703] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.004092] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-EUR
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 2010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.004328] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.004455] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.004350] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-GBP
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 3010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.004832] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-JPY
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 4010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.005206] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.005280] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.005410] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : ETH-USD
+ddsMsg.SecurityExchange : ETH_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 1010
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.005806] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.005904] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : LTC-JPY
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.005995] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.006335] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : LUN-CAD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.006631] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.006719] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.006742] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : MTC-CAD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.007252] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : SOL-EUR
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 201
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.007409] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.007642] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.007768] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : UNI-JPY
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.008251] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : XLM-CNY
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.008456] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.008524] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.008650] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : XLM-EUR
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 201
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.009422] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.009592] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.009606] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : XMR-AUD
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 401
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.010404] root INFO  dds.shm.7421 0x7ffffa2136c0 - marketDataSnapshotFullRefresh : [Message : MarketDataSnapshotFullRefresh { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : FIX_GWY_1
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : CRYPTO_TRADER_1
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : W
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.Symbol : XRP-GBP
+ddsMsg.SecurityExchange : OTHER_COIN_MARKET
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 301
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+}
+}
+]
+[2025-09-09 13:00:03.010469] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.010646] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.011226] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.011301] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.011995] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.012130] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.012662] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.012857] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.013391] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.013449] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.013724] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.013774] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.014142] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.014210] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.014567] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.014625] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015041] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015101] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015375] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015439] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015748] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.015811] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.016270] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.016332] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.016730] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.016793] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017170] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017225] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017505] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017559] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017826] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.017875] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.018267] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.018330] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.018611] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.018671] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processing: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:00:03.018988] root INFO  FIXGateway 0x7fffeb7fe6c0 - Processed: [MarketDataSnapshotFullRefreshDataReaderListenerImpl]
+[2025-09-09 13:18:25.020085] root INFO  FIXGateway 0x7fffe97fa6c0 - Publishing to DDS :Message : NewOrderSingle { 
+ddsMsg.DATS_Source : FIX_GWY_1
+ddsMsg.DATS_Destination : MATCHING_ENGINE
+ddsMsg.DATS_SourceUser : CRYPTO_TRADER_1
+ddsMsg.DATS_DestinationUser : DATA_SERVICE_A
+Header { 
+ddsMsg.BeginString : FIX.4.4
+ddsMsg.BodyLength : 191
+ddsMsg.MsgType : D
+ddsMsg.SenderCompID : CRYPTO_TRADER_1
+ddsMsg.TargetCompID : FIX_GWY_1
+ddsMsg.MsgSeqNum : 42
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 2460928
+}
+ddsMsg.ClOrdID : d9b0c638-b6c0-4947-a046-43896514aef7
+ddsMsg.ExecInst : 
+ddsMsg.Symbol : BTC-USD
+ddsMsg.SecurityExchange : BTC_MARKET
+ddsMsg.Side : 2
+ddsMsg.TransactTime : 2460928
+ddsMsg.OrderQty : 100
+ddsMsg.OrdType : 2
+ddsMsg.Price : 110000
+ddsMsg.StopPx : 0
+ddsMsg.TimeInForce : 0
+ddsMsg.Text : 
+}
+
+[2025-09-09 13:18:25.037595] root INFO  FIXGateway 0x7fffeaffd6c0 - Processing: [ExecutionReportDataReaderListenerImpl]
+[2025-09-09 13:18:25.039650] root INFO  FIXGateway 0x7fffeaffd6c0 - Processed: [ExecutionReportDataReaderListenerImpl]
+[2025-09-09 13:18:25.134375] root INFO  FIXGateway 0x7fffebfff6c0 - Processing: [MarketDataIncrementalRefreshDataReaderListenerImpl]
+[2025-09-09 13:18:25.143093] root INFO  FIXGateway 0x7fffebfff6c0 - Processed: [MarketDataIncrementalRefreshDataReaderListenerImpl]

@@ -22,9 +22,6 @@ link_directories(${LOG4CXX_LIBRARY_DIR})
 
 file(GLOB DISTRIBUTED_ATS_LIB *)
 add_library(DistributedATSLib SHARED ${DISTRIBUTED_ATS_LIB})
-add_dependencies(DistributedATSLib FastDDS)
-add_dependencies(DistributedATSLib QuickFIX)
-add_dependencies(DistributedATSLib Log4cxx)
 target_link_libraries(DistributedATSLib quickfix fastcdr fastdds log4cxx)
 
 install(TARGETS DistributedATSLib

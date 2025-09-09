@@ -1,0 +1,827 @@
+20250909.125756 run-done : pid,46
+Security:Message : SecurityList { 
+ddsMsg.DATS_Source : DATA_SERVICE
+ddsMsg.DATS_Destination : MATCHINE_ENGINE
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : BTC_MARKET
+Header { 
+ddsMsg.BeginString : 
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : y
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.SecurityReqID : 
+ddsMsg.SecurityResponseID : 1
+ddsMsg.SecurityRequestResult : 0
+ddsMsg.c_NoRelatedSym
+{
+ddsMsg.c_NoRelatedSym()[0].Symbol : BTC-AUD
+ddsMsg.c_NoRelatedSym()[0].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[0].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[1].Symbol : BTC-CAD
+ddsMsg.c_NoRelatedSym()[1].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[1].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[2].Symbol : BTC-CNY
+ddsMsg.c_NoRelatedSym()[2].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[2].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[3].Symbol : BTC-EUR
+ddsMsg.c_NoRelatedSym()[3].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[3].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[4].Symbol : BTC-GBP
+ddsMsg.c_NoRelatedSym()[4].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[4].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[5].Symbol : BTC-JPY
+ddsMsg.c_NoRelatedSym()[5].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[5].Text : {"type":"Crypto"}
+ddsMsg.c_NoRelatedSym()[6].Symbol : BTC-USD
+ddsMsg.c_NoRelatedSym()[6].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoRelatedSym()[6].Text : {"type":"Crypto"}
+}
+}
+
+20250909.125801 run-done : pid,185
+20250909.125804 run-done : pid,225
+20250909.125807 run-done : pid,238
+20250909.125810 run-done : pid,251
+20250909.125813 run-done : pid,264
+20250909.125816 run-done : pid,277
+20250909.125819 run-done : pid,290
+20250909.125823 run-done : pid,303
+20250909.125826 run-done : pid,316
+20250909.125829 run-done : pid,329
+20250909.125832 run-done : pid,342
+20250909.125835 run-done : pid,355
+20250909.125838 run-done : pid,368
+20250909.125842 run-done : pid,381
+20250909.125845 run-done : pid,394
+20250909.125848 run-done : pid,407
+20250909.125851 run-done : pid,420
+20250909.125854 run-done : pid,433
+20250909.125857 run-done : pid,446
+20250909.125901 run-done : pid,459
+20250909.125904 run-done : pid,472
+20250909.125907 run-done : pid,485
+20250909.125910 run-done : pid,498
+20250909.125913 run-done : pid,511
+20250909.125916 run-done : pid,524
+20250909.125920 run-done : pid,537
+20250909.125923 run-done : pid,550
+20250909.125926 run-done : pid,563
+20250909.125929 run-done : pid,576
+20250909.125932 run-done : pid,589
+20250909.125935 run-done : pid,602
+20250909.125938 run-done : pid,615
+20250909.125942 run-done : pid,628
+20250909.125945 run-done : pid,641
+20250909.125948 run-done : pid,654
+20250909.125951 run-done : pid,667
+20250909.125954 run-done : pid,680
+20250909.125957 run-done : pid,693
+20250909.130001 run-done : pid,706
+20250909.130004 run-done : pid,719
+20250909.130007 run-done : pid,732
+20250909.130010 run-done : pid,745
+20250909.130013 run-done : pid,758
+20250909.130016 run-done : pid,771
+20250909.130020 run-done : pid,784
+20250909.130023 run-done : pid,797
+20250909.130026 run-done : pid,810
+20250909.130029 run-done : pid,823
+20250909.130032 run-done : pid,836
+20250909.130035 run-done : pid,849
+20250909.130039 run-done : pid,862
+20250909.130042 run-done : pid,875
+20250909.130045 run-done : pid,888
+20250909.130048 run-done : pid,901
+20250909.130051 run-done : pid,914
+20250909.130054 run-done : pid,927
+20250909.130058 run-done : pid,940
+20250909.130101 run-done : pid,953
+20250909.130105 run-done : pid,966
+20250909.130108 run-done : pid,979
+20250909.130112 run-done : pid,992
+20250909.130116 run-done : pid,1005
+20250909.130119 run-done : pid,1018
+20250909.130123 run-done : pid,1031
+20250909.130126 run-done : pid,1044
+20250909.130130 run-done : pid,1057
+20250909.130133 run-done : pid,1070
+20250909.130136 run-done : pid,1083
+20250909.130139 run-done : pid,1096
+20250909.130143 run-done : pid,1109
+20250909.130146 run-done : pid,1122
+20250909.130149 run-done : pid,1135
+20250909.130152 run-done : pid,1148
+20250909.130156 run-done : pid,1161
+20250909.130159 run-done : pid,1174
+20250909.130202 run-done : pid,1187
+20250909.130205 run-done : pid,1200
+20250909.130209 run-done : pid,1213
+20250909.130212 run-done : pid,1226
+20250909.130215 run-done : pid,1239
+20250909.130218 run-done : pid,1252
+20250909.130222 run-done : pid,1265
+20250909.130225 run-done : pid,1278
+20250909.130228 run-done : pid,1291
+20250909.130231 run-done : pid,1304
+20250909.130235 run-done : pid,1317
+20250909.130238 run-done : pid,1330
+20250909.130241 run-done : pid,1343
+20250909.130244 run-done : pid,1356
+20250909.130247 run-done : pid,1369
+20250909.130251 run-done : pid,1382
+20250909.130254 run-done : pid,1395
+20250909.130257 run-done : pid,1408
+20250909.130300 run-done : pid,1421
+20250909.130303 run-done : pid,1434
+20250909.130307 run-done : pid,1447
+20250909.130310 run-done : pid,1460
+20250909.130313 run-done : pid,1473
+20250909.130316 run-done : pid,1486
+20250909.130319 run-done : pid,1499
+20250909.130323 run-done : pid,1512
+20250909.130326 run-done : pid,1525
+20250909.130329 run-done : pid,1538
+20250909.130332 run-done : pid,1551
+20250909.130335 run-done : pid,1564
+20250909.130339 run-done : pid,1577
+20250909.130342 run-done : pid,1590
+20250909.130345 run-done : pid,1603
+20250909.130348 run-done : pid,1616
+20250909.130351 run-done : pid,1629
+20250909.130355 run-done : pid,1642
+20250909.130358 run-done : pid,1655
+20250909.130401 run-done : pid,1668
+20250909.130405 run-done : pid,1681
+20250909.130408 run-done : pid,1694
+20250909.130411 run-done : pid,1707
+20250909.130414 run-done : pid,1720
+20250909.130417 run-done : pid,1733
+20250909.130421 run-done : pid,1746
+20250909.130424 run-done : pid,1759
+20250909.130427 run-done : pid,1772
+20250909.130430 run-done : pid,1785
+20250909.130433 run-done : pid,1798
+20250909.130437 run-done : pid,1811
+20250909.130440 run-done : pid,1824
+20250909.130443 run-done : pid,1837
+20250909.130446 run-done : pid,1850
+20250909.130449 run-done : pid,1863
+20250909.130453 run-done : pid,1876
+20250909.130456 run-done : pid,1889
+20250909.130459 run-done : pid,1902
+20250909.130502 run-done : pid,1915
+20250909.130506 run-done : pid,1928
+20250909.130509 run-done : pid,1941
+20250909.130512 run-done : pid,1954
+20250909.130515 run-done : pid,1967
+20250909.130519 run-done : pid,1980
+20250909.130522 run-done : pid,1993
+20250909.130525 run-done : pid,2006
+20250909.130528 run-done : pid,2019
+20250909.130531 run-done : pid,2032
+20250909.130535 run-done : pid,2045
+20250909.130538 run-done : pid,2058
+20250909.130541 run-done : pid,2071
+20250909.130544 run-done : pid,2084
+20250909.130547 run-done : pid,2097
+20250909.130551 run-done : pid,2110
+20250909.130554 run-done : pid,2123
+20250909.130557 run-done : pid,2136
+20250909.130600 run-done : pid,2149
+20250909.130603 run-done : pid,2162
+20250909.130606 run-done : pid,2175
+20250909.130610 run-done : pid,2188
+20250909.130613 run-done : pid,2201
+20250909.130616 run-done : pid,2214
+20250909.130619 run-done : pid,2227
+20250909.130622 run-done : pid,2240
+20250909.130626 run-done : pid,2253
+20250909.130629 run-done : pid,2266
+20250909.130632 run-done : pid,2279
+20250909.130635 run-done : pid,2292
+20250909.130638 run-done : pid,2305
+20250909.130642 run-done : pid,2318
+20250909.130645 run-done : pid,2331
+20250909.130648 run-done : pid,2344
+20250909.130651 run-done : pid,2357
+20250909.130654 run-done : pid,2370
+20250909.130657 run-done : pid,2383
+20250909.130701 run-done : pid,2396
+20250909.130704 run-done : pid,2409
+20250909.130707 run-done : pid,2422
+20250909.130710 run-done : pid,2435
+20250909.130713 run-done : pid,2448
+20250909.130716 run-done : pid,2461
+20250909.130720 run-done : pid,2474
+20250909.130723 run-done : pid,2487
+20250909.130726 run-done : pid,2500
+20250909.130729 run-done : pid,2513
+20250909.130732 run-done : pid,2526
+20250909.130736 run-done : pid,2539
+20250909.130739 run-done : pid,2552
+20250909.130742 run-done : pid,2565
+20250909.130745 run-done : pid,2578
+20250909.130749 run-done : pid,2591
+20250909.130752 run-done : pid,2604
+20250909.130755 run-done : pid,2617
+20250909.130758 run-done : pid,2630
+20250909.130802 run-done : pid,2643
+20250909.130805 run-done : pid,2656
+20250909.130808 run-done : pid,2669
+20250909.130811 run-done : pid,2682
+20250909.130814 run-done : pid,2695
+20250909.130818 run-done : pid,2708
+20250909.130821 run-done : pid,2721
+20250909.130824 run-done : pid,2734
+20250909.130827 run-done : pid,2747
+20250909.130830 run-done : pid,2760
+20250909.130833 run-done : pid,2773
+20250909.130837 run-done : pid,2786
+20250909.130840 run-done : pid,2799
+20250909.130843 run-done : pid,2812
+20250909.130846 run-done : pid,2825
+20250909.130849 run-done : pid,2838
+20250909.130852 run-done : pid,2851
+20250909.130856 run-done : pid,2864
+20250909.130859 run-done : pid,2877
+20250909.130902 run-done : pid,2890
+20250909.130905 run-done : pid,2903
+20250909.130908 run-done : pid,2916
+20250909.130912 run-done : pid,2929
+20250909.130915 run-done : pid,2942
+20250909.130918 run-done : pid,2955
+20250909.130921 run-done : pid,2968
+20250909.130924 run-done : pid,2981
+20250909.130927 run-done : pid,2994
+20250909.130931 run-done : pid,3007
+20250909.130934 run-done : pid,3020
+20250909.130937 run-done : pid,3033
+20250909.130940 run-done : pid,3046
+20250909.130943 run-done : pid,3059
+20250909.130946 run-done : pid,3072
+20250909.130950 run-done : pid,3085
+20250909.130953 run-done : pid,3098
+20250909.130956 run-done : pid,3111
+20250909.130959 run-done : pid,3124
+20250909.131002 run-done : pid,3137
+20250909.131006 run-done : pid,3150
+20250909.131009 run-done : pid,3163
+20250909.131012 run-done : pid,3176
+20250909.131015 run-done : pid,3189
+20250909.131018 run-done : pid,3202
+20250909.131021 run-done : pid,3215
+20250909.131025 run-done : pid,3228
+20250909.131028 run-done : pid,3241
+20250909.131031 run-done : pid,3254
+20250909.131034 run-done : pid,3267
+20250909.131037 run-done : pid,3280
+20250909.131040 run-done : pid,3293
+20250909.131043 run-done : pid,3306
+20250909.131047 run-done : pid,3319
+20250909.131050 run-done : pid,3332
+20250909.131053 run-done : pid,3345
+20250909.131056 run-done : pid,3358
+20250909.131059 run-done : pid,3371
+20250909.131103 run-done : pid,3384
+20250909.131106 run-done : pid,3397
+20250909.131109 run-done : pid,3410
+20250909.131112 run-done : pid,3423
+20250909.131115 run-done : pid,3436
+20250909.131118 run-done : pid,3449
+20250909.131122 run-done : pid,3462
+20250909.131125 run-done : pid,3475
+20250909.131128 run-done : pid,3488
+20250909.131131 run-done : pid,3501
+20250909.131134 run-done : pid,3514
+20250909.131137 run-done : pid,3527
+20250909.131141 run-done : pid,3540
+20250909.131144 run-done : pid,3553
+20250909.131147 run-done : pid,3566
+20250909.131150 run-done : pid,3579
+20250909.131153 run-done : pid,3592
+20250909.131157 run-done : pid,3605
+20250909.131200 run-done : pid,3618
+20250909.131203 run-done : pid,3631
+20250909.131206 run-done : pid,3644
+20250909.131209 run-done : pid,3657
+20250909.131212 run-done : pid,3670
+20250909.131216 run-done : pid,3683
+20250909.131219 run-done : pid,3696
+20250909.131222 run-done : pid,3709
+20250909.131225 run-done : pid,3722
+20250909.131228 run-done : pid,3735
+20250909.131231 run-done : pid,3748
+20250909.131235 run-done : pid,3761
+20250909.131238 run-done : pid,3774
+20250909.131241 run-done : pid,3787
+20250909.131244 run-done : pid,3800
+20250909.131247 run-done : pid,3813
+20250909.131250 run-done : pid,3826
+20250909.131254 run-done : pid,3839
+20250909.131257 run-done : pid,3852
+20250909.131300 run-done : pid,3865
+20250909.131303 run-done : pid,3878
+20250909.131306 run-done : pid,3891
+20250909.131309 run-done : pid,3904
+20250909.131313 run-done : pid,3917
+20250909.131316 run-done : pid,3930
+20250909.131319 run-done : pid,3943
+20250909.131322 run-done : pid,3956
+20250909.131325 run-done : pid,3969
+20250909.131329 run-done : pid,3982
+20250909.131332 run-done : pid,3995
+20250909.131335 run-done : pid,4008
+20250909.131338 run-done : pid,4021
+20250909.131341 run-done : pid,4034
+20250909.131344 run-done : pid,4047
+20250909.131348 run-done : pid,4060
+20250909.131351 run-done : pid,4073
+20250909.131354 run-done : pid,4086
+20250909.131357 run-done : pid,4099
+20250909.131400 run-done : pid,4112
+20250909.131404 run-done : pid,4125
+20250909.131407 run-done : pid,4138
+20250909.131410 run-done : pid,4151
+20250909.131413 run-done : pid,4164
+20250909.131416 run-done : pid,4177
+20250909.131419 run-done : pid,4190
+20250909.131423 run-done : pid,4203
+20250909.131426 run-done : pid,4216
+20250909.131429 run-done : pid,4229
+20250909.131432 run-done : pid,4242
+20250909.131435 run-done : pid,4255
+20250909.131439 run-done : pid,4268
+20250909.131442 run-done : pid,4281
+20250909.131445 run-done : pid,4294
+20250909.131448 run-done : pid,4307
+20250909.131451 run-done : pid,4320
+20250909.131455 run-done : pid,4333
+20250909.131458 run-done : pid,4346
+20250909.131501 run-done : pid,4359
+20250909.131504 run-done : pid,4372
+20250909.131507 run-done : pid,4385
+20250909.131510 run-done : pid,4398
+20250909.131514 run-done : pid,4411
+20250909.131517 run-done : pid,4424
+20250909.131520 run-done : pid,4437
+20250909.131523 run-done : pid,4450
+20250909.131526 run-done : pid,4463
+20250909.131530 run-done : pid,4476
+20250909.131533 run-done : pid,4489
+20250909.131536 run-done : pid,4502
+20250909.131539 run-done : pid,4515
+20250909.131542 run-done : pid,4528
+20250909.131546 run-done : pid,4541
+20250909.131549 run-done : pid,4554
+20250909.131552 run-done : pid,4567
+20250909.131556 run-done : pid,4580
+20250909.131559 run-done : pid,4593
+20250909.131602 run-done : pid,4606
+20250909.131605 run-done : pid,4619
+20250909.131609 run-done : pid,4632
+20250909.131612 run-done : pid,4645
+20250909.131615 run-done : pid,4658
+20250909.131618 run-done : pid,4671
+20250909.131621 run-done : pid,4684
+20250909.131625 run-done : pid,4697
+20250909.131628 run-done : pid,4710
+20250909.131631 run-done : pid,4723
+20250909.131634 run-done : pid,4736
+20250909.131637 run-done : pid,4749
+20250909.131641 run-done : pid,4762
+20250909.131644 run-done : pid,4775
+20250909.131647 run-done : pid,4788
+20250909.131650 run-done : pid,4801
+20250909.131653 run-done : pid,4814
+20250909.131657 run-done : pid,4827
+20250909.131700 run-done : pid,4840
+20250909.131703 run-done : pid,4853
+20250909.131706 run-done : pid,4866
+20250909.131709 run-done : pid,4879
+20250909.131712 run-done : pid,4892
+20250909.131716 run-done : pid,4905
+20250909.131719 run-done : pid,4918
+20250909.131722 run-done : pid,4931
+20250909.131725 run-done : pid,4944
+20250909.131728 run-done : pid,4957
+20250909.131732 run-done : pid,4970
+20250909.131735 run-done : pid,4983
+20250909.131738 run-done : pid,4996
+20250909.131741 run-done : pid,5009
+20250909.131744 run-done : pid,5022
+20250909.131748 run-done : pid,5035
+20250909.131751 run-done : pid,5048
+20250909.131754 run-done : pid,5061
+20250909.131757 run-done : pid,5074
+20250909.131800 run-done : pid,5087
+20250909.131804 run-done : pid,5100
+20250909.131807 run-done : pid,5113
+20250909.131810 run-done : pid,5126
+20250909.131813 run-done : pid,5139
+20250909.131817 run-done : pid,5152
+20250909.131820 run-done : pid,5165
+20250909.131823 run-done : pid,5178
+Update : Message : MarketDataIncrementalRefresh { 
+ddsMsg.DATS_Source : MATCHING_ENGINE
+ddsMsg.DATS_Destination : 
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : 
+Header { 
+ddsMsg.BeginString : 
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : X
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[0].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[0].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+ddsMsg.c_NoMDEntries()[1].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[1].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[1].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[1].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[1].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[1].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[1].TimeInForce :  
+ddsMsg.c_NoMDEntries()[1].ExecInst : 
+ddsMsg.c_NoMDEntries()[1].Text : 
+ddsMsg.c_NoMDEntries()[2].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[2].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[2].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[2].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[2].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[2].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[2].TimeInForce :  
+ddsMsg.c_NoMDEntries()[2].ExecInst : 
+ddsMsg.c_NoMDEntries()[2].Text : 
+ddsMsg.c_NoMDEntries()[3].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[3].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[3].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[3].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[3].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[3].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[3].TimeInForce :  
+ddsMsg.c_NoMDEntries()[3].ExecInst : 
+ddsMsg.c_NoMDEntries()[3].Text : 
+ddsMsg.c_NoMDEntries()[4].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[4].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[4].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[4].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[4].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[4].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[4].TimeInForce :  
+ddsMsg.c_NoMDEntries()[4].ExecInst : 
+ddsMsg.c_NoMDEntries()[4].Text : 
+ddsMsg.c_NoMDEntries()[5].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[5].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[5].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[5].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[5].MDEntryPx : 110000
+ddsMsg.c_NoMDEntries()[5].MDEntrySize : 100
+ddsMsg.c_NoMDEntries()[5].TimeInForce :  
+ddsMsg.c_NoMDEntries()[5].ExecInst : 
+ddsMsg.c_NoMDEntries()[5].Text : 
+ddsMsg.c_NoMDEntries()[6].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[6].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[6].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[6].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[6].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[6].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[6].TimeInForce :  
+ddsMsg.c_NoMDEntries()[6].ExecInst : 
+ddsMsg.c_NoMDEntries()[6].Text : 
+ddsMsg.c_NoMDEntries()[7].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[7].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[7].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[7].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[7].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[7].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[7].TimeInForce :  
+ddsMsg.c_NoMDEntries()[7].ExecInst : 
+ddsMsg.c_NoMDEntries()[7].Text : 
+ddsMsg.c_NoMDEntries()[8].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[8].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[8].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[8].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[8].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[8].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[8].TimeInForce :  
+ddsMsg.c_NoMDEntries()[8].ExecInst : 
+ddsMsg.c_NoMDEntries()[8].Text : 
+ddsMsg.c_NoMDEntries()[9].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[9].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[9].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[9].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[9].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[9].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[9].TimeInForce :  
+ddsMsg.c_NoMDEntries()[9].ExecInst : 
+ddsMsg.c_NoMDEntries()[9].Text : 
+ddsMsg.c_NoMDEntries()[10].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[10].MDEntryType :  
+ddsMsg.c_NoMDEntries()[10].Symbol : 
+ddsMsg.c_NoMDEntries()[10].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[10].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[10].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[10].TimeInForce :  
+ddsMsg.c_NoMDEntries()[10].ExecInst : 
+ddsMsg.c_NoMDEntries()[10].Text : 
+ddsMsg.c_NoMDEntries()[11].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[11].MDEntryType :  
+ddsMsg.c_NoMDEntries()[11].Symbol : 
+ddsMsg.c_NoMDEntries()[11].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[11].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[11].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[11].TimeInForce :  
+ddsMsg.c_NoMDEntries()[11].ExecInst : 
+ddsMsg.c_NoMDEntries()[11].Text : 
+ddsMsg.c_NoMDEntries()[12].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[12].MDEntryType :  
+ddsMsg.c_NoMDEntries()[12].Symbol : 
+ddsMsg.c_NoMDEntries()[12].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[12].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[12].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[12].TimeInForce :  
+ddsMsg.c_NoMDEntries()[12].ExecInst : 
+ddsMsg.c_NoMDEntries()[12].Text : 
+ddsMsg.c_NoMDEntries()[13].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[13].MDEntryType :  
+ddsMsg.c_NoMDEntries()[13].Symbol : 
+ddsMsg.c_NoMDEntries()[13].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[13].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[13].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[13].TimeInForce :  
+ddsMsg.c_NoMDEntries()[13].ExecInst : 
+ddsMsg.c_NoMDEntries()[13].Text : 
+ddsMsg.c_NoMDEntries()[14].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[14].MDEntryType :  
+ddsMsg.c_NoMDEntries()[14].Symbol : 
+ddsMsg.c_NoMDEntries()[14].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[14].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[14].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[14].TimeInForce :  
+ddsMsg.c_NoMDEntries()[14].ExecInst : 
+ddsMsg.c_NoMDEntries()[14].Text : 
+}
+}
+
+Update : Message : MarketDataIncrementalRefresh { 
+ddsMsg.DATS_Source : MATCHING_ENGINE
+ddsMsg.DATS_Destination : 
+ddsMsg.DATS_SourceUser : 
+ddsMsg.DATS_DestinationUser : 
+Header { 
+ddsMsg.BeginString : 
+ddsMsg.BodyLength : 0
+ddsMsg.MsgType : X
+ddsMsg.SenderCompID : 
+ddsMsg.TargetCompID : 
+ddsMsg.MsgSeqNum : 0
+ddsMsg.SenderSubID : 
+ddsMsg.TargetSubID : 
+ddsMsg.SendingTime : 0
+}
+ddsMsg.MDReqID : 
+ddsMsg.c_NoMDEntries
+{
+ddsMsg.c_NoMDEntries()[0].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[0].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[0].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[0].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[0].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[0].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[0].TimeInForce :  
+ddsMsg.c_NoMDEntries()[0].ExecInst : 
+ddsMsg.c_NoMDEntries()[0].Text : 
+ddsMsg.c_NoMDEntries()[1].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[1].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[1].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[1].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[1].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[1].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[1].TimeInForce :  
+ddsMsg.c_NoMDEntries()[1].ExecInst : 
+ddsMsg.c_NoMDEntries()[1].Text : 
+ddsMsg.c_NoMDEntries()[2].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[2].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[2].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[2].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[2].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[2].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[2].TimeInForce :  
+ddsMsg.c_NoMDEntries()[2].ExecInst : 
+ddsMsg.c_NoMDEntries()[2].Text : 
+ddsMsg.c_NoMDEntries()[3].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[3].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[3].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[3].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[3].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[3].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[3].TimeInForce :  
+ddsMsg.c_NoMDEntries()[3].ExecInst : 
+ddsMsg.c_NoMDEntries()[3].Text : 
+ddsMsg.c_NoMDEntries()[4].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[4].MDEntryType : 0
+ddsMsg.c_NoMDEntries()[4].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[4].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[4].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[4].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[4].TimeInForce :  
+ddsMsg.c_NoMDEntries()[4].ExecInst : 
+ddsMsg.c_NoMDEntries()[4].Text : 
+ddsMsg.c_NoMDEntries()[5].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[5].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[5].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[5].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[5].MDEntryPx : 110000
+ddsMsg.c_NoMDEntries()[5].MDEntrySize : 100
+ddsMsg.c_NoMDEntries()[5].TimeInForce :  
+ddsMsg.c_NoMDEntries()[5].ExecInst : 
+ddsMsg.c_NoMDEntries()[5].Text : 
+ddsMsg.c_NoMDEntries()[6].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[6].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[6].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[6].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[6].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[6].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[6].TimeInForce :  
+ddsMsg.c_NoMDEntries()[6].ExecInst : 
+ddsMsg.c_NoMDEntries()[6].Text : 
+ddsMsg.c_NoMDEntries()[7].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[7].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[7].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[7].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[7].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[7].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[7].TimeInForce :  
+ddsMsg.c_NoMDEntries()[7].ExecInst : 
+ddsMsg.c_NoMDEntries()[7].Text : 
+ddsMsg.c_NoMDEntries()[8].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[8].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[8].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[8].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[8].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[8].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[8].TimeInForce :  
+ddsMsg.c_NoMDEntries()[8].ExecInst : 
+ddsMsg.c_NoMDEntries()[8].Text : 
+ddsMsg.c_NoMDEntries()[9].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[9].MDEntryType : 1
+ddsMsg.c_NoMDEntries()[9].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[9].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[9].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[9].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[9].TimeInForce :  
+ddsMsg.c_NoMDEntries()[9].ExecInst : 
+ddsMsg.c_NoMDEntries()[9].Text : 
+ddsMsg.c_NoMDEntries()[10].MDUpdateAction : 0
+ddsMsg.c_NoMDEntries()[10].MDEntryType : 4
+ddsMsg.c_NoMDEntries()[10].Symbol : BTC-USD
+ddsMsg.c_NoMDEntries()[10].SecurityExchange : BTC_MARKET
+ddsMsg.c_NoMDEntries()[10].MDEntryPx : 10100
+ddsMsg.c_NoMDEntries()[10].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[10].TimeInForce :  
+ddsMsg.c_NoMDEntries()[10].ExecInst : 
+ddsMsg.c_NoMDEntries()[10].Text : 
+ddsMsg.c_NoMDEntries()[11].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[11].MDEntryType :  
+ddsMsg.c_NoMDEntries()[11].Symbol : 
+ddsMsg.c_NoMDEntries()[11].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[11].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[11].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[11].TimeInForce :  
+ddsMsg.c_NoMDEntries()[11].ExecInst : 
+ddsMsg.c_NoMDEntries()[11].Text : 
+ddsMsg.c_NoMDEntries()[12].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[12].MDEntryType :  
+ddsMsg.c_NoMDEntries()[12].Symbol : 
+ddsMsg.c_NoMDEntries()[12].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[12].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[12].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[12].TimeInForce :  
+ddsMsg.c_NoMDEntries()[12].ExecInst : 
+ddsMsg.c_NoMDEntries()[12].Text : 
+ddsMsg.c_NoMDEntries()[13].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[13].MDEntryType :  
+ddsMsg.c_NoMDEntries()[13].Symbol : 
+ddsMsg.c_NoMDEntries()[13].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[13].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[13].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[13].TimeInForce :  
+ddsMsg.c_NoMDEntries()[13].ExecInst : 
+ddsMsg.c_NoMDEntries()[13].Text : 
+ddsMsg.c_NoMDEntries()[14].MDUpdateAction :  
+ddsMsg.c_NoMDEntries()[14].MDEntryType :  
+ddsMsg.c_NoMDEntries()[14].Symbol : 
+ddsMsg.c_NoMDEntries()[14].SecurityExchange : 
+ddsMsg.c_NoMDEntries()[14].MDEntryPx : 0
+ddsMsg.c_NoMDEntries()[14].MDEntrySize : 0
+ddsMsg.c_NoMDEntries()[14].TimeInForce :  
+ddsMsg.c_NoMDEntries()[14].ExecInst : 
+ddsMsg.c_NoMDEntries()[14].Text : 
+}
+}
+
+Publishing chunk of 14 updates
+20250909.131827 run-done : pid,5191
+20250909.131830 run-done : pid,5204
+20250909.131833 run-done : pid,5217
+20250909.131836 run-done : pid,5230
+20250909.131839 run-done : pid,5243
+20250909.131843 run-done : pid,5256
+20250909.131846 run-done : pid,5269
+20250909.131849 run-done : pid,5282
+20250909.131852 run-done : pid,5295
+20250909.131855 run-done : pid,5308
+20250909.131859 run-done : pid,5321
+20250909.131902 run-done : pid,5334
+20250909.131905 run-done : pid,5347
+20250909.131908 run-done : pid,5360
+20250909.131912 run-done : pid,5373
+20250909.131915 run-done : pid,5386
+20250909.131918 run-done : pid,5399
+20250909.131921 run-done : pid,5412
+20250909.131925 run-done : pid,5425
+20250909.131928 run-done : pid,5438
+20250909.131931 run-done : pid,5451
+20250909.131934 run-done : pid,5464
+20250909.131938 run-done : pid,5477
+20250909.131941 run-done : pid,5490
+20250909.131944 run-done : pid,5503
+20250909.131947 run-done : pid,5516
+20250909.131951 run-done : pid,5529
+20250909.131954 run-done : pid,5542
+20250909.131957 run-done : pid,5555
+20250909.132000 run-done : pid,5568
+20250909.132004 run-done : pid,5581
+20250909.132007 run-done : pid,5594
+20250909.132010 run-done : pid,5607
+20250909.132013 run-done : pid,5620
+20250909.132016 run-done : pid,5633
+20250909.132020 run-done : pid,5646
+20250909.132023 run-done : pid,5659
+20250909.132026 run-done : pid,5672
+20250909.132029 run-done : pid,5685
+20250909.132033 run-done : pid,5698
+20250909.132036 run-done : pid,5711
+20250909.132039 run-done : pid,5724
+20250909.132042 run-done : pid,5737
+20250909.132045 run-done : pid,5750
+20250909.132048 run-done : pid,5763
+20250909.132052 run-done : pid,5776
+20250909.132055 run-done : pid,5789
+20250909.132059 run-done : pid,5802
+20250909.132103 run-done : pid,5815
+20250909.132106 run-done : pid,5828
+20250909.132109 run-done : pid,5841
+20250909.132112 run-done : pid,5854
+20250909.132115 run-done : pid,5867
+20250909.132119 run-done : pid,5880
+20250909.133710 run-done : pid,5893
+20250909.133713 run-done : pid,5906
+20250909.133717 run-done : pid,5919
+20250909.133720 run-done : pid,5932
+20250909.133723 run-done : pid,5945
+20250909.133726 run-done : pid,5958
+20250909.133729 run-done : pid,5971
+20250909.133732 run-done : pid,5984
+20250909.133735 run-done : pid,5997
+20250909.133739 run-done : pid,6010
+20250909.133742 run-done : pid,6023
+20250909.133745 run-done : pid,6036
+20250909.133748 run-done : pid,6049
+20250909.133751 run-done : pid,6062
+20250909.133754 run-done : pid,6075
+20250909.133758 run-done : pid,6088
+20250909.133801 run-done : pid,6101
+20250909.133805 run-done : pid,6114
+20250909.133808 run-done : pid,6127
+20250909.133811 run-done : pid,6140
+20250909.133814 run-done : pid,6153
+20250909.133817 run-done : pid,6166
+20250909.133821 run-done : pid,6179
+20250909.133824 run-done : pid,6192
+20250909.133827 run-done : pid,6205
+20250909.133830 run-done : pid,6218
+20250909.133833 run-done : pid,6231
+20250909.133837 run-done : pid,6244
+20250909.133840 run-done : pid,6257

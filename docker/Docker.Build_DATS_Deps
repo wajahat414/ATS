@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt install -y vim cmake curl build-essential libapr1-dev libaprutil1-dev git libboost-all-dev sqlite3 libsqlite3-dev libtool libasio-dev libtinyxml2-dev zip python3-pip
 RUN pip install psutil --break-system-packages
 
-ADD build_dependences.sh /
+ADD docker/build_dependences.sh /
 RUN /build_dependences.sh
 
 FROM ubuntu:latest

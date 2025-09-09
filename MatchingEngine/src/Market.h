@@ -45,6 +45,8 @@
 #include <string>
 #include <vector>
 #include <atomic>
+#include <unordered_map>
+#include <mutex>
 
 #include "OrderBookStats.h"
 #include "DataWriterContainer.h"

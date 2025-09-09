@@ -1,9 +1,10 @@
-FROM ghcr.io/mkipnis/distributed_ats:latest
+ARG BASE_IMAGE=dats_core:latest
+FROM ${BASE_IMAGE}
 
 EXPOSE 15001
 EXPOSE 16001
 EXPOSE 17001
 
-COPY dats_env.sh /usr/local/dats_env.sh
-COPY FastDDS.xml /usr/local/
+COPY docker/dats_env.sh /usr/local/dats_env.sh
+COPY docker/FastDDS.xml /usr/local/
 RUN chmod +x /usr/local/dats_env.sh

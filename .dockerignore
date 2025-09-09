@@ -1,0 +1,10 @@
+.git
+**/build
+build
+**/*.o
+**/*.a
+**/*.so
+**/*.dylib
+**/*.log
+**/__pycache__
+.vscode

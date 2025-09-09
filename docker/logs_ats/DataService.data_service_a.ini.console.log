@@ -1,0 +1,576 @@
+[37;1m2025-09-09 12:57:53.751 [33;1m[[37;1mUTILS[33;1m Warning] [37mCannot get machine id. Failing back to IP based ID[34;1m -> Function [36mHost[m
+20250909.125754 run-done : pid,8
+BTC-AUD
+BTC-CAD
+BTC-CNY
+BTC-EUR
+BTC-GBP
+BTC-JPY
+BTC-USD
+[37;1m2025-09-09 12:57:58.948 [33;1m[[37;1mRTPS_TRANSPORT_SHM[33;1m Warning] [37mBuffer is being invalidated, segment_size may be insufficient[34;1m -> Function [36minvalidate_if_not_processing[m
+>>>> Received MarketDataRequest : MATCHING_ENGINE:DATA_SERVICE:BTC_MARKET
+Symbol to send full snapshot : BTC-AUD
+Publishing Full Market Data Snapshot : BTC-AUD
+Symbol to send full snapshot : BTC-CAD
+Publishing Full Market Data Snapshot : BTC-CAD
+Symbol to send full snapshot : BTC-CNY
+Publishing Full Market Data Snapshot : BTC-CNY
+Symbol to send full snapshot : BTC-EUR
+Publishing Full Market Data Snapshot : BTC-EUR
+Symbol to send full snapshot : BTC-GBP
+Publishing Full Market Data Snapshot : BTC-GBP
+Symbol to send full snapshot : BTC-JPY
+Publishing Full Market Data Snapshot : BTC-JPY
+Symbol to send full snapshot : BTC-USD
+Publishing Full Market Data Snapshot : BTC-USD
+20250909.125800 run-done : pid,162
+20250909.125803 run-done : pid,221
+20250909.125807 run-done : pid,234
+20250909.125810 run-done : pid,247
+20250909.125813 run-done : pid,260
+20250909.125816 run-done : pid,273
+20250909.125819 run-done : pid,286
+20250909.125822 run-done : pid,299
+20250909.125826 run-done : pid,312
+20250909.125829 run-done : pid,325
+20250909.125832 run-done : pid,338
+20250909.125835 run-done : pid,351
+20250909.125838 run-done : pid,364
+20250909.125841 run-done : pid,377
+20250909.125845 run-done : pid,390
+20250909.125848 run-done : pid,403
+20250909.125851 run-done : pid,416
+20250909.125854 run-done : pid,429
+20250909.125857 run-done : pid,442
+20250909.125900 run-done : pid,455
+20250909.125903 run-done : pid,468
+20250909.125907 run-done : pid,481
+20250909.125910 run-done : pid,494
+20250909.125913 run-done : pid,507
+20250909.125916 run-done : pid,520
+20250909.125919 run-done : pid,533
+20250909.125922 run-done : pid,546
+20250909.125926 run-done : pid,559
+20250909.125929 run-done : pid,572
+20250909.125932 run-done : pid,585
+20250909.125935 run-done : pid,598
+20250909.125938 run-done : pid,611
+20250909.125941 run-done : pid,624
+20250909.125944 run-done : pid,637
+20250909.125948 run-done : pid,650
+20250909.125951 run-done : pid,663
+20250909.125954 run-done : pid,676
+20250909.125957 run-done : pid,689
+20250909.130000 run-done : pid,702
+ADA-USD
+AVX-AUD
+BCH-CNY
+BTC-AUD
+BTC-CAD
+BTC-CNY
+BTC-EUR
+BTC-GBP
+BTC-JPY
+BTC-USD
+DAI-USD
+DOT-GBP
+ETH-AUD
+ETH-CAD
+ETH-CNY
+ETH-EUR
+ETH-GBP
+ETH-JPY
+ETH-USD
+LTC-JPY
+LUN-CAD
+MTC-CAD
+SOL-EUR
+UNI-JPY
+XLM-CNY
+XLM-EUR
+XMR-AUD
+XRP-GBP
+>>>> Received MarketDataRequest : FIX_GWY_1:DATA_SERVICE:CRYPTO_TRADER_1
+Symbol to send full snapshot : ADA-USD
+Publishing Full Market Data Snapshot : ADA-USD
+Symbol to send full snapshot : AVX-AUD
+Publishing Full Market Data Snapshot : AVX-AUD
+Symbol to send full snapshot : BCH-CNY
+Publishing Full Market Data Snapshot : BCH-CNY
+Symbol to send full snapshot : BTC-AUD
+Publishing Full Market Data Snapshot : BTC-AUD
+Symbol to send full snapshot : BTC-CAD
+Publishing Full Market Data Snapshot : BTC-CAD
+Symbol to send full snapshot : BTC-CNY
+Publishing Full Market Data Snapshot : BTC-CNY
+Symbol to send full snapshot : BTC-EUR
+Publishing Full Market Data Snapshot : BTC-EUR
+Symbol to send full snapshot : BTC-GBP
+Publishing Full Market Data Snapshot : BTC-GBP
+Symbol to send full snapshot : BTC-JPY
+Publishing Full Market Data Snapshot : BTC-JPY
+Symbol to send full snapshot : BTC-USD
+Publishing Full Market Data Snapshot : BTC-USD
+Symbol to send full snapshot : DAI-USD
+Publishing Full Market Data Snapshot : DAI-USD
+Symbol to send full snapshot : DOT-GBP
+Publishing Full Market Data Snapshot : DOT-GBP
+Symbol to send full snapshot : ETH-AUD
+Publishing Full Market Data Snapshot : ETH-AUD
+Symbol to send full snapshot : ETH-CAD
+Publishing Full Market Data Snapshot : ETH-CAD
+Symbol to send full snapshot : ETH-CNY
+Publishing Full Market Data Snapshot : ETH-CNY
+Symbol to send full snapshot : ETH-EUR
+Publishing Full Market Data Snapshot : ETH-EUR
+Symbol to send full snapshot : ETH-GBP
+Publishing Full Market Data Snapshot : ETH-GBP
+Symbol to send full snapshot : ETH-JPY
+Publishing Full Market Data Snapshot : ETH-JPY
+Symbol to send full snapshot : ETH-USD
+Publishing Full Market Data Snapshot : ETH-USD
+Symbol to send full snapshot : LTC-JPY
+Publishing Full Market Data Snapshot : LTC-JPY
+Symbol to send full snapshot : LUN-CAD
+Publishing Full Market Data Snapshot : LUN-CAD
+Symbol to send full snapshot : MTC-CAD
+Publishing Full Market Data Snapshot : MTC-CAD
+Symbol to send full snapshot : SOL-EUR
+Publishing Full Market Data Snapshot : SOL-EUR
+Symbol to send full snapshot : UNI-JPY
+Publishing Full Market Data Snapshot : UNI-JPY
+Symbol to send full snapshot : XLM-CNY
+Publishing Full Market Data Snapshot : XLM-CNY
+Symbol to send full snapshot : XLM-EUR
+Publishing Full Market Data Snapshot : XLM-EUR
+Symbol to send full snapshot : XMR-AUD
+Publishing Full Market Data Snapshot : XMR-AUD
+Symbol to send full snapshot : XRP-GBP
+Publishing Full Market Data Snapshot : XRP-GBP
+20250909.130004 run-done : pid,715
+20250909.130007 run-done : pid,728
+20250909.130010 run-done : pid,741
+20250909.130013 run-done : pid,754
+20250909.130016 run-done : pid,767
+20250909.130019 run-done : pid,780
+20250909.130022 run-done : pid,793
+20250909.130026 run-done : pid,806
+20250909.130029 run-done : pid,819
+20250909.130032 run-done : pid,832
+20250909.130035 run-done : pid,845
+20250909.130038 run-done : pid,858
+20250909.130041 run-done : pid,871
+20250909.130045 run-done : pid,884
+20250909.130048 run-done : pid,897
+20250909.130051 run-done : pid,910
+20250909.130054 run-done : pid,923
+20250909.130057 run-done : pid,936
+20250909.130101 run-done : pid,949
+20250909.130104 run-done : pid,962
+20250909.130108 run-done : pid,975
+20250909.130111 run-done : pid,988
+20250909.130115 run-done : pid,1001
+20250909.130119 run-done : pid,1014
+20250909.130122 run-done : pid,1027
+20250909.130126 run-done : pid,1040
+20250909.130129 run-done : pid,1053
+20250909.130133 run-done : pid,1066
+20250909.130136 run-done : pid,1079
+20250909.130139 run-done : pid,1092
+20250909.130142 run-done : pid,1105
+20250909.130145 run-done : pid,1118
+20250909.130149 run-done : pid,1131
+20250909.130152 run-done : pid,1144
+20250909.130155 run-done : pid,1157
+20250909.130159 run-done : pid,1170
+20250909.130202 run-done : pid,1183
+20250909.130205 run-done : pid,1196
+20250909.130208 run-done : pid,1209
+20250909.130212 run-done : pid,1222
+20250909.130215 run-done : pid,1235
+20250909.130218 run-done : pid,1248
+20250909.130221 run-done : pid,1261
+20250909.130225 run-done : pid,1274
+20250909.130228 run-done : pid,1287
+20250909.130231 run-done : pid,1300
+20250909.130234 run-done : pid,1313
+20250909.130237 run-done : pid,1326
+20250909.130241 run-done : pid,1339
+20250909.130244 run-done : pid,1352
+20250909.130247 run-done : pid,1365
+20250909.130250 run-done : pid,1378
+20250909.130253 run-done : pid,1391
+20250909.130257 run-done : pid,1404
+20250909.130300 run-done : pid,1417
+20250909.130303 run-done : pid,1430
+20250909.130306 run-done : pid,1443
+20250909.130309 run-done : pid,1456
+20250909.130313 run-done : pid,1469
+20250909.130316 run-done : pid,1482
+20250909.130319 run-done : pid,1495
+20250909.130322 run-done : pid,1508
+20250909.130325 run-done : pid,1521
+20250909.130329 run-done : pid,1534
+20250909.130332 run-done : pid,1547
+20250909.130335 run-done : pid,1560
+20250909.130338 run-done : pid,1573
+20250909.130341 run-done : pid,1586
+20250909.130345 run-done : pid,1599
+20250909.130348 run-done : pid,1612
+20250909.130351 run-done : pid,1625
+20250909.130354 run-done : pid,1638
+20250909.130358 run-done : pid,1651
+20250909.130401 run-done : pid,1664
+20250909.130404 run-done : pid,1677
+20250909.130407 run-done : pid,1690
+20250909.130411 run-done : pid,1703
+20250909.130414 run-done : pid,1716
+20250909.130417 run-done : pid,1729
+20250909.130420 run-done : pid,1742
+20250909.130423 run-done : pid,1755
+20250909.130427 run-done : pid,1768
+20250909.130430 run-done : pid,1781
+20250909.130433 run-done : pid,1794
+20250909.130436 run-done : pid,1807
+20250909.130439 run-done : pid,1820
+20250909.130443 run-done : pid,1833
+20250909.130446 run-done : pid,1846
+20250909.130449 run-done : pid,1859
+20250909.130452 run-done : pid,1872
+20250909.130456 run-done : pid,1885
+20250909.130459 run-done : pid,1898
+20250909.130502 run-done : pid,1911
+20250909.130505 run-done : pid,1924
+20250909.130508 run-done : pid,1937
+20250909.130512 run-done : pid,1950
+20250909.130515 run-done : pid,1963
+20250909.130518 run-done : pid,1976
+20250909.130522 run-done : pid,1989
+20250909.130525 run-done : pid,2002
+20250909.130528 run-done : pid,2015
+20250909.130531 run-done : pid,2028
+20250909.130534 run-done : pid,2041
+20250909.130538 run-done : pid,2054
+20250909.130541 run-done : pid,2067
+20250909.130544 run-done : pid,2080
+20250909.130547 run-done : pid,2093
+20250909.130550 run-done : pid,2106
+20250909.130553 run-done : pid,2119
+20250909.130557 run-done : pid,2132
+20250909.130600 run-done : pid,2145
+20250909.130603 run-done : pid,2158
+20250909.130606 run-done : pid,2171
+20250909.130609 run-done : pid,2184
+20250909.130613 run-done : pid,2197
+20250909.130616 run-done : pid,2210
+20250909.130619 run-done : pid,2223
+20250909.130622 run-done : pid,2236
+20250909.130625 run-done : pid,2249
+20250909.130629 run-done : pid,2262
+20250909.130632 run-done : pid,2275
+20250909.130635 run-done : pid,2288
+20250909.130638 run-done : pid,2301
+20250909.130641 run-done : pid,2314
+20250909.130644 run-done : pid,2327
+20250909.130648 run-done : pid,2340
+20250909.130651 run-done : pid,2353
+20250909.130654 run-done : pid,2366
+20250909.130657 run-done : pid,2379
+20250909.130700 run-done : pid,2392
+20250909.130703 run-done : pid,2405
+20250909.130707 run-done : pid,2418
+20250909.130710 run-done : pid,2431
+20250909.130713 run-done : pid,2444
+20250909.130716 run-done : pid,2457
+20250909.130719 run-done : pid,2470
+20250909.130723 run-done : pid,2483
+20250909.130726 run-done : pid,2496
+20250909.130729 run-done : pid,2509
+20250909.130732 run-done : pid,2522
+20250909.130735 run-done : pid,2535
+20250909.130738 run-done : pid,2548
+20250909.130742 run-done : pid,2561
+20250909.130745 run-done : pid,2574
+20250909.130748 run-done : pid,2587
+20250909.130752 run-done : pid,2600
+20250909.130755 run-done : pid,2613
+20250909.130758 run-done : pid,2626
+20250909.130801 run-done : pid,2639
+20250909.130805 run-done : pid,2652
+20250909.130808 run-done : pid,2665
+20250909.130811 run-done : pid,2678
+20250909.130814 run-done : pid,2691
+20250909.130817 run-done : pid,2704
+20250909.130820 run-done : pid,2717
+20250909.130824 run-done : pid,2730
+20250909.130827 run-done : pid,2743
+20250909.130830 run-done : pid,2756
+20250909.130833 run-done : pid,2769
+20250909.130836 run-done : pid,2782
+20250909.130839 run-done : pid,2795
+20250909.130843 run-done : pid,2808
+20250909.130846 run-done : pid,2821
+20250909.130849 run-done : pid,2834
+20250909.130852 run-done : pid,2847
+20250909.130855 run-done : pid,2860
+20250909.130859 run-done : pid,2873
+20250909.130902 run-done : pid,2886
+20250909.130905 run-done : pid,2899
+20250909.130908 run-done : pid,2912
+20250909.130911 run-done : pid,2925
+20250909.130914 run-done : pid,2938
+20250909.130918 run-done : pid,2951
+20250909.130921 run-done : pid,2964
+20250909.130924 run-done : pid,2977
+20250909.130927 run-done : pid,2990
+20250909.130930 run-done : pid,3003
+20250909.130933 run-done : pid,3016
+20250909.130937 run-done : pid,3029
+20250909.130940 run-done : pid,3042
+20250909.130943 run-done : pid,3055
+20250909.130946 run-done : pid,3068
+20250909.130949 run-done : pid,3081
+20250909.130952 run-done : pid,3094
+20250909.130956 run-done : pid,3107
+20250909.130959 run-done : pid,3120
+20250909.131002 run-done : pid,3133
+20250909.131005 run-done : pid,3146
+20250909.131008 run-done : pid,3159
+20250909.131012 run-done : pid,3172
+20250909.131015 run-done : pid,3185
+20250909.131018 run-done : pid,3198
+20250909.131021 run-done : pid,3211
+20250909.131024 run-done : pid,3224
+20250909.131027 run-done : pid,3237
+20250909.131031 run-done : pid,3250
+20250909.131034 run-done : pid,3263
+20250909.131037 run-done : pid,3276
+20250909.131040 run-done : pid,3289
+20250909.131043 run-done : pid,3302
+20250909.131046 run-done : pid,3315
+20250909.131050 run-done : pid,3328
+20250909.131053 run-done : pid,3341
+20250909.131056 run-done : pid,3354
+20250909.131059 run-done : pid,3367
+20250909.131102 run-done : pid,3380
+20250909.131105 run-done : pid,3393
+20250909.131109 run-done : pid,3406
+20250909.131112 run-done : pid,3419
+20250909.131115 run-done : pid,3432
+20250909.131118 run-done : pid,3445
+20250909.131121 run-done : pid,3458
+20250909.131125 run-done : pid,3471
+20250909.131128 run-done : pid,3484
+20250909.131131 run-done : pid,3497
+20250909.131134 run-done : pid,3510
+20250909.131137 run-done : pid,3523
+20250909.131140 run-done : pid,3536
+20250909.131144 run-done : pid,3549
+20250909.131147 run-done : pid,3562
+20250909.131150 run-done : pid,3575
+20250909.131153 run-done : pid,3588
+20250909.131156 run-done : pid,3601
+20250909.131159 run-done : pid,3614
+20250909.131203 run-done : pid,3627
+20250909.131206 run-done : pid,3640
+20250909.131209 run-done : pid,3653
+20250909.131212 run-done : pid,3666
+20250909.131215 run-done : pid,3679
+20250909.131218 run-done : pid,3692
+20250909.131222 run-done : pid,3705
+20250909.131225 run-done : pid,3718
+20250909.131228 run-done : pid,3731
+20250909.131231 run-done : pid,3744
+20250909.131234 run-done : pid,3757
+20250909.131237 run-done : pid,3770
+20250909.131241 run-done : pid,3783
+20250909.131244 run-done : pid,3796
+20250909.131247 run-done : pid,3809
+20250909.131250 run-done : pid,3822
+20250909.131253 run-done : pid,3835
+20250909.131256 run-done : pid,3848
+20250909.131300 run-done : pid,3861
+20250909.131303 run-done : pid,3874
+20250909.131306 run-done : pid,3887
+20250909.131309 run-done : pid,3900
+20250909.131312 run-done : pid,3913
+20250909.131315 run-done : pid,3926
+20250909.131319 run-done : pid,3939
+20250909.131322 run-done : pid,3952
+20250909.131325 run-done : pid,3965
+20250909.131328 run-done : pid,3978
+20250909.131331 run-done : pid,3991
+20250909.131335 run-done : pid,4004
+20250909.131338 run-done : pid,4017
+20250909.131341 run-done : pid,4030
+20250909.131344 run-done : pid,4043
+20250909.131347 run-done : pid,4056
+20250909.131350 run-done : pid,4069
+20250909.131354 run-done : pid,4082
+20250909.131357 run-done : pid,4095
+20250909.131400 run-done : pid,4108
+20250909.131403 run-done : pid,4121
+20250909.131406 run-done : pid,4134
+20250909.131410 run-done : pid,4147
+20250909.131413 run-done : pid,4160
+20250909.131416 run-done : pid,4173
+20250909.131419 run-done : pid,4186
+20250909.131422 run-done : pid,4199
+20250909.131426 run-done : pid,4212
+20250909.131429 run-done : pid,4225
+20250909.131432 run-done : pid,4238
+20250909.131435 run-done : pid,4251
+20250909.131438 run-done : pid,4264
+20250909.131441 run-done : pid,4277
+20250909.131445 run-done : pid,4290
+20250909.131448 run-done : pid,4303
+20250909.131451 run-done : pid,4316
+20250909.131454 run-done : pid,4329
+20250909.131457 run-done : pid,4342
+20250909.131501 run-done : pid,4355
+20250909.131504 run-done : pid,4368
+20250909.131507 run-done : pid,4381
+20250909.131510 run-done : pid,4394
+20250909.131513 run-done : pid,4407
+20250909.131517 run-done : pid,4420
+20250909.131520 run-done : pid,4433
+20250909.131523 run-done : pid,4446
+20250909.131526 run-done : pid,4459
+20250909.131529 run-done : pid,4472
+20250909.131532 run-done : pid,4485
+20250909.131536 run-done : pid,4498
+20250909.131539 run-done : pid,4511
+20250909.131542 run-done : pid,4524
+20250909.131545 run-done : pid,4537
+20250909.131549 run-done : pid,4550
+20250909.131552 run-done : pid,4563
+20250909.131555 run-done : pid,4576
+20250909.131559 run-done : pid,4589
+20250909.131602 run-done : pid,4602
+20250909.131605 run-done : pid,4615
+20250909.131608 run-done : pid,4628
+20250909.131611 run-done : pid,4641
+20250909.131615 run-done : pid,4654
+20250909.131618 run-done : pid,4667
+20250909.131621 run-done : pid,4680
+20250909.131624 run-done : pid,4693
+20250909.131627 run-done : pid,4706
+20250909.131631 run-done : pid,4719
+20250909.131634 run-done : pid,4732
+20250909.131637 run-done : pid,4745
+20250909.131640 run-done : pid,4758
+20250909.131643 run-done : pid,4771
+20250909.131647 run-done : pid,4784
+20250909.131650 run-done : pid,4797
+20250909.131653 run-done : pid,4810
+20250909.131656 run-done : pid,4823
+20250909.131659 run-done : pid,4836
+20250909.131703 run-done : pid,4849
+20250909.131706 run-done : pid,4862
+20250909.131709 run-done : pid,4875
+20250909.131712 run-done : pid,4888
+20250909.131715 run-done : pid,4901
+20250909.131719 run-done : pid,4914
+20250909.131722 run-done : pid,4927
+20250909.131725 run-done : pid,4940
+20250909.131728 run-done : pid,4953
+20250909.131731 run-done : pid,4966
+20250909.131735 run-done : pid,4979
+20250909.131738 run-done : pid,4992
+20250909.131741 run-done : pid,5005
+20250909.131744 run-done : pid,5018
+20250909.131747 run-done : pid,5031
+20250909.131750 run-done : pid,5044
+20250909.131754 run-done : pid,5057
+20250909.131757 run-done : pid,5070
+20250909.131800 run-done : pid,5083
+20250909.131803 run-done : pid,5096
+20250909.131806 run-done : pid,5109
+20250909.131810 run-done : pid,5122
+20250909.131813 run-done : pid,5135
+20250909.131817 run-done : pid,5148
+20250909.131820 run-done : pid,5161
+20250909.131823 run-done : pid,5174
+20250909.131826 run-done : pid,5187
+20250909.131829 run-done : pid,5200
+20250909.131833 run-done : pid,5213
+20250909.131836 run-done : pid,5226
+20250909.131839 run-done : pid,5239
+20250909.131842 run-done : pid,5252
+20250909.131845 run-done : pid,5265
+20250909.131849 run-done : pid,5278
+20250909.131852 run-done : pid,5291
+20250909.131855 run-done : pid,5304
+20250909.131858 run-done : pid,5317
+20250909.131902 run-done : pid,5330
+20250909.131905 run-done : pid,5343
+20250909.131908 run-done : pid,5356
+20250909.131911 run-done : pid,5369
+20250909.131915 run-done : pid,5382
+20250909.131918 run-done : pid,5395
+20250909.131921 run-done : pid,5408
+20250909.131924 run-done : pid,5421
+20250909.131928 run-done : pid,5434
+20250909.131931 run-done : pid,5447
+20250909.131934 run-done : pid,5460
+20250909.131937 run-done : pid,5473
+20250909.131940 run-done : pid,5486
+20250909.131944 run-done : pid,5499
+20250909.131947 run-done : pid,5512
+20250909.131950 run-done : pid,5525
+20250909.131953 run-done : pid,5538
+20250909.131957 run-done : pid,5551
+20250909.132000 run-done : pid,5564
+20250909.132003 run-done : pid,5577
+20250909.132006 run-done : pid,5590
+20250909.132010 run-done : pid,5603
+20250909.132013 run-done : pid,5616
+20250909.132016 run-done : pid,5629
+20250909.132019 run-done : pid,5642
+20250909.132023 run-done : pid,5655
+20250909.132026 run-done : pid,5668
+20250909.132029 run-done : pid,5681
+20250909.132032 run-done : pid,5694
+20250909.132035 run-done : pid,5707
+20250909.132039 run-done : pid,5720
+20250909.132042 run-done : pid,5733
+20250909.132045 run-done : pid,5746
+20250909.132048 run-done : pid,5759
+20250909.132051 run-done : pid,5772
+20250909.132055 run-done : pid,5785
+20250909.132058 run-done : pid,5798
+20250909.132102 run-done : pid,5811
+20250909.132106 run-done : pid,5824
+20250909.132109 run-done : pid,5837
+20250909.132112 run-done : pid,5850
+20250909.132115 run-done : pid,5863
+20250909.132118 run-done : pid,5876
+20250909.133710 run-done : pid,5889
+20250909.133713 run-done : pid,5902
+20250909.133716 run-done : pid,5915
+20250909.133719 run-done : pid,5928
+20250909.133723 run-done : pid,5941
+20250909.133726 run-done : pid,5954
+20250909.133729 run-done : pid,5967
+20250909.133732 run-done : pid,5980
+20250909.133735 run-done : pid,5993
+20250909.133738 run-done : pid,6006
+20250909.133741 run-done : pid,6019
+20250909.133745 run-done : pid,6032
+20250909.133748 run-done : pid,6045
+20250909.133751 run-done : pid,6058
+20250909.133754 run-done : pid,6071
+20250909.133757 run-done : pid,6084
+20250909.133801 run-done : pid,6097
+20250909.133804 run-done : pid,6110
+20250909.133808 run-done : pid,6123
+20250909.133811 run-done : pid,6136
+20250909.133814 run-done : pid,6149
+20250909.133817 run-done : pid,6162
+20250909.133820 run-done : pid,6175
+20250909.133824 run-done : pid,6188
+20250909.133827 run-done : pid,6201
+20250909.133830 run-done : pid,6214
+20250909.133833 run-done : pid,6227
+20250909.133836 run-done : pid,6240
+20250909.133840 run-done : pid,6253
