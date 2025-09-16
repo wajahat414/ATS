@@ -22,4 +22,8 @@ if(NOT EXISTS "${QUICKFIX_INCLUDE_DIR}/quickfix/config-all.h")
 
 endif()
 
+if(EXISTS "${QUICKFIX_INCLUDE_DIR}/quickfix/config-all.h")
+    set(QUICKFIX_INSTALL_PREFIX ${QUICKFIX_ROOT_DIR})
+endif()
+
 set(quickfix_FOUND TRUE)

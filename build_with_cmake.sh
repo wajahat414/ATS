@@ -6,7 +6,7 @@ set -ex  # Print each command and exit on error
 OS="$(uname)"
 if [[ "$OS" == "Darwin" ]]; then
   LIB_PATH_VAR="DYLD_LIBRARY_PATH"
-#  CMAKE_FLAGS="-G Xcode"
+  CMAKE_FLAGS="-G Ninja"
 else
   LIB_PATH_VAR="LD_LIBRARY_PATH"
 fi
@@ -37,9 +37,25 @@ else
   INSTALL_PREFIX="$(get_abs_path "$1")"
 fi
 
+if [ ! -d "$DDS_HOME/include/fastdds" ]; then
+    echo "Error: DDS headers not found at $DDS_HOME/include/fastdds. Please build/install DDS first."
+    exit 1
+fi
+
 # Run cmake and build
+
+
+cmake ${CMAKE_FLAGS:-} .. \
+  -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" \
+  -DCMAKE_BUILD_TYPE=Debug  \
+  -DDDS_ROOT_DIR="$DDS_HOME" \
+  -DQUICKFIX_ROOT_DIR="$QUICKFIX_HOME" \
+  -DLOG4CXX_ROOT_DIR="$LOG4CXX_HOME" \
+  -DLIQUIBOOK_ROOT="$LIQUIBOOK_HOME" 
+
 cmake ${CMAKE_FLAGS:-} .. -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX"
-cmake --build . --target install --config Debug -v
+
+ninja -v install
 
 # Write the environment setup script
 cat <<EOM > "$INSTALL_PREFIX/dats_env.sh"
@@ -56,3 +72,4 @@ export LOG4CXX_CONFIGURATION="\$DATS_HOME/config/log4cxx.xml"
 EOM
 
 chmod +x "$INSTALL_PREFIX/dats_env.sh"
+

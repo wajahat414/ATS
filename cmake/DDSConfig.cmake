@@ -59,4 +59,8 @@ if(NOT EXISTS "${DDS_INCLUDE_DIRS}/fastdds/config.hpp")
 
 endif()
 
+if (EXISTS "${DDS_INCLUDE_DIRS}/fastdds/config.hpp")
+    set(DDS_INSTALL_PREFIX ${DDS_ROOT_DIR})
+
+endif()
 set(DDS_FOUND TRUE)

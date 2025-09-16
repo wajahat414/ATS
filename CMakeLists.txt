@@ -13,7 +13,7 @@ find_package( DDS REQUIRED )
 find_package( log4cxx REQUIRED )
 find_package( quickfix REQUIRED )
 find_package( liquibook REQUIRED )
-
+message(WAJ_DDS_LIBRARY_DIR="${DDS_INSTALL_PREFIX}")
 set(DDS_INCLUDE_DIR "${DDS_INSTALL_PREFIX}/include")
 set(DDS_LIBRARY_DIR "${DDS_INSTALL_PREFIX}/lib")
 set(QUICKFIX_INCLUDE_DIR "${QUICKFIX_INSTALL_PREFIX}/include")

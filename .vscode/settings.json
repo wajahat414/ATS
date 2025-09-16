@@ -25,5 +25,7 @@
         "algorithm": "cpp",
         "chrono": "cpp"
     },
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build"
 
 }

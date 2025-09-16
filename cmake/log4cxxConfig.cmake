@@ -22,4 +22,7 @@ if(NOT EXISTS "${LOG4CXX_INCLUDE_DIRS}/log4cxx/log4cxx.h")
 
 endif()
 
+if(EXISTS "${LOG4CXX_INCLUDE_DIRS}/log4cxx/log4cxx.h")
+    set(LOG4CXX_INSTALL_PREFIX ${LOG4CXX_ROOT_DIR})
+endif()
 set(Log4cxx_FOUND TRUE)
